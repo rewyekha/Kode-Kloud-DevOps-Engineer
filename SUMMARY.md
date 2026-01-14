@@ -6,3 +6,5 @@
 * [Day 4: Script Execution Permissions](day-4-script-execution-permissions.md)
 * [Day 5: SElinux Installation and Configuration](day-5-selinux-installation-and-configuration.md)
 * [Day 6: Create a Cron Job](day-6-create-a-cron-job.md)
+* [Day 7: Linux SSH Authentication](day-7-linux-ssh-authentication.md)
+* [Day 8: Install Ansible](day-8-install-ansible.md)
