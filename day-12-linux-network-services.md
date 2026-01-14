@@ -1,7 +1,5 @@
 # Day 12: Linux Network Services
 
-
-
 Our monitoring tool has reported an issue in `Stratos Datacenter`. One of our app servers has an issue, as its Apache service is not reachable on port `3002` (which is the Apache port). The service itself could be down, the firewall could be at fault, or something else could be causing the issue.
 
 Use tools like `telnet`, `netstat`, etc. to find and fix the issue. Also make sure Apache is reachable from the jump host without compromising any security settings.\
@@ -10,15 +8,37 @@ Once fixed, you can test the same using command `curl http://stapp01:3002` comma
 
 `Note:` Please do not try to alter the existing `index.html` code, as it will lead to task failure.
 
-Got it 👍\
-You want a **YouTube-style, command-by-command solution**, **same logic**, just adapted correctly for **port 3002**.\
-Below is the **exact flow you should follow**, very similar to what you saw in the video.
+###
 
-***
-
-### 🎯 Problem
-
-Apache on **stapp01** is **not reachable on port 3002**
+> // connecting or not\
+> telnet stapp01 5003\
+> telnet stapp02 5003\
+> telnet stapp03 5003
+>
+> // app1 issue\
+> ssh tony@stapp01\
+> sudo su\
+> systemctl status httpd\
+> netstat -lntp | grep 5003\
+> kill 444\
+> netstat -lntp | grep 5003
+>
+> systemctl restart httpd\
+> systemctl status httpd
+>
+> telnet stapp01 5003\
+> // its due to the firewall
+>
+> iptables -L -n
+>
+> // how to open firewall port in iptables of linux\
+> sudo iptables -A INPUT -p tcp --dport 5003 -j ACCEPT
+>
+> // how to open firewall port sequence in iptables of linux
+>
+> sudo iptables -D INPUT -p tcp --dport 5004 -j ACCEPT\
+> sudo iptables -I INPUT 1 -p tcp --dport 5003 -j ACCEPT\
+> iptables -L -n
 
 ***
 
