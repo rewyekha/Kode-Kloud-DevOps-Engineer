@@ -106,6 +106,71 @@ http {
 
 ***
 
+```
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files
+    include /etc/nginx/conf.d/*.conf;
+
+    # -------------------------------
+    # Load Balancer Upstream Block
+    # -------------------------------
+    upstream nautilus_apps {
+        server 172.16.238.10:80;
+        server 172.16.238.11:80;
+        server 172.16.238.12:80;
+    }
+
+    # -------------------------------
+    # HTTP Load Balancer Server
+    # -------------------------------
+    server {
+        listen 80;
+        listen [::]:80;
+        server_name _;
+
+        location / {
+            proxy_pass http://nautilus_apps;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+
+}
+
+```
+
 ### Step 4: Test Nginx Configuration
 
 ```bash
