@@ -9,3 +9,4 @@
 * [Day 7: Linux SSH Authentication](day-7-linux-ssh-authentication.md)
 * [Day 8: Install Ansible](day-8-install-ansible.md)
 * [Day 9: MariaDB Troubleshooting](day-9-mariadb-troubleshooting.md)
+* [Untitled](untitled.md)
