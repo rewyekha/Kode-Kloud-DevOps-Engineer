@@ -10,3 +10,4 @@
 * [Day 8: Install Ansible](day-8-install-ansible.md)
 * [Day 9: MariaDB Troubleshooting](day-9-mariadb-troubleshooting.md)
 * [Day 10: Linux Bash Scripts](day-10-linux-bash-scripts.md)
+* [Day 11: Install and Configure Tomcat Server](day-11-install-and-configure-tomcat-server.md)
