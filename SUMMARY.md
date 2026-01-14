@@ -13,3 +13,4 @@
 * [Day 11: Install and Configure Tomcat Server](day-11-install-and-configure-tomcat-server.md)
 * [Day 12: Linux Network Services](day-12-linux-network-services.md)
 * [Day 13: IPtables Installation And Configuration](day-13-iptables-installation-and-configuration.md)
+* [Day 14: Linux Process Troubleshooting](day-14-linux-process-troubleshooting.md)
