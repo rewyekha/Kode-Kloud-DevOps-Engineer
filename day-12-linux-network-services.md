@@ -1,0 +1,240 @@
+# Day 12: Linux Network Services
+
+
+
+Our monitoring tool has reported an issue in `Stratos Datacenter`. One of our app servers has an issue, as its Apache service is not reachable on port `3002` (which is the Apache port). The service itself could be down, the firewall could be at fault, or something else could be causing the issue.
+
+Use tools like `telnet`, `netstat`, etc. to find and fix the issue. Also make sure Apache is reachable from the jump host without compromising any security settings.\
+\
+Once fixed, you can test the same using command `curl http://stapp01:3002` command from jump host.
+
+`Note:` Please do not try to alter the existing `index.html` code, as it will lead to task failure.
+
+Got it 👍\
+You want a **YouTube-style, command-by-command solution**, **same logic**, just adapted correctly for **port 3002**.\
+Below is the **exact flow you should follow**, very similar to what you saw in the video.
+
+***
+
+### 🎯 Problem
+
+Apache on **stapp01** is **not reachable on port 3002**
+
+***
+
+### ✅ STEP-BY-STEP (YouTube-style)
+
+***
+
+### 1️⃣ From jump host – check connectivity
+
+```bash
+ssh thor@jump_host
+```
+
+Test port:
+
+```bash
+telnet stapp01 3002
+```
+
+❌ If it fails → problem confirmed
+
+***
+
+### 2️⃣ SSH into App Server 1
+
+```bash
+ssh tony@stapp01
+sudo su
+```
+
+***
+
+### 3️⃣ Check Apache service
+
+```bash
+systemctl status httpd
+```
+
+#### If Apache is not running:
+
+```bash
+systemctl start httpd
+```
+
+If it **fails**, continue below.
+
+***
+
+### 4️⃣ Check what is using port 3002
+
+```bash
+netstat -lntp | grep 3002
+```
+
+#### Possible outcomes:
+
+**Case A: Some process is already using 3002 (like in YouTube video)**
+
+Example:
+
+```
+tcp  0  0 127.0.0.1:3002  LISTEN  456/someprocess
+```
+
+👉 Kill that PID (ONLY the one using 3002):
+
+```bash
+kill 456
+```
+
+Recheck:
+
+```bash
+netstat -lntp | grep 3002
+```
+
+***
+
+### 5️⃣ Restart Apache
+
+```bash
+systemctl restart httpd
+systemctl status httpd
+```
+
+Confirm Apache is listening:
+
+```bash
+netstat -lntp | grep 3002
+```
+
+You should see:
+
+```
+0.0.0.0:3002  LISTEN  httpd
+```
+
+***
+
+### 6️⃣ Test locally on stapp01
+
+```bash
+curl http://localhost:3002
+```
+
+If this works → Apache is fine.
+
+***
+
+### 7️⃣ Check firewall (VERY IMPORTANT)
+
+```bash
+iptables -L -n
+```
+
+If port **3002 is NOT allowed**, open it (same style as YouTube):
+
+```bash
+iptables -I INPUT 1 -p tcp --dport 3002 -j ACCEPT
+```
+
+Verify:
+
+```bash
+iptables -L -n
+```
+
+✔ Only port 3002 opened → **no security compromise**
+
+***
+
+### 8️⃣ Final test from jump host (THIS IS WHAT GRADER CHECKS)
+
+Exit back:
+
+```bash
+exit
+```
+
+Test:
+
+```bash
+curl http://stapp01:3002
+```
+
+🎉 If this works → **TASK PASSES**
+
+***
+
+### ✅ Summary (YouTube Logic Applied Correctly)
+
+| Step          | What you did            |
+| ------------- | ----------------------- |
+| telnet        | Verified issue          |
+| netstat       | Found port usage        |
+| kill PID      | Freed port              |
+| restart httpd | Fixed Apache            |
+| iptables      | Allowed port            |
+| curl          | Verified from jump host |
+
+***
+
+### ⚠️ Very Important Notes
+
+* ❌ Do **NOT** edit `index.html`
+* ❌ Do **NOT** change Apache config unless required
+* ✅ Only fix **service + port + firewall**
+
+***
+
+If you want, paste **only this output** and I’ll tell you the **exact next command**:
+
+```bash
+netstat -lntp | grep 3002
+systemctl status httpd
+```
+
+<pre><code><strong>[root@stapp01 tony]# history
+</strong>    1  systemctl status httpd
+    2  systemctl start httpd
+    3  netstat -lntp | grep 8087
+    4  systemctl stop sendmail
+    5  systemctl disable sendmail
+    6  netstat -lntp | grep 8087
+    7  systemctl start httpd
+    8  systemctl enable httpd
+    9  systemctl status httpd
+   10  netstat -lntp | grep 8087
+   11  iptables -L -n
+   12  curl http://localhost:8087
+   13  sudo history
+   14  history
+   15  history
+[root@stapp01 tony]# 
+</code></pre>
+
+<pre><code><strong>[tony@stapp01 ~]$ iptables -L -n
+</strong>iptables v1.8.4 (nf_tables): Could not fetch rule set generation id: Permission denied (you must be root)
+
+<strong>[tony@stapp01 ~]$ sudo iptables -L -n
+</strong>[sudo] password for tony: 
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3002
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+# Warning: iptables-legacy tables present, use iptables-legacy to see them
+[tony@stapp01 ~]$ 
+</code></pre>
