@@ -11,3 +11,4 @@
 * [Create Countdown Job in Kubernetes](create-countdown-job-in-kubernetes.md)
 * [Set Up Time Check Pod in Kubernetes](set-up-time-check-pod-in-kubernetes.md)
 * [Resolve Pod Deployment Issue](resolve-pod-deployment-issue.md)
+* [Update Deployment and Service in Kubernetes](update-deployment-and-service-in-kubernetes.md)
