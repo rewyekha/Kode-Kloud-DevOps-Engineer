@@ -12,3 +12,4 @@
 * [Set Up Time Check Pod in Kubernetes](set-up-time-check-pod-in-kubernetes.md)
 * [Resolve Pod Deployment Issue](resolve-pod-deployment-issue.md)
 * [Update Deployment and Service in Kubernetes](update-deployment-and-service-in-kubernetes.md)
+* [Deploy Highly Available Pods with ReplicationController](deploy-highly-available-pods-with-replicationcontroller.md)
