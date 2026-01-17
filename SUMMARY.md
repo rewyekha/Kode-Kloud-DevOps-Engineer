@@ -8,3 +8,4 @@
 * [Day 6: Launch EC2 Instance](day-6-launch-ec2-instance.md)
 * [Day 7: Change EC2 Instance Type](day-7-change-ec2-instance-type.md)
 * [Day 8: Enable Stop Protection for EC2 Instance](day-8-enable-stop-protection-for-ec2-instance.md)
+* [Day 9: Enable Termination Protection for EC2 Instance](day-9-enable-termination-protection-for-ec2-instance.md)
