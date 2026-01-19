@@ -13,3 +13,4 @@
 * [Resolve Pod Deployment Issue](resolve-pod-deployment-issue.md)
 * [Update Deployment and Service in Kubernetes](update-deployment-and-service-in-kubernetes.md)
 * [Deploy Highly Available Pods with ReplicationController](deploy-highly-available-pods-with-replicationcontroller.md)
+* [Resolve VolumeMounts Issue in Kubernetes](resolve-volumemounts-issue-in-kubernetes.md)
