@@ -17,3 +17,4 @@
 * [Day 15: Setup SSL for Nginx](day-15-setup-ssl-for-nginx.md)
 * [Day 16: Install and Configure Nginx as an LBR](day-16-install-and-configure-nginx-as-an-lbr.md)
 * [Day 17: Install and Configure PostgreSQL](day-17-install-and-configure-postgresql.md)
+* [Day 19: Install and Configure Web Application](day-19-install-and-configure-web-application.md)
