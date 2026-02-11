@@ -20,3 +20,4 @@
 * [Day 19: Install and Configure Web Application](day-19-install-and-configure-web-application.md)
 * [Day 20: Configure Nginx + PHP-FPM Using Unix Sock](day-20-configure-nginx-+-php-fpm-using-unix-sock.md)
 * [Day 21: Set Up Git Repository on Storage Server](day-21-set-up-git-repository-on-storage-server.md)
+* [Day 22: Clone Git Repository on Storage Server](day-22-clone-git-repository-on-storage-server.md)
