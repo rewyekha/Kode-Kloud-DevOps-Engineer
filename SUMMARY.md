@@ -25,3 +25,4 @@
 * [Day 24: Git Create Branches](day-24-git-create-branches.md)
 * [Day 25: Git Merge Branches](day-25-git-merge-branches.md)
 * [Day 26: Git Manage Remotes](day-26-git-manage-remotes.md)
+* [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
