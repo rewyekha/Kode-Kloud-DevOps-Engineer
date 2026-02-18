@@ -26,3 +26,4 @@
 * [Day 25: Git Merge Branches](day-25-git-merge-branches.md)
 * [Day 26: Git Manage Remotes](day-26-git-manage-remotes.md)
 * [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
+* [Day 28: Git Cherry Pick](day-28-git-cherry-pick.md)
