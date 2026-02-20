@@ -27,3 +27,4 @@
 * [Day 26: Git Manage Remotes](day-26-git-manage-remotes.md)
 * [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
 * [Day 28: Git Cherry Pick](day-28-git-cherry-pick.md)
+* [Day 29: Manage Git Pull Requests](day-29-manage-git-pull-requests.md)
