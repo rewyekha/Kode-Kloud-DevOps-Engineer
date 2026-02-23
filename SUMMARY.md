@@ -28,3 +28,4 @@
 * [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
 * [Day 28: Git Cherry Pick](day-28-git-cherry-pick.md)
 * [Day 29: Manage Git Pull Requests](day-29-manage-git-pull-requests.md)
+* [Day 30: Git hard reset](day-30-git-hard-reset.md)
