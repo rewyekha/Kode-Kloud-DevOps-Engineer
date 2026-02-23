@@ -11,3 +11,4 @@
 * [Day 9: Enable Termination Protection for EC2 Instance](day-9-enable-termination-protection-for-ec2-instance.md)
 * [Day 10: Attach Elastic IP to EC2 Instance](day-10-attach-elastic-ip-to-ec2-instance.md)
 * [Day 11: Attach Elastic Network Interface to EC2 Instance](day-11-attach-elastic-network-interface-to-ec2-instance.md)
+* [Day 12: Attach Volume to EC2 Instance](day-12-attach-volume-to-ec2-instance.md)
