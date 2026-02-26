@@ -31,3 +31,4 @@
 * [Day 30: Git hard reset](day-30-git-hard-reset.md)
 * [Day 31: Git Stash](day-31-git-stash.md)
 * [Day 32: Git Rebase](day-32-git-rebase.md)
+* [Day 33: Resolve Git Merge Conflicts](day-33-resolve-git-merge-conflicts.md)
