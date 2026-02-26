@@ -14,3 +14,4 @@
 * [Day 12: Attach Volume to EC2 Instance](day-12-attach-volume-to-ec2-instance.md)
 * [Day 13: Create AMI from EC2 Instance](page-1.md)
 * [Day 14: Terminate EC2 Instance](day-14-terminate-ec2-instance.md)
+* [Day 15: Create Volume Snapshot](day-15-create-volume-snapshot.md)
