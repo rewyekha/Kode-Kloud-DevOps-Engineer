@@ -15,3 +15,4 @@
 * [Day 13: Create AMI from EC2 Instance](page-1.md)
 * [Day 14: Terminate EC2 Instance](day-14-terminate-ec2-instance.md)
 * [Day 15: Create Volume Snapshot](day-15-create-volume-snapshot.md)
+* [Day 16: Create IAM User](day-16-create-iam-user.md)
