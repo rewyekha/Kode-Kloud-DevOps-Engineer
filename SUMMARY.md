@@ -32,3 +32,4 @@
 * [Day 31: Git Stash](day-31-git-stash.md)
 * [Day 32: Git Rebase](day-32-git-rebase.md)
 * [Day 33: Resolve Git Merge Conflicts](day-33-resolve-git-merge-conflicts.md)
+* [Day 34: Git Hook](day-34-git-hook.md)
