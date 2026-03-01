@@ -34,3 +34,4 @@
 * [Day 33: Resolve Git Merge Conflicts](day-33-resolve-git-merge-conflicts.md)
 * [Day 34: Git Hook](day-34-git-hook.md)
 * [Day 35: Install Docker Packages and Start Docker Service](day-35-install-docker-packages-and-start-docker-service.md)
+* [Day 36: Deploy Nginx Container on Application Server](day-36-deploy-nginx-container-on-application-server.md)
