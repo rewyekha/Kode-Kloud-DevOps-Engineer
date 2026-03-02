@@ -73,5 +73,5 @@ If you prefer a graphical approach:
 
 
 Kode Cloud CLI:\
-![](<.gitbook/assets/image (1) (1) (1) (1).png>)
+![](<.gitbook/assets/image (1) (1) (1) (1) (1).png>)
 
