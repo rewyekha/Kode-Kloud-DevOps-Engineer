@@ -280,3 +280,5 @@ aws iam attach-user-policy --user-name iamuser_siva \
 
 aws iam list-attached-user-policies --user-name iamuser_siva
 ```
+
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
