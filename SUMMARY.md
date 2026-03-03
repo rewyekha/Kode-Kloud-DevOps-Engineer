@@ -36,3 +36,4 @@
 * [Day 35: Install Docker Packages and Start Docker Service](day-35-install-docker-packages-and-start-docker-service.md)
 * [Day 36: Deploy Nginx Container on Application Server](day-36-deploy-nginx-container-on-application-server.md)
 * [Day 37: Copy File to Docker Container](day-37-copy-file-to-docker-container.md)
+* [Day 38: Pull Docker Image](day-38-pull-docker-image.md)
