@@ -37,3 +37,4 @@
 * [Day 36: Deploy Nginx Container on Application Server](day-36-deploy-nginx-container-on-application-server.md)
 * [Day 37: Copy File to Docker Container](day-37-copy-file-to-docker-container.md)
 * [Day 38: Pull Docker Image](day-38-pull-docker-image.md)
+* [Day 39: Create a Docker Image From Container](day-39-create-a-docker-image-from-container.md)
