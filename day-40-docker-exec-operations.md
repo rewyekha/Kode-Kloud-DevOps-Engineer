@@ -261,3 +261,7 @@ These tools are commonly used in troubleshooting and DevOps environments.
   * `ss`
 * **curl** is a reliable way to test web servers quickly.
 * `sed` is very useful for **automating configuration changes**.
+
+
+
+<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
