@@ -41,3 +41,4 @@
 * [Day 38: Pull Docker Image](day-38-pull-docker-image.md)
 * [Day 39: Create a Docker Image From Container](day-39-create-a-docker-image-from-container.md)
 * [Day 40: Docker EXEC Operations](day-40-docker-exec-operations.md)
+* [Day 41: Write a Docker File](day-41-write-a-docker-file.md)
