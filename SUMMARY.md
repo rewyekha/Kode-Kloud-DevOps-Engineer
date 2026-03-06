@@ -25,6 +25,7 @@
 * [Git task: Update Git Repository with Sample HTML File](git-task-update-git-repository-with-sample-html-file.md)
 * [Day 24: Git Create Branches](day-24-git-create-branches.md)
 * [Day 25: Git Merge Branches](day-25-git-merge-branches.md)
+* [Git task: Delete Git Branch](git-task-delete-git-branch.md)
 * [Day 26: Git Manage Remotes](day-26-git-manage-remotes.md)
 * [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
 * [Day 28: Git Cherry Pick](day-28-git-cherry-pick.md)
