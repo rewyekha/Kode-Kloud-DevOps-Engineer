@@ -43,3 +43,4 @@
 * [Day 40: Docker EXEC Operations](day-40-docker-exec-operations.md)
 * [Day 41: Write a Docker File](day-41-write-a-docker-file.md)
 * [Day 42: Create a Docker Network](day-42-create-a-docker-network.md)
+* [Day 43: Docker Ports Mapping](day-43-docker-ports-mapping.md)
