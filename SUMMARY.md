@@ -46,3 +46,4 @@
 * [Day 43: Docker Ports Mapping](day-43-docker-ports-mapping.md)
 * [Day 44: Write a Docker Compose File](day-44-write-a-docker-compose-file.md)
 * [Day 45: Resolve Dockerfile Issues](day-45-resolve-dockerfile-issues.md)
+* [Day 46: Deploy an App on Docker Containers](day-46-deploy-an-app-on-docker-containers.md)
