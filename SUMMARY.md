@@ -21,3 +21,4 @@
 * [Day 19: Attach IAM Policy to IAM User](day-19-attach-iam-policy-to-iam-user.md)
 * [Day 20: Create IAM Role for EC2 with Policy Attachment](day-20-create-iam-role-for-ec2-with-policy-attachment.md)
 * [Day 21: Setting Up an EC2 Instance with an Elastic IP for Application Hosting](day-21-setting-up-an-ec2-instance-with-an-elastic-ip-for-application-hosting.md)
+* [Day 22: Configuring Secure SSH Access to an EC2 Instance](day-22-configuring-secure-ssh-access-to-an-ec2-instance.md)
