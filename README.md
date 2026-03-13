@@ -1,6 +1,7 @@
----
-description: this page contains my solutions of kode kloud challenges
----
+# K8s Test
 
-# Kode Kloud - k8s
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
