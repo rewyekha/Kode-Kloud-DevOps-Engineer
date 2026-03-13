@@ -1,141 +1,39 @@
 ---
-description: Nautilus DevOps Migration Task
+description: Table of contents
 ---
 
-# Day 1 - Azure SSH Key Creation
+# SUMMARY
 
-<figure><img src=".gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
-### Problem Statement
 
-The Nautilus DevOps team is planning a phased migration of a portion of their infrastructure to the Azure cloud. To reduce risk and improve manageability, the team has decided to break the migration into smaller, incremental tasks rather than performing a single large-scale move.
-
-As part of this strategy, the team needs to prepare secure access for future Azure virtual machines by creating an SSH key pair.
-
-#### Task Requirements
-
-* Create an SSH key pair in Azure
-* SSH key name must be **nautilus-kp**
-* Key pair type must be **RSA**
-* Use the provided Azure credentials
-
-***
-
-### Solution
-
-The SSH key pair was created using the Azure CLI on the provided `azure-client` host.
-
-#### Step 1: Retrieve Azure Credentials
-
-Run the following command to display Azure login credentials:
-
-```bash
-showcreds
-```
-
-Use the provided username and password for authentication.
-
-***
-
-#### Step 2: Login to Azure
-
-Authenticate using device login:
-
-```bash
-az login
-```
-
-Follow the on-screen instructions:
-
-* Open the provided URL in a browser
-* Enter the device code
-* Login with the Azure username and password
-
-Verify login:
-
-```bash
-az account show
-```
-
-***
-
-#### Step 3: Identify Resource Group and Location
-
-List available resource groups:
-
-```bash
-az group list -o table
-```
-
-Identified values:
-
-* **Resource Group:** `kml_rg_main-bc19af0667854824`
-* **Location:** `westus`
-
-***
-
-#### Step 4: Create the SSH Key Pair
-
-Run the following command to create the SSH key:
-
-```bash
-az sshkey create \
-  --name nautilus-kp \
-  --resource-group kml_rg_main-bc19af0667854824 \
-  --location westus
-```
-
-> **Note:** Azure CLI generates **RSA keys by default**, which satisfies the task requirement.
-
-***
-
-#### Step 5: Verify the SSH Key
-
-Confirm the key creation:
-
-```bash
-az sshkey show \
-  --name nautilus-kp \
-  --resource-group kml_rg_main-bc19af0667854824
-```
-
-The output confirms:
-
-* SSH key name: `nautilus-kp`
-* Public key starts with `ssh-rsa`, verifying RSA type
-
-***
-
-### Key Storage Details
-
-* **Public Key:** Stored securely in Azure as an SSH key resource
-* **Private Key:** Generated and stored locally on the client machine
-
-Example paths:
-
-```
-/root/.ssh/<generated_key>
-/root/.ssh/<generated_key>.pub
-```
-
-> Azure does **not** store or display private keys.
-
-***
-
-### Azure Portal Verification (Optional)
-
-The SSH key can be viewed in the Azure Portal:
-
-1. Open [https://portal.azure.com](https://portal.azure.com/)
-2. Search for **SSH keys**
-3. Select **nautilus-kp**
-4. View key details and public key
-
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
-
-***
-
-### Conclusion
-
-The SSH key pair **nautilus-kp** was successfully created in Azure using RSA encryption. This completes the required task and prepares the environment for secure, phased infrastructure migration.
-
+* Day 1 - Azure SSH Key Creation
+* Day 2 - creating an Azure Virtual Machine (VM)
+* Day 3: Create VM using Azure CLI
+* Day 4: Create a Virtual Network (VNet) in Azure
+* Day 5: Create a Virtual Network (IPv4) in Azure
+* Day 6: Create a Subnet in Azure Virtual Network
+* Day 7: Create a Public IP Address for Azure VM
+* Day 8: Attach Managed Disk to Azure Virtual Machine
+* Day 9: Attach Network Interface Card (NIC) to Azure Virtual Machine
+* Day 10: Attach Public IP to Azure Virtual Machine
+* Day 11: Change Azure Virtual Machine Size Using Console
+* Day 12: Add and Manage Tags for Azure Virtual Machines
+* Day 13: SSH into an Azure Virtual Machine
+* Day 14: Create and Attach Managed Disks in Azure
+* Day 15: Create and Configure Network Security Group (NSG) in Azure
+* Day 16: Create a Private Azure Blob Storage Container
+* Day 18: Copy Data to an Azure Blob Storage Container
+* Day 19: Convert Public Azure Blob Container to Private
+* Day 20: Deploy Azure Resources Using ARM Template
+* Day 21: Assigning Public IP to Virtual Machines
+* Day 22: Configuring Instances with User Data
+* Day 23: Automating User Data Configuration Using the CLI
+* Day 24: Securing Virtual Machine SSH Access
+* Day 25: Expanding and Managing Disk Storage
+* Day 26: Deploying Virtual Machines in a Public Virtual Network
+* Day 28: Troubleshooting Public Virtual Network Configurations
+* Day 29: Working with Azure Container Registry (ACR)
+* Day 30: Create Azure SQL Database
+* Day 31: Deploying and Managing a Web Application
+* Day 32: Synchronizing Containers Using the CLI
+* Day 33: Integrating Virtual Machines with Application Load Balancer
