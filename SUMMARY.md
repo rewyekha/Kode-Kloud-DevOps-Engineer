@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Day 1 - AWS SSH Key Creation](README.md)
+* [SUMMARY](README.md)
+* [Day 1 - AWS SSH Key Creation](<README (1).md>)
 * [Day 2 -  Security group](day-2-security-group.md)
 * [Day 3: Create Subnet](day-3-create-subnet.md)
 * [Day 4: Enable Versioning for S3 Bucket](day-4-enable-versioning-for-s3-bucket.md)
