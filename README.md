@@ -1,12 +1,11 @@
 ---
-description: Table of contents
+description: Created by Reyas Khan
 ---
 
 # SUMMARY
-# Table of contents
+## Table of contents
 
-* [SUMMARY](README.md)
-* [Day 1 - Azure SSH Key Creation](<README (1).md>)
+* [Day 1 - Azure SSH Key Creation](Day-1-Azure-SSH-Key-Creation.md)
 * [Day 2 - creating an Azure Virtual Machine (VM)](day-2-creating-an-azure-virtual-machine-vm.md)
 * [Day 3: Create VM using Azure CLI](day-3-create-vm-using-azure-cli.md)
 * [Day 4: Create a Virtual Network (VNet) in Azure](day-4-create-a-virtual-network-vnet-in-azure.md)
