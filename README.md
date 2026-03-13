@@ -1,7 +1,20 @@
-# K8s Test
+---
+description: this page contains my solutions of kode kloud challenges
+---
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+# Kode Kloud - k8s
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+## Table of contents
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+* K8s Test
+* Weight: 10
+* Weight: 9
+* Weight: 8
+* Weight: 7
+* Weight: 6
+* Weight: 5
+* Weight: 4
+* Weight: 3
+* Weight: 2
+* Weight: 1
+* Weight: 0
