@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Day 1: Linux User Setup with Non-Interactive Shell](README.md)
+* [SUMMARY](README.md)
+* [Day 1: Linux User Setup with Non-Interactive Shell](day-1-linux-user-setup-with-non-interactive-shell.md)
 * [Day 2: Temporary User Setup with Expiry](day-2-temporary-user-setup-with-expiry.md)
 * [Day 3: Secure Root SSH Access](day-3-secure-root-ssh-access.md)
 * [Day 4: Script Execution Permissions](day-4-script-execution-permissions.md)

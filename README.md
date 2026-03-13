@@ -1,4 +1,8 @@
-# Table of contents
+---
+description: Table of contents
+---
+
+# SUMMARY
 
 * [Day 1: Linux User Setup with Non-Interactive Shell](day-1-Linux-User-Setup-with-Non-Interactive-Shell.md)
 * [Day 2: Temporary User Setup with Expiry](day-2-temporary-user-setup-with-expiry.md)
