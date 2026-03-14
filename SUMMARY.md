@@ -1,7 +1,7 @@
 # Table of contents
 
 * [SUMMARY](README.md)
-* [Day 1 - Azure SSH Key Creation](<README (1).md>)
+* [Day 1 - Azure SSH Key Creation](day-1-azure-ssh-key-creation.md)
 * [Day 2 - creating an Azure Virtual Machine (VM)](day-2-creating-an-azure-virtual-machine-vm.md)
 * [Day 3: Create VM using Azure CLI](day-3-create-vm-using-azure-cli.md)
 * [Day 4: Create a Virtual Network (VNet) in Azure](day-4-create-a-virtual-network-vnet-in-azure.md)
@@ -32,3 +32,4 @@
 * [Day 31: Deploying and Managing a Web Application](day-31-deploying-and-managing-a-web-application.md)
 * [Day 32: Synchronizing Containers Using the CLI](day-32-synchronizing-containers-using-the-cli.md)
 * [Day 33: Integrating Virtual Machines with Application Load Balancer](day-33-integrating-virtual-machines-with-application-load-balancer.md)
+* [Day 34: Enabling Internet Connectivity for Virtual Machines](day-34-enabling-internet-connectivity-for-virtual-machines.md)
