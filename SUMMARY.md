@@ -33,3 +33,4 @@
 * [Day 32: Synchronizing Containers Using the CLI](day-32-synchronizing-containers-using-the-cli.md)
 * [Day 33: Integrating Virtual Machines with Application Load Balancer](day-33-integrating-virtual-machines-with-application-load-balancer.md)
 * [Day 34: Enabling Internet Connectivity for Virtual Machines](day-34-enabling-internet-connectivity-for-virtual-machines.md)
+* [Day 35: Configuring Virtual Network Peering](day-35-configuring-virtual-network-peering.md)
