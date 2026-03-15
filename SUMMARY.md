@@ -51,3 +51,4 @@
 * [Day 47: Docker Python App](day-47-docker-python-app.md)
 * [Day 48: Deploy Pods in Kubernetes Cluster](day-48-deploy-pods-in-kubernetes-cluster.md)
 * [Day 49: Deploy Applications with Kubernetes Deployments](day-49-deploy-applications-with-kubernetes-deployments.md)
+* [Day 50: Set Resource Limits in Kubernetes Pods](day-50-set-resource-limits-in-kubernetes-pods.md)
