@@ -34,3 +34,4 @@
 * [Day 33: Integrating Virtual Machines with Application Load Balancer](day-33-integrating-virtual-machines-with-application-load-balancer.md)
 * [Day 34: Enabling Internet Connectivity for Virtual Machines](day-34-enabling-internet-connectivity-for-virtual-machines.md)
 * [Day 35: Configuring Virtual Network Peering](day-35-configuring-virtual-network-peering.md)
+* [Day 36: Managing Storage Lifecycle in Azure](day-36-managing-storage-lifecycle-in-azure.md)

@@ -266,4 +266,4 @@ No output is returned, which means both files are **identical**.
 
 The file `datacenter.txt` was successfully migrated from the source container `datacenter-source-13818` to the destination container `datacenter-dest-19734` using the **Azure CLI**. Verification confirmed that the file exists in both containers and the contents are identical, ensuring a successful and consistent data migration.
 
-<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
