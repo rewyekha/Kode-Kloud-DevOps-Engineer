@@ -24,3 +24,4 @@
 * [Day 21: Setting Up an EC2 Instance with an Elastic IP for Application Hosting](day-21-setting-up-an-ec2-instance-with-an-elastic-ip-for-application-hosting.md)
 * [Day 22: Configuring Secure SSH Access to an EC2 Instance](day-22-configuring-secure-ssh-access-to-an-ec2-instance.md)
 * [Day 23: Data Migration Between S3 Buckets Using AWS CLI](day-23-data-migration-between-s3-buckets-using-aws-cli.md)
+* [Page 1](page-1-1.md)
