@@ -52,3 +52,4 @@
 * [Day 48: Deploy Pods in Kubernetes Cluster](day-48-deploy-pods-in-kubernetes-cluster.md)
 * [Day 49: Deploy Applications with Kubernetes Deployments](day-49-deploy-applications-with-kubernetes-deployments.md)
 * [Day 50: Set Resource Limits in Kubernetes Pods](day-50-set-resource-limits-in-kubernetes-pods.md)
+* [Day 51: Execute Rolling Updates in Kubernetes](day-51-execute-rolling-updates-in-kubernetes.md)
