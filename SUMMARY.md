@@ -9,3 +9,5 @@
 ## Ansible-Cert
 
 * [Weight: 10](ansible-cert/weight-10.md)
+* [Weight: 10](ansible-cert/weight-10-1.md)
+* [Weight: 10](ansible-cert/weight-10-2.md)
