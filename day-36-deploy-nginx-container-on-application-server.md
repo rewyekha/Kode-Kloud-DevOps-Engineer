@@ -124,5 +124,5 @@ The **nginx\_2** container has been successfully deployed on **Application Serve
 
 ***
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 

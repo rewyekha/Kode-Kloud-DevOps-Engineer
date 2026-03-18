@@ -54,3 +54,4 @@
 * [Day 50: Set Resource Limits in Kubernetes Pods](day-50-set-resource-limits-in-kubernetes-pods.md)
 * [Day 51: Execute Rolling Updates in Kubernetes](day-51-execute-rolling-updates-in-kubernetes.md)
 * [Day 52: Revert Deployment to Previous Version in Kubernetes](day-52-revert-deployment-to-previous-version-in-kubernetes.md)
+* [Day 53: Resolve VolumeMounts Issue in Kubernetes](day-53-resolve-volumemounts-issue-in-kubernetes.md)
