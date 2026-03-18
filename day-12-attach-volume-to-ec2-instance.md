@@ -17,4 +17,4 @@ Use below given AWS Credentials: (You can run the `showcreds` command on `aws-cl
 
 * Create the resources only in `us-east-1` region.
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>

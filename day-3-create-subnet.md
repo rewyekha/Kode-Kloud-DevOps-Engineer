@@ -78,4 +78,4 @@ vpc-02fed80ae8f7dfe05
 ~ on ☁️  (us-east-1) ➜  
 ```
 
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
