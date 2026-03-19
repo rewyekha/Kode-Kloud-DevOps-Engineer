@@ -3,7 +3,7 @@ In a bid to automate backup processes, the `xFusionCorp Industries` sysadmin tea
 
 **`Your task is to grant executable permissions to the /tmp/xfusioncorp.sh script on App Server 3. Additionally, ensure that all users have the capability to execute it.`**
 
-To complete this task on **App Server 3** (stapp03), the next step is to grant executable permissions to the script `/tmp/xfusioncorp.sh` so that **all users** on the server can execute it.
+To complete this task on **App Server 3** (stapp03), grant executable permissions to the script `/tmp/xfusioncorp.sh` so that **all users** on the server can execute it.
 
 #### Steps to Follow
 1.  SSH into **App Server 3**:

@@ -14,7 +14,7 @@ e. Do not use sudo inside the script.
 Note:
 The zip package must be installed on given App Server before executing the script. This package is essential for creating the zip archive of the website files. Install it manually outside the script.
 
-### What the next step is to do (summary)
+### Summary of Requirements
 * Work **on App Server 3** → `stapp03` (user: `banner`)
 * Create a script:
   **`/scripts/official_backup.sh`**
