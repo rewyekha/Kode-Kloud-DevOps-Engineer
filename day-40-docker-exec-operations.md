@@ -1,5 +1,4 @@
 # Day 40: Docker EXEC Operations
-
 One of the Nautilus DevOps team members was working to configure services on a `kkloud` container that is running on `App Server 2` in `Stratos Datacenter`. Due to some personal work he is on PTO for the rest of the week, but we need to finish his pending work ASAP. Please complete the remaining work as per details given below:
 
 a. Install `apache2` in `kkloud` container using `apt` that is running on `App Server 2` in `Stratos Datacenter`.
@@ -8,18 +7,13 @@ b. Configure Apache to listen on port `6200` instead of default `http` port. Do 
 
 c. Make sure Apache service is up and running inside the container. Keep the container in running state at the end.
 
-
-
 ***
 
 ## Deploy Apache on Custom Port Inside Docker Container
-
 ### Question
-
 Connect to the application server and configure an Apache web server inside the running Docker container.
 
 #### Requirements
-
 * SSH into the application server **stapp02**.
 * Access the running Docker container named **kkloud**.
 * Install **Apache2** inside the container.
@@ -30,7 +24,6 @@ Connect to the application server and configure an Apache web server inside the 
 ***
 
 ## Step 1: Connect to Application Server
-
 SSH from the jump host to the application server.
 
 ```bash
@@ -50,7 +43,6 @@ steve@stapp02's password:
 ***
 
 ## Step 2: Verify Running Docker Container
-
 Check if the container is running.
 
 ```bash
@@ -67,7 +59,6 @@ CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS
 ***
 
 ## Step 3: Access the Container
-
 Connect to the container using `docker exec`.
 
 ```bash
@@ -83,7 +74,6 @@ root@470187c1c6ac:/#
 ***
 
 ## Step 4: Update Package Repository
-
 ```bash
 apt update
 ```
@@ -99,7 +89,6 @@ Reading package lists... Done
 ***
 
 ## Step 5: Install Apache
-
 ```bash
 apt install -y apache2
 ```
@@ -116,18 +105,15 @@ Setting up apache2 (2.4.29-1ubuntu4.27) ...
 ***
 
 ## Step 6: Modify Apache Port
-
-The default Apache port is **80**.\
+The default Apache port is **80**.
 We need to change it to **6200**.
 
 #### Update ports.conf
-
 ```bash
 sed -i 's/Listen 80/Listen 6200/g' /etc/apache2/ports.conf
 ```
 
 #### Update Virtual Host Configuration
-
 ```bash
 sed -i 's/<VirtualHost \*:80>/<VirtualHost *:6200>/g' /etc/apache2/sites-available/000-default.conf
 ```
@@ -135,7 +121,6 @@ sed -i 's/<VirtualHost \*:80>/<VirtualHost *:6200>/g' /etc/apache2/sites-availab
 ***
 
 ## Step 7: Start Apache Service
-
 ```bash
 service apache2 start
 ```
@@ -152,7 +137,6 @@ This warning is normal and does not affect the service.
 ***
 
 ## Step 8: Verify Apache Service
-
 Attempt to check the port using `netstat`.
 
 ```bash
@@ -182,7 +166,6 @@ Minimal containers often do not include these tools.
 ***
 
 ## Step 9: Verify Using Curl
-
 Test the web server directly.
 
 ```bash
@@ -205,7 +188,6 @@ This confirms Apache is running on **port 6200**.
 ***
 
 ## Step 10: Check Service Status
-
 ```bash
 service apache2 status
 ```
@@ -219,7 +201,6 @@ Output:
 ***
 
 ## Tools Used in This Lab
-
 | Tool        | Purpose                                |
 | ----------- | -------------------------------------- |
 | SSH         | Remote login to the application server |
@@ -234,7 +215,6 @@ Output:
 ***
 
 ## Tools That May Be Used in Future Labs
-
 These tools are commonly used in troubleshooting and DevOps environments.
 
 | Tool           | Purpose                            |
@@ -252,7 +232,6 @@ These tools are commonly used in troubleshooting and DevOps environments.
 ***
 
 ## Key Takeaways
-
 * Apache default port is **80**, but it can be changed in:
   * `/etc/apache2/ports.conf`
   * `/etc/apache2/sites-available/000-default.conf`
@@ -261,7 +240,3 @@ These tools are commonly used in troubleshooting and DevOps environments.
   * `ss`
 * **curl** is a reliable way to test web servers quickly.
 * `sed` is very useful for **automating configuration changes**.
-
-
-
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>

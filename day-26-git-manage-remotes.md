@@ -1,5 +1,4 @@
 # Day 26: Git Manage Remotes
-
 This document outlines the complete terminal execution performed on the **Stratos DC** Storage Server to:
 
 * Add a new Git remote `dev_ecommerce`
@@ -9,7 +8,6 @@ This document outlines the complete terminal execution performed on the **Strato
 ***
 
 ### Repository Details
-
 * **Local Repository:** `/usr/src/kodekloudrepos/ecommerce`
 * **Existing Remote:** `/opt/ecommerce.git`
 * **New Remote:** `/opt/xfusioncorp_ecommerce.git`
@@ -19,7 +17,6 @@ This document outlines the complete terminal execution performed on the **Strato
 ***
 
 ## Step 1: Connect to Storage Server
-
 From jump host:
 
 ```bash
@@ -45,7 +42,6 @@ natasha@ststor01.stratos.xfusioncorp.com's password:
 ***
 
 ## Step 2: Navigate to Repository
-
 ```bash
 [natasha@ststor01 ~]$ cd /usr/src/kodekloudrepos/ecommerce
 ```
@@ -68,7 +64,6 @@ To add an exception for this directory, call:
 ***
 
 ## Step 3: Switch to Root User
-
 Because the repository is owned by root:
 
 ```bash
@@ -102,7 +97,6 @@ Output:
 ***
 
 ## Step 4: Add New Remote
-
 Add new remote `dev_ecommerce`:
 
 ```bash
@@ -127,7 +121,6 @@ origin          /opt/ecommerce.git (push)
 ***
 
 ## Step 5: Copy File into Repository
-
 ```bash
 [root@ststor01 ecommerce]# cp /tmp/index.html .
 ```
@@ -147,7 +140,6 @@ Output:
 ***
 
 ## Step 6: Add and Commit Changes
-
 ```bash
 [root@ststor01 ecommerce]# git add index.html
 [root@ststor01 ecommerce]# git commit -m "Added index.html file to master branch"
@@ -164,7 +156,6 @@ Commit output:
 ***
 
 ## Step 7: Push Master to New Remote
-
 ```bash
 [root@ststor01 ecommerce]# git push dev_ecommerce master
 ```
@@ -185,7 +176,6 @@ To /opt/xfusioncorp_ecommerce.git
 ***
 
 ## Step 8: Verification
-
 Verify remote branch:
 
 ```bash
@@ -201,13 +191,12 @@ Output:
 ***
 
 ## Final Outcome
-
-✔ Added new remote `dev_ecommerce`\
-✔ Copied `/tmp/index.html` into repository\
-✔ Committed changes to `master`\
-✔ Successfully pushed `master` branch to `/opt/xfusioncorp_ecommerce.git`\
-✔ Verified remote branch exists
+- Added new remote `dev_ecommerce`
+- Copied `/tmp/index.html` into repository
+- Committed changes to `master`
+- Successfully pushed `master` branch to `/opt/xfusioncorp_ecommerce.git`
+- Verified remote branch exists
 
 ***
 
-✅ **Task Completed Successfully**
+**Task Completed Successfully**

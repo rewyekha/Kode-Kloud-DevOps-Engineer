@@ -1,5 +1,4 @@
 # Day 53: Resolve VolumeMounts Issue in Kubernetes
-
 We encountered an issue with our Nginx and PHP-FPM setup on the Kubernetes cluster this morning, which halted its functionality. Investigate and rectify the issue:
 
 The pod name is `nginx-phpfpm` and configmap name is `nginx-config`. Identify and fix the problem.
@@ -8,14 +7,10 @@ Once resolved, copy `/home/thor/index.php` file from the `jump host` to the `ngi
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
-
-
 ***
 
 ## Debugging Nginx + PHP-FPM on Kubernetes
-
 ### Lab Question
-
 > We encountered an issue with our Nginx and PHP-FPM setup on the Kubernetes cluster this morning, which halted its functionality. Investigate and rectify the issue:
 >
 > The pod name is `nginx-phpfpm` and the ConfigMap name is `nginx-config`. Identify and fix the problem.
@@ -27,7 +22,6 @@ Once resolved, copy `/home/thor/index.php` file from the `jump host` to the `ngi
 ***
 
 ### Step 1: Check current pod and ConfigMap
-
 ```bash
 thor@jump-host ~$ kubectl get pods
 No resources found in default namespace
@@ -81,7 +75,6 @@ metadata:
 ***
 
 ### Step 2: Fix ConfigMap
-
 Edit ConfigMap:
 
 ```bash
@@ -101,7 +94,6 @@ Save changes (`ESC` → `:wq` → Enter).
 ***
 
 ### Step 3: Recreate the pod
-
 Create `pod.yaml`:
 
 ```bash
@@ -158,7 +150,6 @@ nginx-phpfpm   2/2     Running   0          6s
 ***
 
 ### Step 4: Copy `index.php` into nginx document root
-
 ```bash
 thor@jump-host ~$ kubectl cp /home/thor/index.php nginx-phpfpm:/var/www/html/index.php -c nginx-container
 ```
@@ -173,7 +164,6 @@ index.php
 ***
 
 ### Step 5: Test PHP-FPM connection
-
 ```bash
 thor@jump-host ~$ kubectl exec -it nginx-phpfpm -c nginx-container -- curl http://127.0.0.1:8099/index.php
 # Output: shows PHP page content
@@ -182,13 +172,11 @@ thor@jump-host ~$ kubectl exec -it nginx-phpfpm -c nginx-container -- curl http:
 ***
 
 ### Step 6: Access the website
-
 Click the **Website button** on the top bar — the page should now load successfully without 502 errors.
 
 ***
 
-### ✅ Key Notes
-
+### Key Notes
 1. Both nginx and php-fpm containers **must share the same volume path** `/var/www/html`.
 2. ConfigMap must point to **the same document root** as the volume.
 3. nginx listening port should match the lab expectation (**8099** in this case).
@@ -198,7 +186,6 @@ Click the **Website button** on the top bar — the page should now load success
 ***
 
 ### Terminal Output Summary
-
 ```bash
 thor@jump-host ~$ kubectl delete pod nginx-phpfpm
 pod "nginx-phpfpm" deleted from default namespace
@@ -220,10 +207,3 @@ thor@jump-host ~$ kubectl exec -it nginx-phpfpm -c nginx-container -- curl http:
 ```
 
 ***
-
-
-
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-

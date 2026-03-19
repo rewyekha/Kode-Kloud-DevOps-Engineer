@@ -1,11 +1,8 @@
 # Day 45: Resolve Dockerfile Issues
-
 ### Problem Statement
-
 The Nautilus DevOps team needs to create a Docker image based on requirements provided by the development team. A team member attempted to build the image using a Dockerfile located on **App Server 1** but encountered errors during the build process.
 
 #### Requirements
-
 1. The **Dockerfile** is located on **App Server 1** in the directory:
 
 ```
@@ -22,7 +19,6 @@ The Nautilus DevOps team needs to create a Docker image based on requirements pr
 ***
 
 ## Infrastructure Details
-
 | Server  | Hostname                        | User | Purpose               |
 | ------- | ------------------------------- | ---- | --------------------- |
 | stapp01 | stapp01.stratos.xfusioncorp.com | tony | Nautilus App Server 1 |
@@ -30,7 +26,6 @@ The Nautilus DevOps team needs to create a Docker image based on requirements pr
 ***
 
 ## Step 1: Connect to App Server
-
 Login to the **jump host** and SSH into **App Server 1**.
 
 ```bash
@@ -51,7 +46,6 @@ tony@stapp01's password:
 ***
 
 ## Step 2: Navigate to Docker Directory
-
 Move to the directory containing the Dockerfile.
 
 ```bash
@@ -73,7 +67,6 @@ Dockerfile  certs  html
 ***
 
 ## Step 3: Verify Existing Docker Images
-
 Check if any Docker images already exist.
 
 ```bash
@@ -91,7 +84,6 @@ No images are present.
 ***
 
 ## Step 4: Inspect the Dockerfile
-
 View the contents of the Dockerfile.
 
 ```bash
@@ -119,20 +111,18 @@ RUN cp html/index.html /usr/local/apache2/htdocs/
 ```
 
 #### Issue Identified
-
 The Dockerfile uses:
 
 ```
 RUN cp
 ```
 
-However, Docker cannot copy files from the build context using `RUN cp`.\
+However, Docker cannot copy files from the build context using `RUN cp`.
 Instead, the **COPY instruction must be used**.
 
 ***
 
 ## Step 5: Edit the Dockerfile
-
 Open the Dockerfile.
 
 ```bash
@@ -142,7 +132,6 @@ vi /opt/docker/Dockerfile
 Replace the `RUN cp` commands with `COPY`.
 
 #### Correct Dockerfile
-
 ```
 FROM httpd:2.4.43
 
@@ -170,7 +159,6 @@ Save and exit:
 ***
 
 ## Step 6: Build the Docker Image
-
 Run the Docker build command.
 
 ```bash
@@ -198,7 +186,6 @@ Output:
 ***
 
 ## Step 7: Verify the Image
-
 Check that the image was successfully created.
 
 ```bash
@@ -215,11 +202,9 @@ nautilus     latest    ee33baa9b053   14 seconds ago   166MB
 ***
 
 ## Final Result
-
 The Dockerfile issue has been successfully resolved.
 
 #### Key Fix
-
 Replaced incorrect commands:
 
 ```
@@ -233,15 +218,9 @@ COPY
 ```
 
 #### Outcome
-
 * Dockerfile corrected
 * Image built successfully
 * Base image unchanged
 * Application files preserved
 
 Docker image **`nautilus:latest`** is now available.
-
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
-
-
-

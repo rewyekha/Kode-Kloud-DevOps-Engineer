@@ -1,9 +1,6 @@
 # Day 46: Deploy an App on Docker Containers
-
 ## **Lab: Deploy Nautilus App Using Docker Compose**
-
 ### **Lab Objective**
-
 The Nautilus Application team wants to deploy a containerized stack using Docker Compose. You will:
 
 * Create a `docker-compose.yml` file on **stapp02**
@@ -14,20 +11,17 @@ The Nautilus Application team wants to deploy a containerized stack using Docker
 ***
 
 ### **Question / Task**
-
 **Task:**
 
 On App Server 2 (`stapp02`), create a Docker Compose stack with:
 
 #### **Web Service**
-
 * Container name: `php_blog`
 * Image: `php:apache`
 * Host port 3000 → container port 80
 * Volume: `/var/www/html` → container `/var/www/html`
 
 #### **DB Service**
-
 * Container name: `mysql_blog`
 * Image: `mariadb:latest`
 * Host port 3306 → container port 3306
@@ -35,7 +29,7 @@ On App Server 2 (`stapp02`), create a Docker Compose stack with:
 * Database: `database_blog`
 * Custom user: `bloguser` with a complex password
 
-**Verify:**\
+**Verify:**
 Access the web app using:
 
 ```bash
@@ -45,20 +39,18 @@ curl http://<server-ip>:3000/
 ***
 
 ### **Step 1: SSH into stapp02**
-
 ```bash
 thor@jump-host ~$ ssh steve@stapp02
 The authenticity of host 'stapp02 (10.244.244.135)' can't be established.
 ED25519 key fingerprint is SHA256:hZWWAbyQkkCDiUpNX3XKrJSRnWnB6I4t4CyCLo6avqU.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'stapp02' (ED25519) to the list of known hosts.
-steve@stapp02's password: 
+steve@stapp02's password:
 ```
 
 ***
 
 ### **Step 2: Create directories for volumes**
-
 ```bash
 [steve@stapp02 ~]$ sudo mkdir -p /var/www/html
 [steve@stapp02 ~]$ sudo mkdir -p /var/lib/mysql
@@ -73,7 +65,6 @@ Set ownership:
 ***
 
 ### **Step 3: Create Docker Compose directory and file**
-
 ```bash
 [steve@stapp02 ~]$ sudo mkdir -p /opt/itadmin
 [steve@stapp02 ~]$ sudo nano /opt/itadmin/docker-compose.yml
@@ -114,22 +105,20 @@ Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`).
 ***
 
 ### **Step 4: Deploy the stack using Docker Compose plugin**
-
 ```bash
 [steve@stapp02 itadmin]$ docker compose up -d
-WARN[0000] /opt/itadmin/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+WARN[0000] /opt/itadmin/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
 [+] up 27/27
- ✔ Image mariadb:latest    Pulled                                             12.3s
- ✔ Image php:apache        Pulled                                             14.9s
- ✔ Network itadmin_default Created                                            0.1s
- ✔ Container php_blog      Created                                            0.2s
- ✔ Container mysql_blog    Created                                            0.3s
+  Image mariadb:latest    Pulled                                             12.3s
+  Image php:apache        Pulled                                             14.9s
+  Network itadmin_default Created                                            0.1s
+  Container php_blog      Created                                            0.2s
+  Container mysql_blog    Created                                            0.3s
 ```
 
 ***
 
 ### **Step 5: Verify containers are running**
-
 ```bash
 [steve@stapp02 itadmin]$ docker ps
 CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                                       NAMES
@@ -140,7 +129,6 @@ f0fdbfd4cf84   php:apache       "docker-php-entrypoi…"   8 seconds ago   Up 7 
 ***
 
 ### **Step 6: Test the web app**
-
 From the server:
 
 ```bash
@@ -172,7 +160,6 @@ From another host (using server IP):
 ***
 
 ### **Step 7: Connect to MariaDB database**
-
 ```bash
 [steve@stapp02 itadmin]$ docker exec -it mysql_blog mariadb -u bloguser -p
 Enter password: Str0ngP@ssw0rd!
@@ -211,22 +198,19 @@ MariaDB [database_blog]> exit
 
 ***
 
-### **✅ Lab Verification Checklist**
-
+### ** Lab Verification Checklist**
 | Requirement                                         | Status |
 | --------------------------------------------------- | ------ |
-| `/opt/itadmin/docker-compose.yml` exists            | ✅      |
-| Two services deployed (`php_blog` and `mysql_blog`) | ✅      |
-| Correct port mapping (3000→80, 3306→3306)           | ✅      |
-| Volume mapping for persistence                      | ✅      |
-| Database `database_blog` created                    | ✅      |
-| Custom user `bloguser` can connect                  | ✅      |
-| Web app accessible via `curl`                       | ✅      |
-
+| `/opt/itadmin/docker-compose.yml` exists            | Done   |
+| Two services deployed (`php_blog` and `mysql_blog`) | Done   |
+| Correct port mapping (3000→80, 3306→3306)           | Done   |
+| Volume mapping for persistence                      | Done   |
+| Database `database_blog` created                    | Done   |
+| Custom user `bloguser` can connect                  | Done   |
+| Web app accessible via `curl`                       | Done   |
 ***
 
 ### **Step 8: Cleanup (Optional)**
-
 If needed to stop and remove the stack:
 
 ```bash
@@ -234,5 +218,3 @@ docker compose down
 ```
 
 ***
-
-<figure><img src=".gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>

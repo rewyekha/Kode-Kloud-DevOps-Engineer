@@ -1,5 +1,4 @@
 # Day 43: Docker Ports Mapping
-
 The Nautilus DevOps team is planning to host an application on a nginx-based container. There are number of tickets already been created for similar tasks. One of the tickets has been assigned to set up a nginx container on `Application Server 3` in `Stratos Datacenter`. Please perform the task as per details mentioned below:
 
 a. Pull `nginx:alpine` docker image on `Application Server 3`.
@@ -9,11 +8,9 @@ b. Create a container named `games` using the image you pulled.
 c. Map host port `6200` to container port `80`. Please keep the container in running state.
 
 ### Task
-
 The Nautilus DevOps team is planning to host an application on an **nginx-based container**. A ticket has been assigned to set up the container on **Application Server 3** in the Stratos Datacenter.
 
 #### Requirements
-
 1. Pull the Docker image **nginx:alpine** on **Application Server 3**.
 2. Create a container named **games** using this image.
 3. Map **host port 6200** to **container port 80**.
@@ -22,7 +19,6 @@ The Nautilus DevOps team is planning to host an application on an **nginx-based 
 ***
 
 ## Infrastructure Details
-
 | Server Name | Hostname                           | User   | Purpose        |
 | ----------- | ---------------------------------- | ------ | -------------- |
 | stapp03     | stapp03.stratos.xfusioncorp.com    | banner | Nautilus App 3 |
@@ -31,9 +27,7 @@ The Nautilus DevOps team is planning to host an application on an **nginx-based 
 ***
 
 ## Solution Steps
-
 ### Step 1: Login to Jump Host
-
 ```bash
 ssh thor@jump_host.stratos.xfusioncorp.com
 ```
@@ -47,7 +41,6 @@ mjolnir123
 ***
 
 ### Step 2: Connect to Application Server 3
-
 ```bash
 ssh banner@stapp03
 ```
@@ -66,7 +59,6 @@ banner@stapp03's password:
 ***
 
 ### Step 3: Pull the nginx Alpine Image
-
 ```bash
 docker pull nginx:alpine
 ```
@@ -91,7 +83,6 @@ docker.io/library/nginx:alpine
 ***
 
 ### Step 4: Run the Container with Port Mapping
-
 ```bash
 docker run -d -p 6200:80 --name games nginx:alpine
 ```
@@ -112,7 +103,6 @@ Explanation:
 ***
 
 ### Step 5: Verify the Running Container
-
 ```bash
 docker ps
 ```
@@ -127,7 +117,6 @@ fb566e89ebf5   nginx:alpine   "/docker-entrypoint.…"   10 seconds ago   Up 9 s
 ***
 
 ## Verification
-
 Test if nginx is accessible from the server.
 
 ```bash
@@ -146,13 +135,7 @@ Expected output (HTML snippet):
 ***
 
 ## Result
-
 * Docker image **nginx:alpine** successfully pulled.
 * Container **games** created and running.
 * Port mapping configured **6200 → 80**.
 * nginx service accessible via **host port 6200**.
-
-
-
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-

@@ -1,5 +1,4 @@
 # Day 47: Docker Python App
-
 A python app needed to be Dockerized, and then it needs to be deployed on `App Server 2`. We have already copied a `requirements.txt` file (having the app dependencies) under `/python_app/src/` directory on `App Server 2`. Further complete this task as per details mentioned below:
 
 1. Create a `Dockerfile` under `/python_app` directory:
@@ -17,7 +16,6 @@ curl http://localhost:8095/
 ```
 
 ### Task
-
 A Python application needs to be **Dockerized** and deployed on **App Server 2**.
 
 A `requirements.txt` file containing dependencies is already available under:
@@ -27,7 +25,6 @@ A `requirements.txt` file containing dependencies is already available under:
 ```
 
 #### Requirements
-
 1. Create a **Dockerfile** under `/python_app`.
 2. Use any **Python base image**.
 3. Install dependencies from `requirements.txt`.
@@ -55,13 +52,11 @@ curl http://localhost:8095/
 ***
 
 ## Step 1: SSH into App Server 2
-
 ```bash
 thor@jump-host ~$ ssh steve@stapp02
 ```
 
 #### First-time SSH Warning
-
 ```bash
 The authenticity of host 'stapp02 (10.244.73.171)' can't be established.
 ED25519 key fingerprint is SHA256:el1B5RuWofirl2dy5YLBVIbOenCdqfF4u3Vu4/Ju8Hw.
@@ -90,7 +85,6 @@ steve@stapp02's password:
 ***
 
 ## Step 2: Verify Application Directory
-
 ```bash
 ls
 ```
@@ -155,7 +149,6 @@ Observation:
 ***
 
 ## Step 3: Create Dockerfile
-
 Attempt to create Dockerfile:
 
 ```bash
@@ -190,7 +183,6 @@ Enter password:
 ***
 
 ### Dockerfile Content
-
 ```dockerfile
 FROM python:3.9
 
@@ -210,7 +202,6 @@ Save and exit.
 ***
 
 ## Step 4: Build Docker Image
-
 Run the build command:
 
 ```bash
@@ -237,7 +228,6 @@ Image successfully built.
 ***
 
 ## Step 5: Run Container
-
 First attempt:
 
 ```bash
@@ -245,20 +235,17 @@ docker run -d --name pythonapp_nautilus -p 8095:8087 --nautilus/python-app
 ```
 
 #### Error
-
 ```
 unknown flag: --nautilus/python-app
 See 'docker run --help'.
 ```
 
 #### Cause
-
 Extra `--` before image name.
 
 ***
 
 ### Correct Command
-
 ```bash
 docker run -d \
 --name pythonapp_nautilus \
@@ -277,7 +264,6 @@ Container started successfully.
 ***
 
 ## Step 6: Verify Container
-
 ```bash
 docker ps
 ```
@@ -294,7 +280,6 @@ Container is running and port mapping is correct.
 ***
 
 ## Step 7: Test the Application
-
 ```bash
 curl http://localhost:8095/
 ```
@@ -310,18 +295,15 @@ Application is working successfully.
 ***
 
 ## Final Verification Checklist
-
-✔ Dockerfile created in `/python_app`\
-✔ Base image: `python:3.9`\
-✔ Dependencies installed via `requirements.txt`\
-✔ Port **8087 exposed**\
-✔ Image built: `nautilus/python-app`\
-✔ Container created: `pythonapp_nautilus`\
-✔ Port mapped **8095 → 8087**\
-✔ Application accessible via curl
+Dockerfile created in `/python_app`
+Base image: `python:3.9`
+Dependencies installed via `requirements.txt`
+Port **8087 exposed**
+Image built: `nautilus/python-app`
+Container created: `pythonapp_nautilus`
+Port mapped **8095 → 8087**
+Application accessible via curl
 
 ***
 
-✅ **Task Completed Successfully**
-
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+**Task Completed Successfully**

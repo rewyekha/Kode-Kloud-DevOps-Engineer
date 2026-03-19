@@ -1,13 +1,11 @@
 # Day 4: Script Execution Permissions
-
 In a bid to automate backup processes, the `xFusionCorp Industries` sysadmin team has developed a new bash script named `xfusioncorp.sh`. While the script has been distributed to all necessary servers, it lacks executable permissions on `App Server 3` within the Stratos Datacenter.<br>
 
 **`Your task is to grant executable permissions to the /tmp/xfusioncorp.sh script on App Server 3. Additionally, ensure that all users have the capability to execute it.`**
 
-To complete this task on **App Server 3** (stapp03), you need to grant executable permissions to the script `/tmp/xfusioncorp.sh` so that **all users** on the server can execute it.
+To complete this task on **App Server 3** (stapp03), grant executable permissions to the script `/tmp/xfusioncorp.sh` so that **all users** on the server can execute it.
 
 #### Steps to Follow
-
 1.  SSH into **App Server 3**:
 
     ```bash
@@ -60,7 +58,6 @@ To complete this task on **App Server 3** (stapp03), you need to grant executabl
     If it runs or shows script output/errors, permissions are set correctly.
 
 #### Summary
-
 * File: `/tmp/xfusioncorp.sh`
 * Server: **App Server 3** (stapp03)
 * Required command: `sudo chmod +x /tmp/xfusioncorp.sh` (or `sudo chmod 755 /tmp/xfusioncorp.sh`)
@@ -74,7 +71,7 @@ ED25519 key fingerprint is SHA256:98jXA601kc7Krit8oDRPilBJGFGYlnJy3DO5vfdFW4M.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '172.16.238.12' (ED25519) to the list of known hosts.
-banner@172.16.238.12's password: 
+banner@172.16.238.12's password:
 [banner@stapp03 ~]$ ls -l /tmp/xfusioncorp.sh
 ---------- 1 root root 40 Dec 19 17:40 /tmp/xfusioncorp.sh
 [banner@stapp03 ~]$ sudo chmod +x /tmp/xfusioncorp.sh
@@ -86,12 +83,12 @@ Administrator. It usually boils down to these three things:
     #2) Think before you type.
     #3) With great power comes great responsibility.
 
-[sudo] password for banner: 
+[sudo] password for banner:
 [banner@stapp03 ~]$ ls -l /tmp/xfusioncorp.sh
 ---x--x--x 1 root root 40 Dec 19 17:40 /tmp/xfusioncorp.sh
 [banner@stapp03 ~]$ sudo chmod 755 /tmp/xfusioncorp.sh
 [banner@stapp03 ~]$ ls -l /tmp/xfusioncorp.sh
 -rwxr-xr-x 1 root root 40 Dec 19 17:40 /tmp/xfusioncorp.sh
-[banner@stapp03 ~]$ 
+[banner@stapp03 ~]$
 
 ```

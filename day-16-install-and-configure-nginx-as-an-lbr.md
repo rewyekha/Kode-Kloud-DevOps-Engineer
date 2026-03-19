@@ -1,13 +1,10 @@
 # Day 16: Install and Configure Nginx as an LBR
-
 Absolutely! Here's a clean **GitBook-style documentation** for your Nginx LBR lab, including the problem statement and step-by-step solution:
 
 ***
 
 ## Day 16: Install and Configure Nginx as a Load Balancer (LBR)
-
 ### Objective
-
 The Nautilus production support team has observed increasing website traffic, resulting in degraded performance. The team has decided to deploy the website on a **high availability stack** in Stratos DC. All app servers are running, and the only pending task is to configure the **Load Balancer (LBR)** using Nginx.
 
 You are required to:
@@ -21,7 +18,6 @@ You are required to:
 ***
 
 ### Infrastructure Details
-
 | Server Name | IP            | Hostname                        | User   | Password | Purpose           |
 | ----------- | ------------- | ------------------------------- | ------ | -------- | ----------------- |
 | stapp01     | 172.16.238.10 | stapp01.stratos.xfusioncorp.com | tony   | Ir0nM@n  | Nautilus App 1    |
@@ -34,7 +30,6 @@ You are required to:
 ***
 
 ### Step 1: Install Nginx on LBR
-
 SSH into the load balancer server:
 
 ```bash
@@ -53,7 +48,6 @@ sudo systemctl status nginx
 ***
 
 ### Step 2: Verify Apache Port on App Servers
-
 SSH into each app server and check the Apache port:
 
 ```bash
@@ -71,7 +65,6 @@ tcp   LISTEN 0      511          0.0.0.0:5001       0.0.0.0:*    users:(("httpd"
 ***
 
 ### Step 3: Configure Nginx for Load Balancing
-
 Edit the main Nginx configuration file:
 
 ```bash
@@ -108,9 +101,8 @@ http {
 
 ```
 # For more information on configuration, see:
-#   * Official English Documentation: http://nginx.org/en/docs/
-#   * Official Russian Documentation: http://nginx.org/ru/docs/
-
+# * Official English Documentation: http://nginx.org/en/docs/
+# * Official Russian Documentation: http://nginx.org/ru/docs/
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
@@ -172,7 +164,6 @@ http {
 ```
 
 ### Step 4: Test Nginx Configuration
-
 ```bash
 sudo nginx -t
 ```
@@ -192,21 +183,18 @@ sudo systemctl reload nginx
 ***
 
 ### Step 5: Verify Load Balancing
-
 * Open the **StaticApp** button in the lab interface.
 * Refresh multiple times; traffic should round-robin across all three app servers.
 
 ***
 
 ### Troubleshooting
-
 * **502 Bad Gateway**: Usually occurs if Nginx is forwarding to the wrong port. Ensure the `upstream` block uses the correct Apache ports (5001 in this lab).
 * `nginx -t` syntax errors: Check for typos, especially in directives like `proxy_set_header` (it must have underscores, not hyphens).
 
 ***
 
-### ✅ Result
-
+### Result
 * Nginx installed on LBR.
 * Load balancing configured correctly.
 * Website is accessible and traffic is evenly distributed to all app servers.
