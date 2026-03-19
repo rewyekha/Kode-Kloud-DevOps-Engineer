@@ -121,7 +121,7 @@ iampolicy_siva
 
 Status: Attached
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>IAM - Role Attached</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>IAM - Role Attached</p></figcaption></figure>
 
 ***
 

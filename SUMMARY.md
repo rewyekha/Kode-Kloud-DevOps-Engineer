@@ -27,3 +27,4 @@
 * [Day 24: Setting Up an Application Load Balancer for an EC2 Instance](day-24-setting-up-an-application-load-balancer-for-an-ec2-instance.md)
 * [Day 25: Setting Up an EC2 Instance and CloudWatch Alarm](day-25-setting-up-an-ec2-instance-and-cloudwatch-alarm.md)
 * [Day 26: Configuring an EC2 Instance as a Web Server with Nginx](day-26-configuring-an-ec2-instance-as-a-web-server-with-nginx.md)
+* [Day 27: Configuring a Public VPC with an EC2 Instance for Internet Access](day-27-configuring-a-public-vpc-with-an-ec2-instance-for-internet-access.md)

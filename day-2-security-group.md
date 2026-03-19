@@ -16,7 +16,7 @@ Use below given AWS Credentials: (You can run the `showcreds` command on `aws-cl
 | Username    | kk\_labs\_user\_903896                                                                                                                     |
 | Password    | 5^nC0QP7K^Mb                                                                                                                               |
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
