@@ -14,6 +14,6 @@ Use below given Azure Credentials: (You can run the showcreds command on the azu
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-cbc8b2a4c74c4e58@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-cbc8b2a4c74c4e58@azurefreekmlprod.onmicrosoft.com) |
-| Password   | H$GAZP36                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 
 <figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>

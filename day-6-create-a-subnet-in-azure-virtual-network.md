@@ -9,7 +9,7 @@ Use below given Azure Credentials: (You can run the `showcreds` command on the `
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-4bc24aa297d14928@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-4bc24aa297d14928@azurefreekmlprod.onmicrosoft.com) |
-| Password   | \&AedCxB^                                                                                                                                          |
+| Password   | \*\*\*\*                                                                                                                                           |
 
 <figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 

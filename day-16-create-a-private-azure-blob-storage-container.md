@@ -9,18 +9,13 @@ Use below given Azure Credentials: (You can run the `showcreds` command on the `
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-96d89b69340b473b@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-96d89b69340b473b@azurefreekmlprod.onmicrosoft.com) |
-| Password   | TJEb+cTK                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 | Start Time | Mon Jan 12 17:00:49 UTC 2026                                                                                                                       |
 | End Time   | Mon Jan 12 18:00:49 UTC 2026                                                                                                                       |
 
-You’re **almost done** 👍\
-The error is just because `<STORAGE_ACCOUNT_KEY>` is a **placeholder**, not a real value.
-
-You already retrieved the **actual storage account key**. You must paste it **directly** or store it in a variable.
-
 ***
 
-### ✅ Option 1 (Recommended): Use a Variable
+### ✅ Use a Variable
 
 Run this **exactly**:
 

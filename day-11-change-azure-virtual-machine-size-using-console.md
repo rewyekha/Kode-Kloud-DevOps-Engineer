@@ -11,7 +11,7 @@ Use the below given Azure Credentials: (You can run the `showcreds` command on t
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-23d83f5aad804f0d@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-23d83f5aad804f0d@azurefreekmlprod.onmicrosoft.com) |
-| Password   | @5QFPYMN                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 | Start Time | Fri Dec 26 04:07:53 UTC 2025                                                                                                                       |
 | End Time   | Fri Dec 26 05:07:53 UTC 2025                                                                                                                       |
 
@@ -23,7 +23,7 @@ Use the below given Azure Credentials: (You can run the `showcreds` command on t
 
 
 
-<pre><code>
+<pre class="language-bash"><code class="lang-bash">
 <strong>~ ➜  az vm deallocate \
 </strong><strong>  --resource-group kml_rg_main-23d83f5aad804f0d \
 </strong><strong>  --name nautilus-vm

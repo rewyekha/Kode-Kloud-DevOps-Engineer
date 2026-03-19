@@ -29,11 +29,13 @@ Use the following Azure credentials to access the Azure portal:
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-620879b0c7e3420a@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-620879b0c7e3420a@azurefreekmlprod.onmicrosoft.com) |
-| Password   | z9QdXXE@                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 | Start Time | Fri Jan 09 15:05:51 UTC 2026                                                                                                                       |
 | End Time   | Fri Jan 09 16:05:51 UTC 2026                                                                                                                       |
 
-## Solution: Configure Password-less Root SSH Access to nautilus-vm
+***
+
+## Configure Password-less Root SSH Access to nautilus-vm
 
 ### Step 1: Verify VM Availability
 

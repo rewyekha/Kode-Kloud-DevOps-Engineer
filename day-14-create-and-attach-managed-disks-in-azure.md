@@ -13,7 +13,7 @@ Use below given Azure Credentials: (You can run the showcreds command on the azu
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-c2b9210d8af74f50@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-c2b9210d8af74f50@azurefreekmlprod.onmicrosoft.com) |
-| Password   | hd59x$2c                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 | Start Time | Fri Jan 09 15:30:03 UTC 2026                                                                                                                       |
 | End Time   | Fri Jan 09 16:30:03 UTC 2026                                                                                                                       |
 

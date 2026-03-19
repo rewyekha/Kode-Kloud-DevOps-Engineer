@@ -14,7 +14,7 @@ Use the following command to find out the resource group to use:
 az group list --query '[].name' --output table | grep 'kml'
 ```
 
-<br>
+
 
 ```bash
 ~ ➜  cd /root/arm-templates

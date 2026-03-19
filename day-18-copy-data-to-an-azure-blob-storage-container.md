@@ -9,7 +9,7 @@ Use below given Azure Credentials: (You can run the `showcreds` command on `azur
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-49de696ec0374a85@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-49de696ec0374a85@azurefreekmlprod.onmicrosoft.com) |
-| Password   | C2--$T8$                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 | Start Time | Tue Jan 13 17:13:21 UTC 2026                                                                                                                       |
 | End Time   | Tue Jan 13 18:13:21 UTC                                                                                                                            |
 
@@ -53,8 +53,7 @@ devops.txt  BlockBlob    Hot          33        text/plain      2026-01-13T17:19
 
 ```
 
-Sure — here is the **Azure CLI method** to copy `/tmp/devops.txt` to the Blob container.\
-These steps are suitable for **lab / terminal execution** ✅
+
 
 ***
 

@@ -9,7 +9,7 @@ Use below given Azure Credentials: (You can run the `showcreds` command on the `
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-e2b732cae2a54d95@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-e2b732cae2a54d95@azurefreekmlprod.onmicrosoft.com) |
-| Password   | y+gKcu9U                                                                                                                                           |
+| Password   | \*\*\*\*                                                                                                                                           |
 |            |                                                                                                                                                    |
 
 Create the Virtual Network

@@ -9,9 +9,9 @@ Use the below given Azure Credentials: (You can run the `showcreds` command on t
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-d41568f8857d4f9d@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-d41568f8857d4f9d@azurefreekmlprod.onmicrosoft.com) |
-| Password   | hktGTa7E                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 
-<pre><code><strong>~ ➜  az vm update \
+<pre class="language-bash"><code class="lang-bash"><strong>~ ➜  az vm update \
 </strong><strong>  --resource-group &#x3C;RESOURCE_GROUP_NAME> \
 </strong><strong>  --name datacenter-vm \
 </strong><strong>  --set tags.Environment=dev

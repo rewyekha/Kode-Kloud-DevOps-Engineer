@@ -13,9 +13,9 @@ Use below given Azure Credentials: (You can run the `showcreds` command on the `
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-545e3fa653d9440c@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-545e3fa653d9440c@azurefreekmlprod.onmicrosoft.com) |
-| Password   | HZXH-7+$                                                                                                                                           |
+| Password   | \*\*\*                                                                                                                                             |
 
-```
+```bash
 
 ~ ➜  az vm nic list \
   --resource-group kml_rg_main-545e3fa653d9440c \

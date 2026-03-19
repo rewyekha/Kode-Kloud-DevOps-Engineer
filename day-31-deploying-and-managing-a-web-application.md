@@ -15,7 +15,7 @@ The Nautilus DevOps team is tasked with deploying a Python-based web application
 
 Solution:
 
-```
+```bash
 rg=$(az group list --query "[].name" -o tsv)
 az appservice plan create \
   --name datacenter-learn-python \

@@ -2,8 +2,6 @@
 
 ***
 
-## Day 26: Deploying a Public Virtual Network with a Public VM
-
 ### Objective
 
 The Nautilus DevOps Team was tasked to set up a **public-facing Azure Virtual Network (VNet)** to host resources accessible over the internet. A virtual machine (VM) was required to run public applications and allow SSH access for administration.
@@ -14,7 +12,7 @@ The Nautilus DevOps Team was tasked to set up a **public-facing Azure Virtual Ne
 
 * **Azure Portal URL:** [https://portal.azure.com](https://portal.azure.com)
 * **Username:** `kk_lab_user_main-80a1bb36624a4345@azurefreekmlprod.onmicrosoft.com`
-* **Password:** `vgSU6sHV`
+* **Password:** `****`
 * **Region:** East US
 * **Resource Group:** `kml_rg_main-80a1bb36624a4345`
 

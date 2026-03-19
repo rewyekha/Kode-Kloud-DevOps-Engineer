@@ -6,15 +6,9 @@
 
 ***
 
-## ❓ Question
-
 Create an SSH key on the `azure-client` host (if it does not already exist) and configure password-less SSH access to the `azureuser` account on the `nautilus-vm` in Azure.
 
 Additionally, resolve any Azure policy errors encountered during VM deployment.
-
-***
-
-## ✅ Solution
 
 ***
 

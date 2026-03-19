@@ -245,9 +245,3 @@ working. Further configuration is required.</p>
 3. **Custom Script/Cloud-Init:** Plain shell scripts may not run automatically; consider using cloud-init YAML for automation.
 4. **Verification:** Always check service status and public access after VM creation.
 
-***
-
-This GitBook documentation captures **all terminal output**, including mistakes and successful commands, providing a complete reference for team members.
-
-***
-
