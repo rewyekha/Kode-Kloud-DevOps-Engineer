@@ -15,7 +15,7 @@ Use the following Azure Credentials: (Run `showcreds` on `azure-client` to retri
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-a9a917ab40a24f20@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-a9a917ab40a24f20@azurefreekmlprod.onmicrosoft.com) |
-| Password   | =@7P8wWB                                                                                                                                           |
+| Password   | \*\*\*\*                                                                                                                                           |
 | Start Time | Mon Mar 02 04:07:35 UTC 2026                                                                                                                       |
 | End Time   | Mon Mar 02 05:07:35 UTC 2026                                                                                                                       |
 

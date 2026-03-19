@@ -25,7 +25,7 @@ Use below given Azure Credentials: (You can run the `showcreds` command on the `
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-45db2c29c0f34520@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-45db2c29c0f34520@azurefreekmlprod.onmicrosoft.com) |
-| Password   | QRF984vm                                                                                                                                           |
+| Password   | \*\*\*\*                                                                                                                                           |
 | Start Time | Wed Mar 04 03:42:07 UTC 2026                                                                                                                       |
 | End Time   | Wed Mar 04 04:42:07 UTC 2026                                                                                                                       |
 

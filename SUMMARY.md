@@ -37,3 +37,4 @@
 * [Day 36: Managing Storage Lifecycle in Azure](day-36-managing-storage-lifecycle-in-azure.md)
 * [Day 37: Setting Up MySQL on a Virtual Machine in Azure](day-37-setting-up-mysql-on-a-virtual-machine-in-azure.md)
 * [Day 38: Running Containers on Azure Virtual Machines](day-38-running-containers-on-azure-virtual-machines.md)
+* [Day 39: Deploying a Static Website Using Containers on Azure](day-39-deploying-a-static-website-using-containers-on-azure.md)

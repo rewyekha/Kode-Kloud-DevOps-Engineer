@@ -15,7 +15,7 @@ Use below given Azure Credentials: (You can run the `showcreds` command on `azur
 | Portal URL | [https://portal.azure.com](https://portal.azure.com)                                                                                               |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Username   | [kk\_lab\_user\_main-9794630ed6cf4155@azurefreekmlprod.onmicrosoft.com](mailto:kk_lab_user_main-9794630ed6cf4155@azurefreekmlprod.onmicrosoft.com) |
-| Password   | BXSZM$L2                                                                                                                                           |
+| Password   | $L2                                                                                                                                                |
 | Start Time | Tue Mar 03 06:38:59 UTC 2026                                                                                                                       |
 | End Time   | Tue Mar 03 07:38:59 UTC 2026                                                                                                                       |
 

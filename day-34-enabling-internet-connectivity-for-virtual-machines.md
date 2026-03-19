@@ -16,7 +16,7 @@ The Nautilus DevOps team encountered connectivity issues on the Azure VM **xfusi
 
 ```
 Username: kk_lab_user_main-37b9f45c70fd46e6@azurefreekmlprod.onmicrosoft.com
-Password: @RU77A-B
+Password: ****
 ```
 
 * SSH key for VM access located at `/root/.ssh/id_rsa` on the `azure-client` host.
