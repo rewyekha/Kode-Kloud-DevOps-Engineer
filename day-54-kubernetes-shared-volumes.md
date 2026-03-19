@@ -229,3 +229,7 @@ exit
 ### 🏁 Conclusion
 
 This setup demonstrates how multiple containers within the same Pod can communicate and share data efficiently using a shared `emptyDir` volume.
+
+
+
+<figure><img src=".gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
