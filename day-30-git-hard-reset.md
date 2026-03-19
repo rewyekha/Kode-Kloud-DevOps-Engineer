@@ -173,11 +173,11 @@ a2b2d0c (HEAD -> master, origin/master) add data.txt file
 ***
 
 ## Final Result
- Only two commits remain
- `HEAD` points to `add data.txt file`
- All test commits removed
- Remote repository updated
- Working tree clean
+- Only two commits remain
+- `HEAD` points to `add data.txt file`
+- All test commits removed
+- Remote repository updated
+- Working tree clean
 
 ***
 
@@ -195,4 +195,4 @@ git log --oneline
 
 ***
 
- **Task Completed Successfully**
+**Task Completed Successfully**

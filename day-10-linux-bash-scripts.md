@@ -122,9 +122,9 @@ chmod +x /scripts/official_backup.sh
 /scripts/official_backup.sh
 ```
 
- No password prompt
- Zip created in `/backup`
- Zip copied to `stbkp01:/backup`
+- No password prompt
+- Zip created in `/backup`
+- Zip copied to `stbkp01:/backup`
 
 ***
 

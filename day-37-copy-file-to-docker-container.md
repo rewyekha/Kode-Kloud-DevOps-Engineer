@@ -173,11 +173,11 @@ ls -l /tmp/nautilus.txt.gpg
 ***
 
 ## Final Outcome
- SSH connection established
- Container verified running
- Encrypted file copied successfully
- File integrity preserved
- Task completed without modification
+SSH connection established
+Container verified running
+Encrypted file copied successfully
+File integrity preserved
+Task completed without modification
 
 ***
 

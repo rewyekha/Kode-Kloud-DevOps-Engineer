@@ -207,12 +207,12 @@ Output:
 ***
 
 ## Final Outcome
- Created new branch `datacenter`
- Copied `/tmp/index.html` into repository
- Committed changes in `datacenter`
- Merged `datacenter` into `master` (fast-forward merge)
- Pushed both branches to `/opt/official.git`
- Verified local and remote branches successfully
+- Created new branch `datacenter`
+- Copied `/tmp/index.html` into repository
+- Committed changes in `datacenter`
+- Merged `datacenter` into `master` (fast-forward merge)
+- Pushed both branches to `/opt/official.git`
+- Verified local and remote branches successfully
 
 ***
 

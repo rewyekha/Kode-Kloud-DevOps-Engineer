@@ -132,4 +132,4 @@ Your branch is up to date with 'origin/master'.
 nothing to commit, working tree clean
 ```
 
- The `index.html` file is successfully added, committed, and pushed to the master branch
+The `index.html` file is successfully added, committed, and pushed to the master branch

@@ -175,11 +175,11 @@ To /opt/apps.git
 ***
 
 ## Final Result
- Feature branch rebased successfully
- No merge commit created
- No data loss
- Remote branch updated
- Clean linear history
+Feature branch rebased successfully
+No merge commit created
+No data loss
+Remote branch updated
+Clean linear history
 
 ***
 
@@ -259,4 +259,4 @@ This ensures a clean, professional Git history suitable for production environme
 
 ***
 
- **End of Day 32 – Git Rebase Documentation**
+**End of Day 32 – Git Rebase Documentation**

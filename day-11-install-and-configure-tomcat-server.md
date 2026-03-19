@@ -435,7 +435,7 @@ Or from jump host:
 curl http://stapp03:6300
 ```
 
- Page should load successfully on **base URL** (no `/ROOT`).
+Page should load successfully on **base URL** (no `/ROOT`).
 
 ***
 

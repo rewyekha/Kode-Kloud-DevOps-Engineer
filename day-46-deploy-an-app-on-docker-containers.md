@@ -201,14 +201,13 @@ MariaDB [database_blog]> exit
 ### ** Lab Verification Checklist**
 | Requirement                                         | Status |
 | --------------------------------------------------- | ------ |
-| `/opt/itadmin/docker-compose.yml` exists            |       |
-| Two services deployed (`php_blog` and `mysql_blog`) |       |
-| Correct port mapping (3000→80, 3306→3306)           |       |
-| Volume mapping for persistence                      |       |
-| Database `database_blog` created                    |       |
-| Custom user `bloguser` can connect                  |       |
-| Web app accessible via `curl`                       |       |
-
+| `/opt/itadmin/docker-compose.yml` exists            | Done   |
+| Two services deployed (`php_blog` and `mysql_blog`) | Done   |
+| Correct port mapping (3000→80, 3306→3306)           | Done   |
+| Volume mapping for persistence                      | Done   |
+| Database `database_blog` created                    | Done   |
+| Custom user `bloguser` can connect                  | Done   |
+| Web app accessible via `curl`                       | Done   |
 ***
 
 ### **Step 8: Cleanup (Optional)**

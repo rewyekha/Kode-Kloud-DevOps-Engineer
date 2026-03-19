@@ -169,7 +169,7 @@ On **stapp01, stapp02, stapp03**:
 
  `cronie` package installed
  `crond` service running
- Root cron exists with correct schedule and command
+Root cron exists with correct schedule and command
 
 ***
 

@@ -144,16 +144,16 @@ curl http://localhost:6300/games/
 ***
 
 ### Final Result
- Apache installed on **stapp01**
- Apache listening on **port 6300**
- Blog site accessible at `/blog/`
- Games site accessible at `/games/`
- Verified using `curl`
+- Apache installed on **stapp01**
+- Apache listening on **port 6300**
+- Blog site accessible at `/blog/`
+- Games site accessible at `/games/`
+- Verified using `curl`
 
 ***
 
 ### Task Status
- **CONGRATULATIONS!**
+**CONGRATULATIONS!**
 The task was completed successfully and validated by the system.
 
 **Reference ID:** `680774af399a2462b6cc6670`

@@ -55,7 +55,7 @@ Test port:
 telnet stapp01 3002
 ```
 
- If it fails → problem confirmed
+If it fails → problem confirmed
 
 ***
 
@@ -95,7 +95,7 @@ Example:
 tcp  0  0 127.0.0.1:3002  LISTEN  456/someprocess
 ```
 
- Kill that PID (ONLY the one using 3002):
+Kill that PID (ONLY the one using 3002):
 
 ```bash
 kill 456
@@ -155,7 +155,7 @@ Verify:
 iptables -L -n
 ```
 
- Only port 3002 opened → **no security compromise**
+Only port 3002 opened → **no security compromise**
 
 ***
 
@@ -172,7 +172,7 @@ Test:
 curl http://stapp01:3002
 ```
 
- If this works → **TASK PASSES**
+If this works → **TASK PASSES**
 
 ***
 

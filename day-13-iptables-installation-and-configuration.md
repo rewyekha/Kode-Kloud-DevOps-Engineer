@@ -141,7 +141,7 @@ We’ll:
 ***
 
 ### Perform the following steps on EACH App Host
- **stapp01, stapp02, stapp03**
+**stapp01, stapp02, stapp03**
 
 ***
 
@@ -180,7 +180,7 @@ sudo iptables -F
 ***
 
 ### 5 Allow Port 5001 ONLY from Load Balancer
- **Note:**
+**Note:**
 
 ```bash
 sudo iptables -A INPUT -p tcp -s 172.16.238.14 --dport 5001 -j ACCEPT
@@ -214,7 +214,7 @@ sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 sudo service iptables save
 ```
 
- Rules saved to:
+Rules saved to:
 
 ```
 /etc/sysconfig/iptables
@@ -254,14 +254,14 @@ After reboot:
 sudo iptables -L -n
 ```
 
- Rules should still exist → **Requirement #3 satisfied**
+Rules should still exist → **Requirement #3 satisfied**
 
 ***
 
 ### Final Result
 | Requirement               | Status |
 | ------------------------- | ------ |
-| iptables installed        |       |
-| Port 5001 blocked for all |       |
-| Only LBR allowed          |       |
-| Persistent after reboot   |       |
+| iptables installed        | Done   |
+| Port 5001 blocked for all | Done   |
+| Only LBR allowed          | Done   |
+| Persistent after reboot   | Done   |

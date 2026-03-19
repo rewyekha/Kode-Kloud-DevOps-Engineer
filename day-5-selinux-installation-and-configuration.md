@@ -134,19 +134,19 @@ or
 SELINUX=permissive
 ```
 
- **to**
+**to**
 
 ```ini
 SELINUX=disabled
 ```
 
- Save and exit.
+Save and exit.
 
 ***
 
 ### Step 3: Do NOT reboot (as instructed)
- No reboot required
- Scheduled maintenance reboot will apply the change
+No reboot required
+Scheduled maintenance reboot will apply the change
 
 ***
 
@@ -169,7 +169,7 @@ or
 Permissive
 ```
 
- **Ignore it** (explicitly stated in the task).
+**Ignore it** (explicitly stated in the task).
 
 After reboot, SELinux will be:
 
@@ -195,9 +195,9 @@ SELinux status: disabled
 ***
 
 ### Final Answer (What Evaluator Checks)
- SELinux packages installed
+SELinux packages installed
  `/etc/selinux/config` contains `SELINUX=disabled`
- No reboot performed
- Permanent disablement configured
+No reboot performed
+Permanent disablement configured
 
 **Task completed successfully**

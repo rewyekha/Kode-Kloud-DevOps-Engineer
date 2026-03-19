@@ -81,7 +81,7 @@ Fast-forward
  create mode 100644 feature.txt
 ```
 
- Feature successfully merged into master.
+Feature successfully merged into master.
 
 ***
 
@@ -131,7 +131,7 @@ done
 chmod +x post-update
 ```
 
- Do NOT change ownership or permissions of repository.
+Do NOT change ownership or permissions of repository.
 
 ***
 
@@ -173,8 +173,8 @@ Example output:
 release-2026-02-27
 ```
 
- Tag matches current date
- Hook successfully triggered
+Tag matches current date
+Hook successfully triggered
 
 ***
 

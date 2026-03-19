@@ -73,7 +73,7 @@ ssh-copy-id banner@stapp03.stratos.xfusioncorp.com
 # password: BigGr33n
 ```
 
- This automatically:
+This automatically:
 
 * Creates `~/.ssh` on target (if missing)
 * Adds public key to `authorized_keys`
@@ -90,7 +90,7 @@ ssh steve@stapp02.stratos.xfusioncorp.com
 ssh banner@stapp03.stratos.xfusioncorp.com
 ```
 
- **You should NOT be prompted for a password**
+**You should NOT be prompted for a password**
 
 ***
 

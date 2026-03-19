@@ -279,4 +279,4 @@ kubectl rollout undo deployment nginx-deployment
 
 ***
 
- Deployment successfully rolled back to the **previous stable version**.
+Deployment successfully rolled back to the **previous stable version**.

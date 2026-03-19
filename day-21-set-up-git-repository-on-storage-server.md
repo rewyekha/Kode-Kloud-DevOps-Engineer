@@ -141,6 +141,6 @@ drwxr-xr-x 6 root root 4096 Feb 10 04:37 /opt/games.git
 ***
 
 ### Final Status
- Git installed successfully on the Storage Server
- Bare Git repository created at `/opt/games.git`
- Repository name and path match the project requirements
+- Git installed successfully on the Storage Server
+- Bare Git repository created at `/opt/games.git`
+- Repository name and path match the project requirements

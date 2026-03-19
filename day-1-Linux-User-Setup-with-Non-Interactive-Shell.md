@@ -46,63 +46,38 @@ The Nautilus is a three-tier application and is deployed in the Stratos Datacent
 | jump\_host      | Dynamic       | jump\_host.stratos.xfusioncorp.com | thor     | mjolnir123   | Jump Server to Access Stork DC |
 | jenkins         | 172.16.238.19 | jenkins.stratos.xfusioncorp.com    | jenkins  | j@rv!s       | Jenkins Server for CI/CD       |
 
-```bash
-thor@jumphost \~$ ssh tony@172.16.238.10
-
+```
+thor@jumphost ~$ ssh tony@172.16.238.10
 The authenticity of host '172.16.238.10 (172.16.238.10)' can't be established.
-
 ED25519 key fingerprint is SHA256:8tonJP761VoH5SfGpmbvGUN0ccm+QMNcKgQQM/7djzQ.
-
 This key is not known by any other names
-
-Are you sure you want to continue connecting (yes/no/\[fingerprint])? Ir0nM@n
-
-Please type 'yes', 'no' or the fingerprint: yes
-
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '172.16.238.10' (ED25519) to the list of known hosts.
-
 tony@172.16.238.10's password:
-
-\[tony@stapp01 \~]$ sudo useradd -m -s /sbin/nologin mark
+[tony@stapp01 ~]$ sudo useradd -m -s /sbin/nologin mark
 
 We trust you have received the usual lecture from the local System
-
 Administrator. It usually boils down to these three things:
 
-```
-```
-#1) Respect the privacy of others.
-#2) Think before you type.
-#3) With great power comes great responsibility.
-```
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
 
-\[sudo] password for tony:
-
-\[tony@stapp01 \~]$ sudo passwd mark
-
+[sudo] password for tony:
+[tony@stapp01 ~]$ sudo passwd mark
 Changing password for user mark.
-
 New password:
-
 BAD PASSWORD: The password is shorter than 8 characters
-
 Retype new password:
-
 Sorry, passwords do not match.
-
 New password:
-
 BAD PASSWORD: The password is shorter than 8 characters
-
 Retype new password:
-
 passwd: all authentication tokens updated successfully.
-
-\[tony@stapp01 \~]$ grep "^mark:" /etc/passwd
-
+[tony@stapp01 ~]$ grep "^mark:" /etc/passwd
 mark:x:1002:1002::/home/mark:/sbin/nologin
-
-\[tony@stapp01 \~]$
+[tony@stapp01 ~]$
+```
 
 ### **Step-by-Step Instructions**
 #### 1) **SSH into App Server 1**
@@ -173,8 +148,8 @@ The last field (`/sbin/nologin`) confirms the _non-interactive shell_.
 ***
 
 ### Additional Notes
- Users with `/sbin/nologin` **cannot log in interactively**, but can still be used by services (like your backup agent).
- If your backup tool needs a specific shell path (sometimes `/bin/false`), you can use that instead:
+Users with `/sbin/nologin` **cannot log in interactively**, but can still be used by services (like your backup agent).
+If your backup tool needs a specific shell path (sometimes `/bin/false`), you can use that instead:
 
 ```bash
 sudo useradd -m -s /bin/false mark

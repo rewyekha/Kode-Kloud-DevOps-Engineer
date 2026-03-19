@@ -105,7 +105,7 @@ beb11d8 Update welcome.txt
 b43cc6a initial commit
 ```
 
- Required commit hash:
+Required commit hash:
 
 ```
 2bb682f

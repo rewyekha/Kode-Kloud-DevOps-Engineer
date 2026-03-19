@@ -158,6 +158,6 @@ git push origin master
 * Changes committed to `master`
 * Updates pushed to remote origin
 
- Task Completed Successfully
+Task Completed Successfully
 
 ***

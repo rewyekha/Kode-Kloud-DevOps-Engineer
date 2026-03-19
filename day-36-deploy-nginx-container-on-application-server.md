@@ -96,10 +96,10 @@ e25f9b92288a   nginx:alpine   "/docker-entrypoint.…"   8 seconds ago   Up 7 se
 ***
 
 ### Verification
- Container name: `nginx_2`
- Image used: `nginx:alpine`
- Status: `Up` (Running)
- Port exposed internally: `80/tcp`
+Container name: `nginx_2`
+Image used: `nginx:alpine`
+Status: `Up` (Running)
+Port exposed internally: `80/tcp`
 
 ***
 

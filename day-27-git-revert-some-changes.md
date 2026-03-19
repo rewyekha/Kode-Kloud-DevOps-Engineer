@@ -119,9 +119,9 @@ d1c53d9 (origin/master) add data.txt file
 ***
 
 ## Final Result
- Latest commit successfully reverted
- New commit created with message: `revert cluster`
- Repository history preserved
+Latest commit successfully reverted
+New commit created with message: `revert cluster`
+Repository history preserved
 
 ***
 
@@ -135,4 +135,4 @@ For shared repositories, **`git revert` is the safe option**.
 
 ***
 
- **Task Completed Successfully**
+**Task Completed Successfully**

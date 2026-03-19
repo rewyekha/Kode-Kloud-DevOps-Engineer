@@ -240,7 +240,7 @@ sudo systemctl status httpd
 * Two servers → `active (running)`
 * **One server → inactive / failed / not running** ←  faulty host
 
- **That server is the faulty app host**
+**That server is the faulty app host**
 
 ***
 
@@ -343,9 +343,9 @@ LISTEN 0 128 :::6100 :::* users:(("httpd",pid=XXXX))
 ***
 
 ### Final Answer (What the task wants)
- Faulty app host identified and fixed
- Apache running on **all app servers**
- Apache listening on **port 6100**
- No need for web content (service-only task)
+- Faulty app host identified and fixed
+- Apache running on **all app servers**
+- Apache listening on **port 6100**
+No need for web content (service-only task)
 
- **Task is COMPLETE and ready for submission**
+**Task is COMPLETE and ready for submission**

@@ -98,7 +98,7 @@ Output:
 Failed to start docker.service: Unit docker.service not found.
 ```
 
- Reason: Docker is not installed yet.
+Reason: Docker is not installed yet.
 
 ***
 
@@ -165,7 +165,7 @@ Userid     : "Docker Release (CE rpm) <docker@docker.com>"
 Key imported successfully
 ```
 
- This is expected during first installation.
+This is expected during first installation.
 
 ***
 
@@ -211,7 +211,7 @@ Operation not permitted
 ```
 
 #### Should You Worry?
- No.
+No.
 These are **cgroup permission warnings** common in lab/virtualized environments.
 Docker is running properly.
 
@@ -235,13 +235,12 @@ Docker Compose version v5.1.0
 ## Final Verification Checklist
 | Check                  | Status |
 | ---------------------- | ------ |
-| Docker Repo Added      |       |
-| Docker Installed       |       |
-| Docker Service Started |       |
-| Docker Enabled on Boot |       |
-| Docker Running         |       |
-| Docker Compose Working |       |
-
+| Docker Repo Added      | Done   |
+| Docker Installed       | Done   |
+| Docker Service Started | Done   |
+| Docker Enabled on Boot | Done   |
+| Docker Running         | Done   |
+| Docker Compose Working | Done   |
 ***
 
 ## Final Result
@@ -262,4 +261,4 @@ Docker CE and Docker Compose successfully installed and running on:
 
 ***
 
- **Day 35 Task Completed Successfully**
+**Day 35 Task Completed Successfully**

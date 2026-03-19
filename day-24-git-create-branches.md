@@ -12,7 +12,7 @@ Create a new branch **`xfusioncorp_news`** from the `master` branch in the repos
 /usr/src/kodekloudrepos/news
 ```
 
- Do **not** make any code changes.
+Do **not** make any code changes.
 
 ***
 
@@ -126,9 +126,9 @@ On branch xfusioncorp_news
 nothing to commit, working tree clean
 ```
 
- Branch successfully created
- No code changes made
- Working tree clean
+- Branch successfully created
+- No code changes made
+- Working tree clean
 
 ***
 

@@ -295,15 +295,15 @@ Application is working successfully.
 ***
 
 ## Final Verification Checklist
- Dockerfile created in `/python_app`
- Base image: `python:3.9`
- Dependencies installed via `requirements.txt`
- Port **8087 exposed**
- Image built: `nautilus/python-app`
- Container created: `pythonapp_nautilus`
- Port mapped **8095 → 8087**
- Application accessible via curl
+Dockerfile created in `/python_app`
+Base image: `python:3.9`
+Dependencies installed via `requirements.txt`
+Port **8087 exposed**
+Image built: `nautilus/python-app`
+Container created: `pythonapp_nautilus`
+Port mapped **8095 → 8087**
+Application accessible via curl
 
 ***
 
- **Task Completed Successfully**
+**Task Completed Successfully**

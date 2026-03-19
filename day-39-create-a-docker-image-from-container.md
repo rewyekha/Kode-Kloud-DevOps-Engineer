@@ -101,7 +101,7 @@ demo         xfusion   9b22064a7a8e   12 seconds ago   138MB
 ubuntu       latest    bbdabce66f1b   3 weeks ago      78.1MB
 ```
 
- Image `demo:xfusion` successfully created.
+Image `demo:xfusion` successfully created.
 
 ***
 
@@ -123,7 +123,7 @@ If you see no output from `docker ps`:
 Error: No such container: ubuntu_latest
 ```
 
- Fix:
+Fix:
 
 ```bash
 docker ps -a
@@ -141,7 +141,7 @@ docker commit ubuntu demo:xfusion
 
 This will fail if container name is different.
 
- Always confirm using:
+Always confirm using:
 
 ```bash
 docker ps
@@ -154,7 +154,7 @@ docker ps
 Got permission denied while trying to connect to the Docker daemon socket
 ```
 
- Fix:
+Fix:
 
 ```bash
 sudo docker commit ubuntu_latest demo:xfusion
@@ -222,11 +222,10 @@ demo   xfusion
 ## Final Verification Checklist
 | Check                             | Status |
 | --------------------------------- | ------ |
-| Logged into Application Server 2  |       |
-| Container `ubuntu_latest` running |       |
-| Image `demo:xfusion` created      |       |
-| Image visible in `docker images`  |       |
-
+| Logged into Application Server 2  | Done   |
+| Container `ubuntu_latest` running | Done   |
+| Image `demo:xfusion` created      | Done   |
+| Image visible in `docker images`  | Done   |
 ***
 
 ### Final Command Summary

@@ -72,7 +72,7 @@ server {
 }
 ```
 
- Replace `<APP_SERVER_1_IP>` with the actual IP or hostname of App Server 1.
+Replace `<APP_SERVER_1_IP>` with the actual IP or hostname of App Server 1.
 
 ***
 
@@ -133,7 +133,7 @@ Expected result:
 
 ***
 
- **App Server 1 is now fully prepared for secure application deployment.**
+**App Server 1 is now fully prepared for secure application deployment.**
 
 *
 * Optimize SSL settings

@@ -123,6 +123,6 @@ Containers:
 ***
 
 ## Final Result
- Pod **httpd-pod** created successfully
- Container **httpd-container** running
- Resource **requests and limits configured correctly**
+Pod **httpd-pod** created successfully
+Container **httpd-container** running
+Resource **requests and limits configured correctly**
