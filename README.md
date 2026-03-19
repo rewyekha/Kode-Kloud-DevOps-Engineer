@@ -1,10 +1,12 @@
 ---
-description: this page contains my solutions of kode kloud challenges
+description: >-
+  Created by Reyas Khan, this document contains my solutions for KodeKloud labs,
+  showcasing various scenarios across the K8s
 ---
 
-# Table of contents
+# Kode Kloud - k8s
 
-* [Kode Kloud - k8s](README.md)
+* [Kode Kloud - k8s](./)
 * [Day 1: Deploy Pods in Kubernetes Cluster](day-1-deploy-pods-in-kubernetes-cluster.md)
 * [Day 2: Deploy Applications with Kubernetes Deployments](day-2-deploy-applications-with-kubernetes-deployments.md)
 * [Day 4: Script Execution Permissions](day-4-script-execution-permissions.md)
