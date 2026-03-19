@@ -1,13 +1,10 @@
 # Day 30: Git hard reset
-
 ***
 
 ## Day 30: Git Hard Reset
-
 ***
 
-### 📌 Question
-
+### Question
 The Nautilus application development team was working on a git repository:
 
 ```
@@ -23,7 +20,6 @@ add data.txt file
 ```
 
 #### Requirements:
-
 * Reset the git commit history so that there are only **two commits**:
   * `initial commit`
   * `add data.txt file`
@@ -32,20 +28,17 @@ add data.txt file
 
 ***
 
-## 🖥 Server Details
-
+## Server Details
 * Server: `ststor01`
 * User: `natasha`
 * Repository Path: `/usr/src/kodekloudrepos/blog`
 
 ***
 
-## ✅ Solution
-
+## Solution
 ***
 
 ### Step 1: Login to Storage Server
-
 From jump host:
 
 ```bash
@@ -64,7 +57,6 @@ natasha@ststor01's password:
 ***
 
 ### Step 2: Navigate to Repository
-
 ```bash
 [natasha@ststor01 ~]$ cd /usr/src/kodekloudrepos/blog
 ```
@@ -105,7 +97,6 @@ nothing to commit, working tree clean
 ***
 
 ### Step 3: Check Commit History
-
 ```bash
 [root@ststor01 blog]# git log --oneline
 ```
@@ -136,7 +127,6 @@ a2b2d0c add data.txt file
 ***
 
 ### Step 4: Hard Reset to Required Commit
-
 ```bash
 [root@ststor01 blog]# git reset --hard a2b2d0c
 ```
@@ -152,7 +142,6 @@ This removes all commits after `add data.txt file`.
 ***
 
 ### Step 5: Force Push to Remote
-
 Since history was rewritten, a force push is required:
 
 ```bash
@@ -170,7 +159,6 @@ To /opt/blog.git
 ***
 
 ### Step 6: Verify Final Commit History
-
 ```bash
 [root@ststor01 blog]# git log --oneline
 ```
@@ -184,18 +172,16 @@ a2b2d0c (HEAD -> master, origin/master) add data.txt file
 
 ***
 
-## 🎯 Final Result
-
-✔ Only two commits remain\
-✔ `HEAD` points to `add data.txt file`\
-✔ All test commits removed\
-✔ Remote repository updated\
-✔ Working tree clean
+## Final Result
+ Only two commits remain
+ `HEAD` points to `add data.txt file`
+ All test commits removed
+ Remote repository updated
+ Working tree clean
 
 ***
 
-## 🏁 Final Command Summary
-
+## Final Command Summary
 ```bash
 ssh natasha@ststor01
 cd /usr/src/kodekloudrepos/blog
@@ -209,4 +195,4 @@ git log --oneline
 
 ***
 
-✅ **Task Completed Successfully**
+ **Task Completed Successfully**

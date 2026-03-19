@@ -1,5 +1,4 @@
 # Day 49: Deploy Applications with Kubernetes Deployments
-
 The Nautilus DevOps team is delving into Kubernetes for app management. One team member needs to create a deployment following these details:
 
 Create a deployment named `nginx` to deploy the application `nginx` using the image `nginx:latest` (ensure to specify the tag)
@@ -7,13 +6,10 @@ Create a deployment named `nginx` to deploy the application `nginx` using the im
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
 ### Objective
-
 Deploy an **nginx** application using a Kubernetes **Deployment**.
 
 ### Steps
-
 #### 1. Create a Deployment
-
 Run the following command to create a deployment named `nginx` using the `nginx:latest` image:
 
 ```bash
@@ -29,7 +25,6 @@ deployment.apps/nginx created
 ***
 
 #### 2. Verify the Deployment
-
 Check the status of the deployment:
 
 ```bash
@@ -50,7 +45,6 @@ nginx   1/1     1            1           14s
 ***
 
 #### 3. Check Pods
-
 List the pods created by the deployment:
 
 ```bash
@@ -70,7 +64,6 @@ nginx-7c5d8bf9f7-htt5v   1/1     Running   0          22s
 ***
 
 #### 4. Describe the Deployment
-
 Get detailed information about the deployment:
 
 ```bash
@@ -96,11 +89,6 @@ Scaled up replica set nginx-7c5d8bf9f7 from 0 to 1
 ***
 
 #### 5. Summary
-
 * A **Kubernetes Deployment** `nginx` was successfully created.
 * The deployment manages **ReplicaSet** and **Pod** automatically.
 * Kubernetes ensures **desired replicas are running** and handles updates via rolling strategy.
-
-
-
-<figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>

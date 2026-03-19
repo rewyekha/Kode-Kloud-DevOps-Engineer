@@ -1,5 +1,4 @@
 # Day 8: Install Ansible
-
 During the weekly meeting, the Nautilus DevOps team discussed about the automation and configuration management solutions that they want to implement. While considering several options, the team has decided to go with Ansible for now due to its simple setup and minimal pre-requisites. The team wanted to start testing using Ansible, so they have decided to use jump host as an Ansible controller to test different kind of tasks on rest of the servers.
 
 Install ansible version 4.8.0 on Jump host using pip3 only. Make sure Ansible binary is available globally on this system, i.e all users on this system are able to run Ansible commands.
@@ -11,7 +10,7 @@ ED25519 key fingerprint is SHA256:T/3aLL8JU25aPnNxketMn4Q8HOgzkgwCwicdEMQjn5M.
 This key is not known by any other names
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'jump_host.stratos.xfusioncorp.com' (ED25519) to the list of known hosts.
-thor@jump_host.stratos.xfusioncorp.com's password: 
+thor@jump_host.stratos.xfusioncorp.com's password:
 Last login: Tue Dec 23 15:43:33 2025
 thor@jumphost ~$ sudo pip3 install ansible==4.8.0
 
@@ -22,7 +21,7 @@ Administrator. It usually boils down to these three things:
     #2) Think before you type.
     #3) With great power comes great responsibility.
 
-[sudo] password for thor: 
+[sudo] password for thor:
 Collecting ansible==4.8.0
   Downloading ansible-4.8.0.tar.gz (36.1 MB)
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 82.0 MB/s eta 0:00:00
@@ -68,5 +67,5 @@ WARNING: Running pip as the 'root' user can result in broken permissions and con
 
 [notice] A new release of pip is available: 24.0 -> 25.3
 [notice] To update, run: pip install --upgrade pip
-thor@jumphost ~$ 
+thor@jumphost ~$
 ```

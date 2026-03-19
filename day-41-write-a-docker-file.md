@@ -1,5 +1,4 @@
 # Day 41: Write a Docker File
-
 As per recent requirements shared by the Nautilus application development team, they need custom images created for one of their projects. Several of the initial testing requirements have already been shared with the DevOps team.
 
 Create a **Dockerfile** at:
@@ -18,7 +17,6 @@ on **App Server 1 in Stratos DC** with the following requirements:
 ***
 
 ## Infrastructure Details
-
 | Server     | Hostname                           | User | Purpose               |
 | ---------- | ---------------------------------- | ---- | --------------------- |
 | stapp01    | stapp01.stratos.xfusioncorp.com    | tony | Nautilus App Server 1 |
@@ -27,13 +25,11 @@ on **App Server 1 in Stratos DC** with the following requirements:
 ***
 
 ## Step 1 – Connect to Jump Host
-
 ```bash
 ssh thor@jump_host.stratos.xfusioncorp.com
 ```
 
 #### Terminal Output
-
 ```
 thor@jump-host ~$ ssh thor@jump_host.stratos.xfusioncorp.com
 thor@jump_host.stratos.xfusioncorp.com's password:
@@ -44,13 +40,11 @@ thor@jump-host ~$
 ***
 
 ## Step 2 – Connect to App Server 1
-
 ```bash
 ssh tony@stapp01
 ```
 
 #### Terminal Output
-
 ```
 thor@jump-host ~$ ssh tony@stapp01
 The authenticity of host 'stapp01 (10.244.240.128)' can't be established.
@@ -65,13 +59,11 @@ tony@stapp01's password:
 ***
 
 ## Step 3 – Create Docker Directory
-
 ```bash
 sudo mkdir -p /opt/docker
 ```
 
 #### Terminal Output
-
 ```
 [tony@stapp01 ~]$ sudo mkdir -p /opt/docker
 
@@ -88,7 +80,6 @@ Administrator. It usually boils down to these three things:
 ***
 
 ## Step 4 – Create Dockerfile
-
 ```bash
 sudo vi /opt/docker/Dockerfile
 ```
@@ -119,13 +110,11 @@ ESC
 ***
 
 ## Step 5 – Verify the Dockerfile
-
 ```bash
 cat /opt/docker/Dockerfile
 ```
 
 #### Terminal Output
-
 ```
 [tony@stapp01 ~]$ cat /opt/docker/Dockerfile
 FROM ubuntu:24.04
@@ -144,7 +133,6 @@ CMD ["apachectl", "-D", "FOREGROUND"]
 ***
 
 ## Result
-
 The **Dockerfile** has been successfully created at:
 
 ```
@@ -157,5 +145,3 @@ It satisfies all requirements:
 * **Apache2 installed**
 * Apache configured to run on **port 8086**
 * No other Apache configuration changes made.
-
-<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>

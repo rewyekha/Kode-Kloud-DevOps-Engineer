@@ -1,5 +1,4 @@
 # Day 42: Create a Docker Network
-
 The Nautilus DevOps team needs to set up several docker environments for different applications. One of the team members has been assigned a ticket where he has been asked to create some docker networks to be used later. Complete the task based on the following ticket description:
 
 a. Create a docker network named as `media` on App Server `1` in `Stratos DC`.
@@ -11,7 +10,6 @@ c. Set it to use subnet `192.168.0.0/24` and iprange `192.168.0.0/24`.
 ***
 
 ## Create Docker Network with Custom Subnet
-
 The Nautilus DevOps team needs to set up several Docker environments for different applications. One of the team members has been assigned a ticket where he has been asked to create some Docker networks to be used later.
 
 Complete the task based on the following ticket description:
@@ -38,7 +36,6 @@ Docker networks allow containers to communicate with each other in an isolated e
 ***
 
 ## Step 1: Connect to App Server 1
-
 We are already logged into the **jump host**, so we directly SSH into **stapp01**.
 
 ```bash
@@ -46,7 +43,6 @@ ssh tony@stapp01
 ```
 
 #### Terminal Output
-
 ```bash
 thor@jump-host ~$ ssh tony@stapp01
 The authenticity of host 'stapp01 (10.244.81.11)' can't be established.
@@ -60,7 +56,6 @@ tony@stapp01's password:
 ***
 
 ## Step 2: Create the Docker Network
-
 Now create the Docker network using the **bridge driver** with the specified **subnet and IP range**.
 
 ```bash
@@ -72,7 +67,6 @@ media
 ```
 
 #### Terminal Output
-
 ```bash
 [tony@stapp01 ~]$ docker network create --driver bridge --subnet 172.168.0.0/24 --ip-range 172.168.0.0/24 media
 c982992f7fb9512db0b6134f5fb06618792801d433920ef6fb43fb3c0cfef53e
@@ -83,7 +77,6 @@ Docker returns a **network ID**, confirming that the network has been created su
 ***
 
 ## Step 3: Verify the Network
-
 List all Docker networks to confirm that **media** has been created.
 
 ```bash
@@ -91,7 +84,6 @@ docker network ls
 ```
 
 #### Terminal Output
-
 ```bash
 [tony@stapp01 ~]$ docker network ls
 NETWORK ID     NAME      DRIVER    SCOPE
@@ -104,7 +96,6 @@ c982992f7fb9   media     bridge    local
 ***
 
 ## Result
-
 The Docker network **`media`** was successfully created with:
 
 * **Driver:** bridge
@@ -113,12 +104,3 @@ The Docker network **`media`** was successfully created with:
 * **Server:** stapp01
 
 This network can now be used by Docker containers for application deployment.
-
-
-
-<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-

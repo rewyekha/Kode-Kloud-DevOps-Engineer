@@ -1,15 +1,10 @@
 # Day 25: Git Merge Branches
-
-
-
 The Nautilus application development team has been working on a project repository `/opt/official.git`. This repo is cloned at `/usr/src/kodekloudrepos` on `storage server` in `Stratos DC`. They recently shared the following requirements with DevOps team:
 
 Create a new branch `datacenter` in `/usr/src/kodekloudrepos/official` repo from `master` and copy the `/tmp/index.html` file (present on `storage server` itself) into the repo. Further, `add/commit` this file in the new branch and merge back that branch into `master` branch. Finally, push the changes to the origin for both of the branches.
 
 ## GitBook Documentation
-
 ### Create `datacenter` Branch and Merge into `master`
-
 This document describes the complete procedure performed on the **Stratos DC** storage server to:
 
 * Create a new branch `datacenter` from `master`
@@ -21,7 +16,6 @@ This document describes the complete procedure performed on the **Stratos DC** s
 ***
 
 ### Infrastructure Details
-
 * **Jump Host:** jump\_host.stratos.xfusioncorp.com
 * **Storage Server:** ststor01.stratos.xfusioncorp.com
 * **Git Repository (local clone):** `/usr/src/kodekloudrepos/official`
@@ -30,7 +24,6 @@ This document describes the complete procedure performed on the **Stratos DC** s
 ***
 
 ## Step 1: Connect to Storage Server
-
 Login from jump host to storage server:
 
 ```bash
@@ -48,7 +41,6 @@ Enter password when prompted.
 ***
 
 ## Step 2: Navigate to Repository
-
 ```bash
 cd /usr/src/kodekloudrepos/official
 ```
@@ -68,7 +60,6 @@ fatal: detected dubious ownership in repository at '/usr/src/kodekloudrepos/offi
 ***
 
 ## Step 3: Switch to Root User
-
 Since the repository is owned by root, switch user:
 
 ```bash
@@ -96,7 +87,6 @@ Output:
 ***
 
 ## Step 4: Create New Branch `datacenter`
-
 ```bash
 git checkout -b datacenter
 ```
@@ -110,7 +100,6 @@ Switched to a new branch 'datacenter'
 ***
 
 ## Step 5: Copy File into Repository
-
 Copy the file from `/tmp`:
 
 ```bash
@@ -126,7 +115,6 @@ ls -l index.html
 ***
 
 ## Step 6: Add and Commit File
-
 ```bash
 git add index.html
 git commit -m "Added index.html file to datacenter branch"
@@ -143,7 +131,6 @@ Commit output:
 ***
 
 ## Step 7: Merge `datacenter` into `master`
-
 Switch back to master:
 
 ```bash
@@ -169,7 +156,6 @@ Fast-forward
 ***
 
 ## Step 8: Push Changes to Remote
-
 Push `datacenter` branch:
 
 ```bash
@@ -192,9 +178,7 @@ To /opt/official.git
 ***
 
 ## Step 9: Verification
-
 ### Verify Local Branches
-
 ```bash
 git branch -a
 ```
@@ -209,7 +193,6 @@ Output:
 ```
 
 ### Verify Remote Heads
-
 ```bash
 git ls-remote --heads origin
 ```
@@ -224,13 +207,12 @@ Output:
 ***
 
 ## Final Outcome
-
-✔ Created new branch `datacenter`\
-✔ Copied `/tmp/index.html` into repository\
-✔ Committed changes in `datacenter`\
-✔ Merged `datacenter` into `master` (fast-forward merge)\
-✔ Pushed both branches to `/opt/official.git`\
-✔ Verified local and remote branches successfully
+ Created new branch `datacenter`
+ Copied `/tmp/index.html` into repository
+ Committed changes in `datacenter`
+ Merged `datacenter` into `master` (fast-forward merge)
+ Pushed both branches to `/opt/official.git`
+ Verified local and remote branches successfully
 
 ***
 

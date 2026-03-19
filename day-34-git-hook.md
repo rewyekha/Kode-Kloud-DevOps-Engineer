@@ -1,22 +1,17 @@
 # Day 34: Git Hook
-
 Day 34: Git Hook
 
 The Nautilus application development team was working on a git repository /opt/news.git which is cloned under /usr/src/kodekloudrepos directory present on Storage server in Stratos DC. The team want to setup a hook on this repository, please find below more details:
 
-&#x20;   Merge the feature branch into the master branch, but before pushing your changes complete below point.
+   Merge the feature branch into the master branch, but before pushing your changes complete below point.
 
-&#x20;   Create a post-update hook in this git repository so that whenever any changes are pushed to the master branch, it creates a release tag with name release-2023-06-15, where 2023-06-15 is supposed to be the current date. For example if today is 20th June, 2023 then the release tag must be release-2023-06-20. Make sure you test the hook at least once and create a release tag for today's release.
+   Create a post-update hook in this git repository so that whenever any changes are pushed to the master branch, it creates a release tag with name release-2023-06-15, where 2023-06-15 is supposed to be the current date. For example if today is 20th June, 2023 then the release tag must be release-2023-06-20. Make sure you test the hook at least once and create a release tag for today's release.
 
-&#x20;   Finally remember to push your changes.\
-&#x20;   Note: Perform this task using the natasha user, and ensure the repository or existing directory permissions are not altered.
+   Finally remember to push your changes.
+   Note: Perform this task using the natasha user, and ensure the repository or existing directory permissions are not altered.
 
-
-
-## 📘 Day 34: Git Hook – Auto Release Tag on Push
-
-### 🧾 Task Overview
-
+## Day 34: Git Hook – Auto Release Tag on Push
+### Task Overview
 The Nautilus development team is working on a Git repository:
 
 * **Bare Repository:** `/opt/news.git`
@@ -24,8 +19,7 @@ The Nautilus development team is working on a Git repository:
 * **Server:** `ststor01`
 * **User:** `natasha`
 
-#### 🎯 Objectives
-
+#### Objectives
 1. Merge the `feature` branch into `master`
 2. Create a **post-update hook** in `/opt/news.git`
 3.  When changes are pushed to `master`, automatically create a release tag:
@@ -40,8 +34,7 @@ The Nautilus development team is working on a Git repository:
 
 ***
 
-## 🖥 Step 1: Connect to Storage Server
-
+## Step 1: Connect to Storage Server
 From jump host:
 
 ```bash
@@ -50,8 +43,7 @@ ssh natasha@172.16.238.15
 
 ***
 
-## 📂 Step 2: Navigate to Cloned Repository
-
+## Step 2: Navigate to Cloned Repository
 ```bash
 cd /usr/src/kodekloudrepos
 ls
@@ -63,22 +55,18 @@ Ensure working branch is `feature`.
 
 ***
 
-## 🔀 Step 3: Merge Feature into Master
-
+## Step 3: Merge Feature into Master
 #### Switch to master
-
 ```bash
 git checkout master
 ```
 
 #### Pull latest changes
-
 ```bash
 git pull origin master
 ```
 
 #### Merge feature branch
-
 ```bash
 git merge feature
 ```
@@ -93,12 +81,11 @@ Fast-forward
  create mode 100644 feature.txt
 ```
 
-✅ Feature successfully merged into master.
+ Feature successfully merged into master.
 
 ***
 
-## 🪝 Step 4: Create Post-Update Hook
-
+## Step 4: Create Post-Update Hook
 Move to bare repository hooks directory:
 
 ```bash
@@ -113,8 +100,7 @@ vi post-update
 
 ***
 
-### 📝 Add Following Script
-
+### Add Following Script
 ```bash
 #!/bin/bash
 
@@ -130,10 +116,9 @@ done
 ```
 
 #### Explanation
-
 * `"$@"` → receives updated refs from post-update hook
 * Checks if push was made to `master`
-*   Creates tag in format:
+* Creates tag in format:
 
     ```
     release-YYYY-MM-DD
@@ -141,18 +126,16 @@ done
 
 ***
 
-### 🔐 Make Hook Executable
-
+### Make Hook Executable
 ```bash
 chmod +x post-update
 ```
 
-⚠ Do NOT change ownership or permissions of repository.
+ Do NOT change ownership or permissions of repository.
 
 ***
 
-## 🚀 Step 5: Push Changes to Trigger Hook
-
+## Step 5: Push Changes to Trigger Hook
 Return to working repository:
 
 ```bash
@@ -176,8 +159,7 @@ git push origin master
 
 ***
 
-## 🧪 Step 6: Verify Tag Creation
-
+## Step 6: Verify Tag Creation
 Check in bare repository:
 
 ```bash
@@ -191,13 +173,12 @@ Example output:
 release-2026-02-27
 ```
 
-✔ Tag matches current date\
-✔ Hook successfully triggered
+ Tag matches current date
+ Hook successfully triggered
 
 ***
 
-## ⚠ Common Errors & Solutions
-
+## Common Errors & Solutions
 | Issue               | Cause                     | Solution                        |
 | ------------------- | ------------------------- | ------------------------------- |
 | Tag not created     | Hook not executable       | `chmod +x post-update`          |
@@ -207,8 +188,7 @@ release-2026-02-27
 
 ***
 
-## ✅ Final Verification Checklist
-
+## Final Verification Checklist
 * [x] Merged `feature` into `master`
 * [x] Created `post-update` hook in `/opt/news.git/hooks`
 * [x] Hook executable
@@ -220,8 +200,7 @@ release-2026-02-27
 
 ***
 
-## 🏁 Final Result
-
+## Final Result
 Whenever changes are pushed to the `master` branch, a release tag is automatically created in this format:
 
 ```
@@ -229,4 +208,3 @@ release-YYYY-MM-DD
 ```
 
 The hook is fully functional and meets all task requirements.
-

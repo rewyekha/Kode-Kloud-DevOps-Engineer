@@ -1,5 +1,4 @@
 # Day 48: Deploy Pods in Kubernetes Cluster
-
 The Nautilus DevOps team is diving into Kubernetes for application management. One team member has a task to create a pod according to the details below:
 
 1. Create a pod named `pod-nginx` using the `nginx` image with the `latest` tag. Ensure to specify the tag as `nginx:latest`.
@@ -7,17 +6,12 @@ The Nautilus DevOps team is diving into Kubernetes for application management. O
 
 `Note`: The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
-
-
 ## Kubernetes Pod Creation – nginx
-
 ### Overview
-
-This document explains how to create a Kubernetes Pod using the `kubectl` CLI.\
+This document explains how to create a Kubernetes Pod using the `kubectl` CLI.
 The task was to create a pod named **pod-nginx** using the **nginx:latest** image with a specific label and container name.
 
 #### Requirements
-
 * Pod name: `pod-nginx`
 * Image: `nginx:latest`
 * Container name: `nginx-container`
@@ -26,9 +20,7 @@ The task was to create a pod named **pod-nginx** using the **nginx:latest** imag
 ***
 
 ## Step 1 – Create the Pod
-
 ### Command
-
 ```bash
 kubectl run pod-nginx \
   --image=nginx:latest \
@@ -45,7 +37,6 @@ kubectl run pod-nginx \
 ```
 
 ### Terminal Output
-
 ```bash
 thor@jump-host ~$ kubectl run pod-nginx \
   --image=nginx:latest \
@@ -63,7 +54,6 @@ pod/pod-nginx created
 ```
 
 ### Command Explanation
-
 | Parameter                   | Meaning                                                 |
 | --------------------------- | ------------------------------------------------------- |
 | `kubectl run`               | Creates a new pod or deployment in Kubernetes           |
@@ -77,15 +67,12 @@ pod/pod-nginx created
 ***
 
 ## Step 2 – Verify Pod Creation
-
 ### Command
-
 ```bash
 kubectl get pods
 ```
 
 ### Terminal Output
-
 ```bash
 thor@jump-host ~$ kubectl get pods
 NAME        READY   STATUS    RESTARTS   AGE
@@ -93,7 +80,6 @@ pod-nginx   1/1     Running   0          7s
 ```
 
 ### Command Explanation
-
 | Column     | Meaning                                       |
 | ---------- | --------------------------------------------- |
 | `NAME`     | Name of the pod                               |
@@ -105,15 +91,12 @@ pod-nginx   1/1     Running   0          7s
 ***
 
 ## Step 3 – Inspect Pod Details
-
 ### Command
-
 ```bash
 kubectl describe pod pod-nginx
 ```
 
 ### Terminal Output (Important Sections)
-
 ```bash
 Name:             pod-nginx
 Namespace:        default
@@ -125,7 +108,6 @@ IP:               10.22.0.9
 ```
 
 #### Container Information
-
 ```bash
 Containers:
   nginx-container:
@@ -136,7 +118,6 @@ Containers:
 ```
 
 #### Events
-
 ```bash
 Events:
   Type    Reason     Message
@@ -149,7 +130,6 @@ Events:
 ```
 
 ### Command Explanation
-
 | Field        | Meaning                                        |
 | ------------ | ---------------------------------------------- |
 | `Namespace`  | Kubernetes namespace where the pod runs        |
@@ -162,13 +142,10 @@ Events:
 ***
 
 ## Key Kubernetes Concepts
-
 ### Pod
-
 A **Pod** is the smallest deployable unit in Kubernetes and represents one or more containers running together.
 
 ### Label
-
 Labels are metadata used for:
 
 * Service discovery
@@ -182,7 +159,6 @@ app=nginx_app
 ```
 
 ### Container Image
-
 The container runs using the image:
 
 ```
@@ -197,7 +173,6 @@ Where:
 ***
 
 ## Quick Validation Checklist
-
 | Check                | Command                                   |
 | -------------------- | ----------------------------------------- |
 | Verify pod exists    | `kubectl get pods`                        |
@@ -207,7 +182,6 @@ Where:
 ***
 
 ## Useful Cleanup Command
-
 To delete the pod when it is no longer needed:
 
 ```bash
@@ -217,7 +191,6 @@ kubectl delete pod pod-nginx
 ***
 
 ## Summary
-
 We successfully:
 
 1. Created a pod named `pod-nginx`
@@ -274,11 +247,11 @@ Containers:
       /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-kj2gd (ro)
 Conditions:
   Type                        Status
-  PodReadyToStartContainers   True 
-  Initialized                 True 
-  Ready                       True 
-  ContainersReady             True 
-  PodScheduled                True 
+  PodReadyToStartContainers   True
+  Initialized                 True
+  Ready                       True
+  ContainersReady             True
+  PodScheduled                True
 Volumes:
   kube-api-access-kj2gd:
     Type:                    Projected (a volume that contains injected data from multiple sources)
@@ -298,7 +271,5 @@ Events:
   Normal  Pulled     13s   kubelet            Successfully pulled image "nginx:latest" in 3.679s (3.679s including waiting). Image size: 62960551 bytes.
   Normal  Created    13s   kubelet            Created container: nginx-container
   Normal  Started    13s   kubelet            Started container nginx-container
-thor@jump-host ~$ 
+thor@jump-host ~$
 ```
-
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

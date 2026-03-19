@@ -1,5 +1,4 @@
 # Day 51: Execute Rolling Updates in Kubernetes
-
 An application currently running on the Kubernetes cluster employs the nginx web server. The Nautilus application development team has introduced some recent changes that need deployment. They've crafted an image `nginx:1.19` with the latest updates.
 
 Execute a rolling update for this application, integrating the `nginx:1.19` image. The deployment is named `nginx-deployment`.
@@ -11,7 +10,6 @@ Ensure all pods are operational post-update.
 ***
 
 ### Question
-
 An application currently running on the Kubernetes cluster employs the **nginx** web server. The Nautilus application development team has introduced some recent changes that need deployment. They've crafted an image **nginx:1.19** with the latest updates.
 
 **Task:** Execute a rolling update for this application, integrating the **nginx:1.19** image. The deployment is named **nginx-deployment**. Ensure all pods are operational post-update.
@@ -21,7 +19,6 @@ An application currently running on the Kubernetes cluster employs the **nginx**
 ***
 
 ### Step 1: Check Current Deployment
-
 ```bash
 thor@jump-host ~$ kubectl get deployment nginx-deployment
 ```
@@ -36,7 +33,6 @@ nginx-deployment   3/3     3            3           59s
 ***
 
 ### Step 2: Attempt Update with Wrong Container Name
-
 ```bash
 thor@jump-host ~$ kubectl set image deployment/nginx-deployment nginx=nginx:1.19
 ```
@@ -52,7 +48,6 @@ error: unable to find container named "nginx"
 ***
 
 ### Step 3: Identify the Correct Container Name
-
 ```bash
 thor@jump-host ~$ kubectl get deployment nginx-deployment -o yaml | grep -i image
 ```
@@ -70,7 +65,6 @@ thor@jump-host ~$ kubectl get deployment nginx-deployment -o yaml | grep -i imag
 ***
 
 ### Step 4: Check Rollout Status (Before Update)
-
 ```bash
 thor@jump-host ~$ kubectl rollout status deployment/nginx-deployment
 ```
@@ -84,7 +78,6 @@ deployment "nginx-deployment" successfully rolled out
 ***
 
 ### Step 5: Verify Pods (Before Update)
-
 ```bash
 thor@jump-host ~$ kubectl get pods
 ```
@@ -101,7 +94,6 @@ nginx-deployment-fc677cbc9-z8t8s   1/1     Running   0          114s
 ***
 
 ### Step 6: Perform the Rolling Update
-
 ```bash
 thor@jump-host ~$ kubectl set image deployment/nginx-deployment nginx-container=nginx:1.19
 ```
@@ -115,7 +107,6 @@ deployment.apps/nginx-deployment image updated
 ***
 
 ### Step 7: Monitor Rollout
-
 ```bash
 thor@jump-host ~$ kubectl rollout status deployment/nginx-deployment
 ```
@@ -131,7 +122,6 @@ deployment "nginx-deployment" successfully rolled out
 ***
 
 ### Step 8: Verify Deployment Image
-
 ```bash
 thor@jump-host ~$ kubectl describe deployment nginx-deployment | grep Image
 ```
@@ -145,7 +135,6 @@ Image:         nginx:1.19
 ***
 
 ### Step 9: Verify Pods After Update
-
 ```bash
 thor@jump-host ~$ kubectl get pods
 ```
@@ -176,11 +165,7 @@ nginx-deployment-6655dc8cfb-hsnrn   1/1     Running   0          55s
 
 ***
 
-### ✅ Result
-
+### Result
 * The **nginx-deployment** was successfully updated to **nginx:1.19**.
 * All pods were **recreated gradually** via **rolling update**.
 * Deployment remains fully **operational**, meeting task requirements.
-
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
-

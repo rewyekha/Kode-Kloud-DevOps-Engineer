@@ -1,13 +1,11 @@
 # Day 9: MariaDB Troubleshooting
+There is a critical issue going on with the `Nautilus` application in `Stratos DC`. The production support team identified that the application is unable to connect to the database. After digging into the issue, the team found that mariadb service is down on the database server.
 
-There is a critical issue going on with the `Nautilus` application in `Stratos DC`. The production support team identified that the application is unable to connect to the database. After digging into the issue, the team found that mariadb service is down on the database server.\
-\
 Look into the issue and fix the same.
 
-
-
-<pre><code><strong>[peter@stdb01 ~]$ sudo systemctl status mariadb
-</strong>× mariadb.service - MariaDB 10.5 database server
+```bash
+[peter@stdb01 ~]$ sudo systemctl status mariadb
+× mariadb.service - MariaDB 10.5 database server
      Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: disabled)
      Active: failed (Result: exit-code) since Wed 2025-12-24 15:23:17 UTC; 4min 33s ago
    Duration: 6.413s
@@ -26,17 +24,17 @@ Dec 24 15:23:17 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Chan
 Dec 24 15:23:17 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Job 316 mariadb.service/start finished, result=failed
 Dec 24 15:23:17 stdb01.stratos.xfusioncorp.com systemd[1]: Failed to start MariaDB 10.5 database server.
 Dec 24 15:23:17 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Unit entered failed state.
-<strong>[peter@stdb01 ~]$ ls /var/lib/mysql
-</strong>ls: cannot access '/var/lib/mysql': No such file or directory
-<strong>[peter@stdb01 ~]$ sudo mkdir /var/lib/mysql
-</strong><strong>[peter@stdb01 ~]$ sudo ls -lah /var/lib/mysql
-</strong>total 12K
+[peter@stdb01 ~]$ ls /var/lib/mysql
+ls: cannot access '/var/lib/mysql': No such file or directory
+[peter@stdb01 ~]$ sudo mkdir /var/lib/mysql
+[peter@stdb01 ~]$ sudo ls -lah /var/lib/mysql
+total 12K
 drwxr-xr-x 2 root root 4.0K Dec 24 15:28 .
 drwxr-xr-x 1 root root 4.0K Dec 24 15:28 ..
-<strong>[peter@stdb01 ~]$ sudo chown -R mysql:mysql /var/lib/mysql
-</strong><strong>[peter@stdb01 ~]$ sudo systemctl start mariadb
-</strong><strong>[peter@stdb01 ~]$ sudo systemctl status mariadb
-</strong>● mariadb.service - MariaDB 10.5 database server
+[peter@stdb01 ~]$ sudo chown -R mysql:mysql /var/lib/mysql
+[peter@stdb01 ~]$ sudo systemctl start mariadb
+[peter@stdb01 ~]$ sudo systemctl status mariadb
+ mariadb.service - MariaDB 10.5 database server
      Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: disabled)
      Active: active (running) since Wed 2025-12-24 15:30:11 UTC; 18s ago
        Docs: man:mariadbd(8)
@@ -61,8 +59,8 @@ Dec 24 15:30:11 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Chan
 Dec 24 15:30:11 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Job 360 mariadb.service/start finished, result=done
 Dec 24 15:30:11 stdb01.stratos.xfusioncorp.com systemd[1]: Started MariaDB 10.5 database server.
 Dec 24 15:30:11 stdb01.stratos.xfusioncorp.com systemd[1]: mariadb.service: Failed to send unit change signal for mariadb.service: Connection reset by peer
-<strong>[peter@stdb01 ~]$ sudo mysql
-</strong>Welcome to the MariaDB monitor.  Commands end with ; or \g.
+[peter@stdb01 ~]$ sudo mysql
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 3
 Server version: 10.5.27-MariaDB MariaDB Server
 
@@ -70,8 +68,8 @@ Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-<strong>MariaDB [(none)]> show databases;
-</strong>+--------------------+
+MariaDB [(none)]> show databases;
++--------------------+
 | Database           |
 +--------------------+
 | information_schema |
@@ -80,7 +78,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 +--------------------+
 3 rows in set (0.001 sec)
 
-<strong>MariaDB [(none)]> exit
-</strong>Bye
-[peter@stdb01 ~]$ 
-</code></pre>
+MariaDB [(none)]> exit
+Bye
+[peter@stdb01 ~]$
+```

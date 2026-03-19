@@ -1,5 +1,4 @@
 # Day 23: Fork a Git Repository
-
 There is a Git server utilized by the Nautilus project teams. Recently, a new developer named Jon joined the team and needs to begin working on a project. To begin, he must fork an existing Git repository. Follow the steps below:
 
 1. Click on the `Gitea UI` button located on the top bar to access the Gitea page.
@@ -7,21 +6,3 @@ There is a Git server utilized by the Nautilus project teams. Recently, a new de
 3. Once logged in, locate the Git repository named `sarah/story-blog` and `fork` it under the `jon` user.
 
 `Note:` For tasks requiring web UI changes, screenshots are necessary for review purposes. Additionally, consider utilizing screen recording software such as loom.com to record and share your task completion process.
-
-
-
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>

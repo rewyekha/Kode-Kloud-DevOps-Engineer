@@ -3,11 +3,10 @@ description: >-
   Created by Reyas Khan, this document contains my solutions for KodeKloud labs,
   showcasing various scenarios across the entire DevOps lifecycle, including
   Cloud and DevOps tools.
-icon: face-laugh-wink
+
 ---
 
 # SUMMARY
-
 * [Day 1: Linux User Setup with Non-Interactive Shell](day-1-linux-user-setup-with-non-interactive-shell.md)
 * [Day 2: Temporary User Setup with Expiry](day-2-temporary-user-setup-with-expiry.md)
 * [Day 3: Secure Root SSH Access](day-3-secure-root-ssh-access.md)

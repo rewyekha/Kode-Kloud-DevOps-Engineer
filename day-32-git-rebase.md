@@ -1,19 +1,15 @@
 # Day 32: Git Rebase
-
 The Nautilus application development team has been working on a project repository `/opt/apps.git`. This repo is cloned at `/usr/src/kodekloudrepos` on `storage server` in `Stratos DC`. They recently shared the following requirements with DevOps team:
 
 One of the developers is working on `feature` branch and their work is still in progress, however there are some changes which have been pushed into the `master` branch, the developer now wants to `rebase` the `feature` branch with the `master` branch without loosing any data from the `feature` branch, also they don't want to add any `merge commit` by simply merging the `master` branch into the `feature` branch. Accomplish this task as per requirements mentioned.
 
 Also remember to push your changes once done.
 
-## 📘 GitBook Documentation
-
+## GitBook Documentation
 ## Day 32 – Git Rebase Without Merge Commit
-
 ***
 
-### 📌 Scenario
-
+### Scenario
 The Nautilus application development team is working on a repository:
 
 ```
@@ -26,8 +22,7 @@ The repository is cloned on the storage server at:
 /usr/src/kodekloudrepos
 ```
 
-#### 🔹 Requirement
-
+#### Requirement
 A developer is working on the `feature` branch. Meanwhile, new changes were pushed to `master`.
 
 The developer wants to:
@@ -39,20 +34,17 @@ The developer wants to:
 
 ***
 
-## 🖥️ Infrastructure Details
-
-Server: `ststor01`\
-User: `natasha`\
+## Infrastructure Details
+Server: `ststor01`
+User: `natasha`
 Repository location: `/usr/src/kodekloudrepos`
 
 ***
 
-## 🚀 Step-by-Step Solution
-
+## Step-by-Step Solution
 ***
 
-### 🔹 Step 1: SSH into Storage Server
-
+### Step 1: SSH into Storage Server
 ```bash
 thor@jumphost ~$ ssh natasha@ststor01.stratos.xfusioncorp.com
 natasha@ststor01.stratos.xfusioncorp.com's password:
@@ -67,8 +59,7 @@ Switch to root:
 
 ***
 
-### ❌ Mistake #1: Running Git in Wrong Directory
-
+### Mistake #1: Running Git in Wrong Directory
 Initially, Git commands were run here:
 
 ```bash
@@ -77,8 +68,7 @@ Initially, Git commands were run here:
 fatal: not a git repository (or any of the parent directories): .git
 ```
 
-#### 🔎 Why This Happened?
-
+#### Why This Happened?
 Because `/usr/src/kodekloudrepos` was **not the actual git repository root**.
 
 Checking contents:
@@ -95,8 +85,7 @@ The actual repository was inside the `apps` directory.
 
 ***
 
-### ✅ Step 2: Move to Correct Repository Directory
-
+### Step 2: Move to Correct Repository Directory
 ```bash
 [root@ststor01 kodekloudrepos]# cd apps
 [root@ststor01 apps]#
@@ -114,8 +103,7 @@ Now Git works correctly.
 
 ***
 
-### 🔹 Step 3: Fetch Latest Changes
-
+### Step 3: Fetch Latest Changes
 ```bash
 [root@ststor01 apps]# git fetch origin
 ```
@@ -132,8 +120,7 @@ Verify remote branches:
 
 ***
 
-### 🔹 Step 4: Ensure On Feature Branch
-
+### Step 4: Ensure On Feature Branch
 ```bash
 [root@ststor01 apps]# git checkout feature
 Already on 'feature'
@@ -141,15 +128,13 @@ Already on 'feature'
 
 ***
 
-### 🔹 Step 5: Rebase Feature Onto Master
-
+### Step 5: Rebase Feature Onto Master
 ```bash
 [root@ststor01 apps]# git rebase origin/master
 Successfully rebased and updated refs/heads/feature.
 ```
 
-#### ✅ What This Did
-
+#### What This Did
 * Took feature commits
 * Replayed them on top of latest `origin/master`
 * Avoided creating a merge commit
@@ -157,8 +142,7 @@ Successfully rebased and updated refs/heads/feature.
 
 ***
 
-### 🔹 Step 6: Verify Working Tree
-
+### Step 6: Verify Working Tree
 ```bash
 [root@ststor01 apps]# git status
 On branch feature
@@ -167,8 +151,7 @@ nothing to commit, working tree clean
 
 ***
 
-### 🔹 Step 7: Push Rebased Branch
-
+### Step 7: Push Rebased Branch
 Since rebase rewrites commit history, a force push is required.
 
 ```bash
@@ -181,8 +164,7 @@ To /opt/apps.git
 
 ***
 
-### 🔹 Step 8: Final Verification
-
+### Step 8: Final Verification
 ```bash
 [root@ststor01 apps]# git log --oneline --graph --decorate --all
 * f46aeda (HEAD -> feature, origin/feature) Add new feature
@@ -192,20 +174,17 @@ To /opt/apps.git
 
 ***
 
-## 🎯 Final Result
-
-✔ Feature branch rebased successfully\
-✔ No merge commit created\
-✔ No data loss\
-✔ Remote branch updated\
-✔ Clean linear history
+## Final Result
+ Feature branch rebased successfully
+ No merge commit created
+ No data loss
+ Remote branch updated
+ Clean linear history
 
 ***
 
-## 📚 Key Concepts Explained
-
-### 🔹 Rebase vs Merge
-
+## Key Concepts Explained
+### Rebase vs Merge
 | Merge                      | Rebase                  |
 | -------------------------- | ----------------------- |
 | Creates merge commit       | No merge commit         |
@@ -214,23 +193,20 @@ To /opt/apps.git
 
 ***
 
-## ❗ Common Mistakes in This Task
-
-#### 1️⃣ Running Git Outside Repository
-
+## Common Mistakes in This Task
+#### 1 Running Git Outside Repository
 Error:
 
 ```
 fatal: not a git repository
 ```
 
-Fix:\
+Fix:
 Navigate into the directory containing `.git`.
 
 ***
 
-#### 2️⃣ Forgetting to Fetch Before Rebase
-
+#### 2 Forgetting to Fetch Before Rebase
 If you don’t run:
 
 ```bash
@@ -241,8 +217,7 @@ You may rebase against outdated local master.
 
 ***
 
-#### 3️⃣ Forgetting to Force Push After Rebase
-
+#### 3 Forgetting to Force Push After Rebase
 Rebase rewrites commit history.
 
 Without:
@@ -255,8 +230,7 @@ Push will fail.
 
 ***
 
-#### 4️⃣ Rebasing the Wrong Branch
-
+#### 4 Rebasing the Wrong Branch
 Always confirm:
 
 ```bash
@@ -267,8 +241,7 @@ The `*` must be on `feature`.
 
 ***
 
-## 🧠 Best Practices
-
+## Best Practices
 * Always run `git status` before rebasing
 * Always fetch latest changes
 * Avoid rebasing shared public branches
@@ -276,8 +249,7 @@ The `*` must be on `feature`.
 
 ***
 
-## ✅ Conclusion
-
+## Conclusion
 The `feature` branch was successfully rebased onto `master` without:
 
 * Losing work
@@ -287,4 +259,4 @@ This ensures a clean, professional Git history suitable for production environme
 
 ***
 
-📌 **End of Day 32 – Git Rebase Documentation**
+ **End of Day 32 – Git Rebase Documentation**

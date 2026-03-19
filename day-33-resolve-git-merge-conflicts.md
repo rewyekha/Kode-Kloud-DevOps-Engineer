@@ -1,5 +1,4 @@
 # Day 33: Resolve Git Merge Conflicts
-
 Sarah and Max were working on writting some stories which they have pushed to the repository. Max has recently added some new changes and is trying to push them to the repository but he is facing some issues. Below you can find more details:
 
 SSH into `storage server` using user `max` and password `Max_pass123`. Under `/home/max` you will find the `story-blog` repository. Try to push the changes to the origin repo and fix the issues. The `story-index.txt` must have titles for all 4 stories. Additionally, there is a typo in `The Lion and the Mooose` line where `Mooose` should be `Mouse`.
@@ -8,31 +7,25 @@ Click on the `Gitea UI` button on the top bar. You should be able to access the 
 
 `Note:` For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.
 
-
-
 ***
 
-## 📝 Fix Push Rejection & Resolve Merge Conflict in Gitea Repository
-
-### 📌 Problem Statement
-
+## Fix Push Rejection & Resolve Merge Conflict in Gitea Repository
+### Problem Statement
 Max attempted to push changes to the `story-blog` repository but encountered issues.
 
 #### Requirements:
-
 1. SSH into the storage server.
 2. Navigate to `/home/max/story-blog`.
 3. Ensure `story-index.txt` contains all **4 story titles**.
 4. Fix the typo:
-   * ❌ `Mooose`
-   * ✅ `Mouse`
+   * `Mooose`
+   * `Mouse`
 5. Push the changes to the remote repository.
 6. Verify changes in Gitea UI.
 
 ***
 
-## 🖥️ Infrastructure Details
-
+## Infrastructure Details
 | Server   | IP            | User    | Password |
 | -------- | ------------- | ------- | -------- |
 | ststor01 | 172.16.238.15 | natasha | Bl@kW    |
@@ -44,8 +37,7 @@ Repository Owner Credentials:
 
 ***
 
-## 🔐 Step 1: SSH into Storage Server
-
+## Step 1: SSH into Storage Server
 ```bash
 ssh natasha@172.16.238.15
 ```
@@ -64,8 +56,7 @@ cd /home/max/story-blog
 
 ***
 
-## 🔍 Step 2: Check Repository Status
-
+## Step 2: Check Repository Status
 ```bash
 git status
 ```
@@ -80,8 +71,7 @@ But push to `main` failed because branch name is `master`.
 
 ***
 
-## ❌ Initial Push Error
-
+## Initial Push Error
 ```bash
 git push origin main
 ```
@@ -92,34 +82,29 @@ Error:
 error: src refspec main does not match any
 ```
 
-#### 🔎 Root Cause:
-
+#### Root Cause:
 The repository uses **master branch**, not `main`.
 
 ***
 
-## ✅ Correct Push Command
-
+## Correct Push Command
 ```bash
 git push origin master
 ```
 
 ***
 
-## ❌ Second Error: Rejected Push
-
+## Second Error: Rejected Push
 ```
 ! [rejected] master -> master (fetch first)
 ```
 
-#### 🔎 Root Cause:
-
+#### Root Cause:
 Remote repository had new commits not present locally.
 
 ***
 
-## 🔄 Step 3: Rebase with Remote
-
+## Step 3: Rebase with Remote
 ```bash
 git pull origin master --rebase
 ```
@@ -132,8 +117,7 @@ story-index.txt
 
 ***
 
-## ⚔️ Merge Conflict Found
-
+## Merge Conflict Found
 Conflict content:
 
 ```
@@ -151,8 +135,7 @@ Conflict content:
 
 ***
 
-## 🛠️ Step 4: Resolve Conflict
-
+## Step 4: Resolve Conflict
 Edited `story-index.txt` to:
 
 ```
@@ -171,8 +154,7 @@ Removed:
 
 ***
 
-## ▶️ Step 5: Continue Rebase
-
+## Step 5: Continue Rebase
 ```bash
 git add story-index.txt
 git rebase --continue
@@ -182,8 +164,7 @@ Rebase completed successfully.
 
 ***
 
-## 🚀 Step 6: Final Push
-
+## Step 6: Final Push
 ```bash
 git push origin master
 ```
@@ -196,8 +177,7 @@ master -> master
 
 ***
 
-## 🌐 Verification in Gitea UI
-
+## Verification in Gitea UI
 Logged into Gitea as `max`.
 
 Confirmed:
@@ -209,17 +189,14 @@ Confirmed:
 
 ***
 
-<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
-
 ***
 
-## 🏁 Final Outcome
-
-✔ Branch mismatch issue resolved\
-✔ Rebase completed\
-✔ Merge conflict fixed\
-✔ Typo corrected\
-✔ Changes successfully pushed\
-✔ Verified in Gitea
+## Final Outcome
+ Branch mismatch issue resolved
+ Rebase completed
+ Merge conflict fixed
+ Typo corrected
+ Changes successfully pushed
+ Verified in Gitea
 
 ***
