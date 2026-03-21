@@ -39,3 +39,4 @@
 * [Day 38: Running Containers on Azure Virtual Machines](day-38-running-containers-on-azure-virtual-machines.md)
 * [Day 39: Deploying a Static Website Using Containers on Azure](day-39-deploying-a-static-website-using-containers-on-azure.md)
 * [Day 40: Managing Secrets with Azure Key Vault](day-40-managing-secrets-with-azure-key-vault.md)
+* [Day 41: Working with Azure Table Storage](day-41-working-with-azure-table-storage.md)
