@@ -57,3 +57,4 @@
 * [Day 53: Resolve VolumeMounts Issue in Kubernetes](day-53-resolve-volumemounts-issue-in-kubernetes.md)
 * [Day 54: Kubernetes Shared Volumes](day-54-kubernetes-shared-volumes.md)
 * [Day 55: Kubernetes Sidecar Containers](day-55-kubernetes-sidecar-containers.md)
+* [File Permission Correction](file-permission-correction.md)
