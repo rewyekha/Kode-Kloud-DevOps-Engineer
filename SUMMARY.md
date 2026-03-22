@@ -58,3 +58,4 @@
 * [Day 54: Kubernetes Shared Volumes](day-54-kubernetes-shared-volumes.md)
 * [Day 55: Kubernetes Sidecar Containers](day-55-kubernetes-sidecar-containers.md)
 * [Day 56: Deploy Nginx Web Server on Kubernetes Cluster](day-56-deploy-nginx-web-server-on-kubernetes-cluster.md)
+* [Day 57: Print Environment Variables](day-57-print-environment-variables.md)
