@@ -29,3 +29,4 @@
 * [Day 26: Configuring an EC2 Instance as a Web Server with Nginx](day-26-configuring-an-ec2-instance-as-a-web-server-with-nginx.md)
 * [Day 27: Configuring a Public VPC with an EC2 Instance for Internet Access](day-27-configuring-a-public-vpc-with-an-ec2-instance-for-internet-access.md)
 * [Day 28: Creating a Private ECR Repository](day-28-creating-a-private-ecr-repository.md)
+* [Day 29: Establishing Secure Communication Between Public and Private VPCs via VPC Peering](day-29-establishing-secure-communication-between-public-and-private-vpcs-via-vpc-peering.md)
