@@ -30,3 +30,4 @@
 * [Day 27: Configuring a Public VPC with an EC2 Instance for Internet Access](day-27-configuring-a-public-vpc-with-an-ec2-instance-for-internet-access.md)
 * [Day 28: Creating a Private ECR Repository](day-28-creating-a-private-ecr-repository.md)
 * [Day 29: Establishing Secure Communication Between Public and Private VPCs via VPC Peering](day-29-establishing-secure-communication-between-public-and-private-vpcs-via-vpc-peering.md)
+* [Day 30: Enable Internet Access for Private EC2 using NAT Instance](day-30-enable-internet-access-for-private-ec2-using-nat-instance.md)
