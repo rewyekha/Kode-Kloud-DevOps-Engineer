@@ -215,11 +215,6 @@ Additionally, configure the instance to run a user data script during launch tha
     ![image](https://github.com/user-attachments/assets/d48c5daf-773b-434c-989b-4de419eafcb6)
 2.  Access `devops-agw`'s frontend public ip from web and you should see nginx welcome page.
 
-    ![image](https://github.com/user-attachments/assets/1bd67871-17b8-4684-986a-934e3c4b0468)
+    <figure><img src=".gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
-
-
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src=".gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
