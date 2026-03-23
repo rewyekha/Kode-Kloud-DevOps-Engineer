@@ -103,3 +103,4 @@ thor@jumphost ~$ kubectl describe rc nginx-replicationcontroller-t3q5 | grep Ima
     Image:         nginx:latest
 thor@jumphost ~$ 
 ```
+

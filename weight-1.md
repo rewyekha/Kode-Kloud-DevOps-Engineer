@@ -1,5 +1,7 @@
 # Weight: 1
 
+
+
 An application was previously deployed on the Kubernetes cluster, the deployment name is `deployment-t5q2`. This application is used by another applications within the same Kubernetes cluster. To enable access to this app, we require the creation of a `ClusterIP` service for the same.
 
 Create a service named `deployment-svc-t5q2`. It must be a `ClusterIP` service which should use port `8090` and target port should be `80`.

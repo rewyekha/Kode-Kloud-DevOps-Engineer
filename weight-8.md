@@ -1,5 +1,7 @@
 # Weight: 8
 
+
+
 Recently, during an audit, it was identified that there are some deployments on Kubernetes cluster which are no longer needed. Therefore, the team wants to delete some obslete deployments. Find below more details about the same.
 
 There is a deployment named `web-app-t2q4`, delete the same.

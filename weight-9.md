@@ -1,5 +1,7 @@
 # Weight: 9
 
+
+
 The Nautilus application development team aims to test a straightforward deployment by creating an Nginx-based Pod on the Kubernetes cluster. The specifications for this deployment are as follows:
 
 Create a Pod named `dummy-nginx-nginx-t1q6`, it must use `nginx:stable-alpine3.17-slim` image. Finally, ensure the Pod remains in the `Running` state.

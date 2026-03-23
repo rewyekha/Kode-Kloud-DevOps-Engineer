@@ -24,3 +24,5 @@ kubectl get deployments
 
 If it has been successfully removed, `web-app-t2q4` will no longer appear in the list.
 
+
+

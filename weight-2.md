@@ -1,5 +1,7 @@
 # Weight: 2
 
+
+
 One of our junior DevOps team members encountered an issue while deploying a stack on the Kubernetes cluster. The `webserver-t4q1` pod, with the `nginx-container` and a sidecar container named `sidecar-container`, is failing to start and remains in an error state.
 
 Your task is to investigate and rectify the problem to ensure the successful running state of the `webserver-t4q1` pod. The `nginx-container` uses the `nginx:latest` image, while the sidecar-container utilizes the `ubuntu:latest` image. Ensure the `webserver-t4q1` pod is running as expected and the application is accessible.
@@ -159,5 +161,5 @@ thor@jumphost ~$ kubectl logs webserver-t4q1 -c sidecar-container
 thor@jumphost ~$ 
 ```
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 

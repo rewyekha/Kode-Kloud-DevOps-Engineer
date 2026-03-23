@@ -54,3 +54,4 @@ service-t5q3   NodePort   10.96.x.x        <none>        80:30099/TCP     ...
 
 * `NodePort=30099` confirms the update
 * Application is accessible via `http://<node-ip>:30099` ✅
+

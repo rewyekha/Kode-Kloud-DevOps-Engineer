@@ -9,7 +9,7 @@ The Nautilus DevOps team is diving into Kubernetes for application management. O
 
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 
 
