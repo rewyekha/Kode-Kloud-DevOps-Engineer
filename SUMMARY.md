@@ -41,3 +41,4 @@
 * [Day 40: Managing Secrets with Azure Key Vault](day-40-managing-secrets-with-azure-key-vault.md)
 * [Day 41: Working with Azure Table Storage](day-41-working-with-azure-table-storage.md)
 * [Day 42: Backup and Delete Azure Storage Blob Container](day-42-backup-and-delete-azure-storage-blob-container.md)
+* [Day 43: Configuring Azure VM with Application Gateway](day-43-configuring-azure-vm-with-application-gateway.md)
