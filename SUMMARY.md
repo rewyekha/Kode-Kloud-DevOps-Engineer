@@ -59,3 +59,4 @@
 * [Day 55: Kubernetes Sidecar Containers](day-55-kubernetes-sidecar-containers.md)
 * [Day 56: Deploy Nginx Web Server on Kubernetes Cluster](day-56-deploy-nginx-web-server-on-kubernetes-cluster.md)
 * [Day 57: Print Environment Variables](day-57-print-environment-variables.md)
+* [Day 58: Deploy Grafana on Kubernetes Cluster](day-58-deploy-grafana-on-kubernetes-cluster.md)
