@@ -8,8 +8,6 @@
 
 ***
 
-### Table of Contents
-
 1. [Lab Overview](https://claude.ai/chat/2167892e-87fd-41a5-a1b7-351d743253cc#lab-overview)
 2. [Architecture Diagram](https://claude.ai/chat/2167892e-87fd-41a5-a1b7-351d743253cc#architecture-diagram)
 3. [Prerequisites & Existing Resources](https://claude.ai/chat/2167892e-87fd-41a5-a1b7-351d743253cc#prerequisites--existing-resources)
@@ -719,4 +717,7 @@ Amazon Linux 2023 uses `nftables` as its default firewall framework and does **n
 
 ***
 
+<figure><img src=".gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src=".gitbook/assets/Screenshot 2026-03-23 125419.png" alt=""><figcaption></figcaption></figure>
+
