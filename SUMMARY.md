@@ -30,3 +30,4 @@
 * [Docker Update Permissions](docker-update-permissions.md)
 * [Create a Docker Image From Container](create-a-docker-image-from-container.md)
 * [Docker EXEC Operations](docker-exec-operations.md)
+* [Write a Docker File](write-a-docker-file.md)
