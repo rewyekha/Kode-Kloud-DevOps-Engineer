@@ -60,3 +60,4 @@
 * [Day 56: Deploy Nginx Web Server on Kubernetes Cluster](day-56-deploy-nginx-web-server-on-kubernetes-cluster.md)
 * [Day 57: Print Environment Variables](day-57-print-environment-variables.md)
 * [Day 58: Deploy Grafana on Kubernetes Cluster](day-58-deploy-grafana-on-kubernetes-cluster.md)
+* [Day 59: Troubleshoot Deployment issues in Kubernetes](day-59-troubleshoot-deployment-issues-in-kubernetes.md)
