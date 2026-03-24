@@ -27,3 +27,4 @@
 ***
 
 * [Pull Docker Image](pull-docker-image.md)
+* [Docker Update Permissions](docker-update-permissions.md)
