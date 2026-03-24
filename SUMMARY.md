@@ -31,3 +31,4 @@
 * [Day 28: Creating a Private ECR Repository](day-28-creating-a-private-ecr-repository.md)
 * [Day 29: Establishing Secure Communication Between Public and Private VPCs via VPC Peering](day-29-establishing-secure-communication-between-public-and-private-vpcs-via-vpc-peering.md)
 * [Day 30: Enable Internet Access for Private EC2 using NAT Instance](day-30-enable-internet-access-for-private-ec2-using-nat-instance.md)
+* [Day 31: Configuring a Private RDS Instance for Application Development](day-31-configuring-a-private-rds-instance-for-application-development.md)
