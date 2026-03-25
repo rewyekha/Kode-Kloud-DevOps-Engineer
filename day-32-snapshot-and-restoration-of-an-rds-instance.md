@@ -90,7 +90,7 @@ REGION="us-east-1"
 
 Terminal Output:
 
-```
+```bash
 ~ on ☁️  (us-east-1) ➜  SOURCE_RDS="devops-rds"
 SNAPSHOT="devops-snapshot"
 TARGET_RDS="devops-snapshot-restore"
@@ -114,7 +114,7 @@ aws rds wait db-instance-available \
 
 Terminal Output:
 
-```
+```bash
 (no output)
 ```
 
@@ -135,7 +135,7 @@ aws rds create-db-snapshot \
 
 Terminal Output:
 
-```
+```bash
 {
     "DBSnapshot": {
         "DBSnapshotIdentifier": "devops-snapshot",
@@ -165,7 +165,7 @@ aws rds wait db-snapshot-available \
 
 Terminal Output:
 
-```
+```bash
 (no output)
 ```
 
@@ -187,7 +187,7 @@ aws rds describe-db-instances \
 
 Terminal Output:
 
-```
+```bash
 An error occurred (DBInstanceNotFound) when calling the DescribeDBInstances operation: DBInstance devops-snapshot-restore not found.
 ```
 
@@ -210,7 +210,7 @@ aws rds restore-db-instance-from-db-snapshot \
 
 Terminal Output:
 
-```
+```bash
 {
     "DBInstance": {
         "DBInstanceIdentifier": "devops-snapshot-restore",
@@ -239,7 +239,7 @@ aws rds wait db-instance-available \
 
 Terminal Output:
 
-```
+```bash
 (no output)
 ```
 
@@ -261,11 +261,11 @@ aws rds describe-db-instances \
 
 Terminal Output:
 
-```
+```bash
 -----------------------------------------
 |  DescribeDBInstances                  |
 +-------------+-------------------------+
-| available   | db.t3.micro            |
+| available   | db.t3.micro             |
 +-------------+-------------------------+
 ```
 
