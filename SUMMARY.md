@@ -43,3 +43,4 @@
 * [Day 42: Backup and Delete Azure Storage Blob Container](day-42-backup-and-delete-azure-storage-blob-container.md)
 * [Day 43: Configuring Azure VM with Application Gateway](day-43-configuring-azure-vm-with-application-gateway.md)
 * [Day 44: Integrating Azure Event Hub with Virtual Machines](day-44-integrating-azure-event-hub-with-virtual-machines.md)
+* [Day 45: Azure Kubernetes Service (AKS) Setup and Management](day-45-azure-kubernetes-service-aks-setup-and-management.md)
