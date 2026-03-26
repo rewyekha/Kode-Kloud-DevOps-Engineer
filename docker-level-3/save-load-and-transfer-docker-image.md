@@ -12,10 +12,6 @@ c. Load that image archive on `App Server 3` with same name and tag which was us
 
 
 
-Day 61: Init Containers in Kubernetes
-
-
-
 ## Docker: Save, Transfer, and Load a Docker Image Between Servers
 
 > **Platform:** KodeKloud | **Series:** Nautilus DevOps — Stratos Datacenter **Difficulty:** Beginner | **Topic:** Docker, Image Management, docker save, docker load, SCP
