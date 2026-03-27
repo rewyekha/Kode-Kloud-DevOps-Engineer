@@ -63,3 +63,4 @@
 * [Day 59: Troubleshoot Deployment issues in Kubernetes](day-59-troubleshoot-deployment-issues-in-kubernetes.md)
 * [Day 60: Persistent Volumes in Kubernetes](day-60-persistent-volumes-in-kubernetes.md)
 * [Day 61: Init Containers in Kubernetes](day-61-init-containers-in-kubernetes.md)
+* [Day 62: Manage Secrets in Kubernetes](day-62-manage-secrets-in-kubernetes.md)
