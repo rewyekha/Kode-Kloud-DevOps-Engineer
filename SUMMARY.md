@@ -33,3 +33,4 @@
 * [Day 30: Enable Internet Access for Private EC2 using NAT Instance](day-30-enable-internet-access-for-private-ec2-using-nat-instance.md)
 * [Day 31: Configuring a Private RDS Instance for Application Development](day-31-configuring-a-private-rds-instance-for-application-development.md)
 * [Day 32: Snapshot and Restoration of an RDS Instance](day-32-snapshot-and-restoration-of-an-rds-instance.md)
+* [Day 33: Create a Lambda Function](day-33-create-a-lambda-function.md)
