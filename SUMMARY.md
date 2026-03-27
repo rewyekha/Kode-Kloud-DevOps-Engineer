@@ -37,3 +37,5 @@
 * [Docker Volumes Mapping](docker-level-3/docker-volumes-mapping.md)
 * [Save, Load and Transfer Docker Image](docker-level-3/save-load-and-transfer-docker-image.md)
 * [Page 1](docker-level-3/page-1.md)
+* [Resolve Dockerfile](docker-level-3/resolve-dockerfile.md)
+* [Page 2](docker-level-3/page-2.md)
