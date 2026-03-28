@@ -34,3 +34,4 @@
 * [Day 31: Configuring a Private RDS Instance for Application Development](day-31-configuring-a-private-rds-instance-for-application-development.md)
 * [Day 32: Snapshot and Restoration of an RDS Instance](day-32-snapshot-and-restoration-of-an-rds-instance.md)
 * [Day 33: Create a Lambda Function](day-33-create-a-lambda-function.md)
+* [Day 34: Create a Lambda Function Using CLI](day-34-create-a-lambda-function-using-cli.md)
