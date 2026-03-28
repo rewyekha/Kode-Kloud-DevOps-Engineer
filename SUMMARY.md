@@ -44,4 +44,4 @@
 * [Day 43: Configuring Azure VM with Application Gateway](day-43-configuring-azure-vm-with-application-gateway.md)
 * [Day 44: Integrating Azure Event Hub with Virtual Machines](day-44-integrating-azure-event-hub-with-virtual-machines.md)
 * [Day 45: Azure Kubernetes Service (AKS) Setup and Management](day-45-azure-kubernetes-service-aks-setup-and-management.md)
-* [Day 46:](day-46.md)
+* [Day 46: EventHub to Blob Storage Integration Setup](day-46-eventhub-to-blob-storage-integration-setup.md)
