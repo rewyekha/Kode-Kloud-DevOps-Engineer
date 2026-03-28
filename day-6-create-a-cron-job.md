@@ -7,11 +7,11 @@ b. Add a cron `*/5 * * * * echo hello > /tmp/cron_text` for `root` user.
 
 <figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 add  `*/5 * * * * echo hello > /tmp/cron_text`
 
-![](<.gitbook/assets/image (2) (1) (1) (1).png>) &#x20;
+![](<.gitbook/assets/image (2) (1) (1) (1) (1).png>) &#x20;
 
 You’re starting from the **jumphost**, and this task must be done on **ALL Nautilus App Servers**:
 
