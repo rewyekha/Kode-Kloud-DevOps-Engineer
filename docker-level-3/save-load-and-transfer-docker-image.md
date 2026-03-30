@@ -421,4 +421,4 @@ _Lab completed on 2026-03-26 | Source: stapp01 | Destination: stapp03 | OS: Cent
 
 
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
