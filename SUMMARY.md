@@ -66,3 +66,4 @@
 * [Day 62: Manage Secrets in Kubernetes](day-62-manage-secrets-in-kubernetes.md)
 * [Day 63: Deploy Iron Gallery App on Kubernetes](day-63-deploy-iron-gallery-app-on-kubernetes.md)
 * [Day 64: Fix Python App Deployed on Kubernetes Cluster](day-64-fix-python-app-deployed-on-kubernetes-cluster.md)
+* [Day 65: Deploy Redis Deployment on Kubernetes](day-65-deploy-redis-deployment-on-kubernetes.md)
