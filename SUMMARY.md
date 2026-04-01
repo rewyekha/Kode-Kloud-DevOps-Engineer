@@ -33,3 +33,7 @@
 * [Weight: 2](weight-2.md)
 * [Weight: 1](weight-1.md)
 * [Weight: 0](weight-0.md)
+
+## Kubernetes Level - 2
+
+* [Kubernetes Shared Volumes](kubernetes-level-2/kubernetes-shared-volumes.md)
