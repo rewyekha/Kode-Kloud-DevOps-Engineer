@@ -67,3 +67,4 @@
 * [Day 63: Deploy Iron Gallery App on Kubernetes](day-63-deploy-iron-gallery-app-on-kubernetes.md)
 * [Day 64: Fix Python App Deployed on Kubernetes Cluster](day-64-fix-python-app-deployed-on-kubernetes-cluster.md)
 * [Day 65: Deploy Redis Deployment on Kubernetes](day-65-deploy-redis-deployment-on-kubernetes.md)
+* [Day 66: Deploy MySQL on Kubernetes](day-66-deploy-mysql-on-kubernetes.md)
