@@ -161,3 +161,7 @@ spec:
     emptyDir: {}
 thor@jump-host ~$ 
 ```
+
+
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
