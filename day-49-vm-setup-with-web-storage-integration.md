@@ -33,7 +33,252 @@ The VM should securely download the `index.html` blob directly from the designat
 
 * Verify that the Nginx web server on the **client host** serves the `index.html` file correctly when accessing the VM's public IP address.
 
-<br>
+
+
+***
+
+## Azure VM Setup with Secure Storage Integration
+
+### Overview
+
+This lab demonstrates how to securely host a static web application using an Azure Virtual Machine and Azure Storage Account. The static content (`index.html`) is stored in a private blob container and retrieved by the VM during deployment. The VM uses Nginx to serve the content locally.
+
+This approach ensures that only required assets are exposed, while the main application codebase remains secure and isolated.
+
+***
+
+### Architecture
+
+```
+Azure Storage Account (Private Blob)
+        ↓
+Secure Access (Account Key / CLI)
+        ↓
+Azure Virtual Machine (Nginx)
+        ↓
+Public Access via VM IP
+```
+
+***
+
+### Prerequisites
+
+* Azure CLI installed
+* Active Azure subscription
+* SSH key pair (`~/.ssh/id_rsa.pub`)
+
+***
+
+### 1. Create Virtual Network and Subnet
+
+```bash
+az network vnet create \
+  --resource-group kml_rg_main-ef25ed6a4bba4d55 \
+  --name nautilus-vnet \
+  --address-prefix 10.0.0.0/16 \
+  --subnet-name nautilus-subnet \
+  --subnet-prefix 10.0.1.0/24 \
+  --location eastus
+```
+
+***
+
+### 2. Create Storage Account
+
+```bash
+az storage account create \
+  --name nautilusstor4379 \
+  --resource-group kml_rg_main-ef25ed6a4bba4d55 \
+  --location eastus \
+  --sku Standard_LRS \
+  --kind StorageV2 \
+  --allow-blob-public-access false
+```
+
+***
+
+### 3. Configure Network Access (Temporary for Upload)
+
+Enable public access temporarily:
+
+```bash
+az storage account update \
+  --name nautilusstor4379 \
+  --public-network-access Enabled
+```
+
+***
+
+### 4. Create Blob Container
+
+```bash
+az storage container create \
+  --account-name nautilusstor4379 \
+  --name nautilus-container \
+  --auth-mode login
+```
+
+***
+
+### 5. Upload index.html to Blob Storage
+
+Retrieve storage account key:
+
+```bash
+az storage account keys list \
+  --account-name nautilusstor4379 \
+  --query "[0].value" \
+  -o tsv
+```
+
+Upload file:
+
+```bash
+az storage blob upload \
+  --account-name nautilusstor4379 \
+  --account-key <ACCOUNT_KEY> \
+  --container-name nautilus-container \
+  --name index.html \
+  --file /root/index.html
+```
+
+***
+
+### 6. Secure Storage Account
+
+Disable public access after upload:
+
+```bash
+az storage account update \
+  --name nautilusstor4379 \
+  --public-network-access Disabled
+```
+
+***
+
+### 7. Create Virtual Machine
+
+```bash
+az vm create \
+  --resource-group kml_rg_main-ef25ed6a4bba4d55 \
+  --name nautilus-vm \
+  --image Ubuntu2204 \
+  --size Standard_B1s \
+  --admin-username azureuser \
+  --ssh-key-values ~/.ssh/id_rsa.pub \
+  --vnet-name nautilus-vnet \
+  --subnet nautilus-subnet \
+  --public-ip-sku Basic \
+  --security-type Standard \
+  --os-disk-sku Standard_LRS
+```
+
+***
+
+### 8. Open HTTP Port
+
+```bash
+az vm open-port \
+  --resource-group kml_rg_main-ef25ed6a4bba4d55 \
+  --name nautilus-vm \
+  --port 80
+```
+
+***
+
+### 9. Connect to Virtual Machine
+
+Retrieve public IP:
+
+```bash
+az vm list-ip-addresses \
+  --name nautilus-vm \
+  --output table
+```
+
+SSH into VM:
+
+```bash
+ssh azureuser@<PUBLIC_IP>
+```
+
+***
+
+### 10. Install and Configure Nginx
+
+```bash
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
+***
+
+### 11. Install Azure CLI on VM
+
+```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+
+***
+
+### 12. Download Blob to Web Root
+
+```bash
+sudo az storage blob download \
+  --account-name nautilusstor4379 \
+  --account-key <ACCOUNT_KEY> \
+  --container-name nautilus-container \
+  --name index.html \
+  --file /var/www/html/index.html
+```
+
+***
+
+### 13. Restart Nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+***
+
+### 14. Verification
+
+Access the application in a browser:
+
+```
+http://<PUBLIC_IP>
+```
+
+The uploaded `index.html` file should be displayed.
+
+***
+
+### Security Considerations
+
+* Blob storage is kept private; public access is disabled.
+* Only required static content is stored in the storage account.
+* Full application code is not exposed to the VM.
+* Account key is used for controlled access.
+* Public network access is enabled only temporarily during upload.
+
+***
+
+### Key Learnings
+
+* Separation of storage and compute improves security and flexibility.
+* Azure Storage can act as a secure artifact repository.
+* Virtual Machines can dynamically fetch required assets during deployment.
+* Network rules and RBAC both influence storage access behavior.
+* Minimal VM configuration helps avoid deployment failures in restricted environments.
+
+***
+
+### Conclusion
+
+This lab demonstrates a secure and modular deployment pattern where static content is stored independently and served via a compute layer. This approach aligns with best practices for cloud security, maintainability, and controlled access.
 
 ```bash
 
