@@ -1,5 +1,33 @@
 # Day 36: Load Balancing EC2 Instances with Application Load Balancer
 
+**Question:**
+
+You are tasked with deploying a web application on AWS using an EC2 instance and an Application Load Balancer (ALB). The workflow involves launching an EC2 instance with Ubuntu 22.04, installing Nginx via user data, configuring security groups, and ensuring the instance is publicly accessible through the ALB.
+
+After performing the initial setup, you notice the following:
+
+1. The EC2 instance is running and Nginx is installed.
+2. The instance is registered to the target group of the ALB.
+3. The target group reports the instance as `healthy`.
+4. Attempting to access the ALB via its DNS name using a browser or `curl` results in a timeout or no response.
+
+Upon investigation:
+
+* The instance resides in `us-east-1f`.
+* The ALB is configured for `us-east-1d` and `us-east-1e`.
+* Security groups for the ALB and EC2 are configured, with HTTP (port 80) allowed.
+* Subnets for the ALB have `MapPublicIpOnLaunch` set to `true`.
+
+You are asked to:
+
+1. Identify the root cause why the ALB is not serving traffic despite the target being healthy.
+2. Describe the steps needed to fix the issue, including any subnet, Availability Zone, or instance adjustments.
+3. Provide the sequence of AWS CLI commands to relaunch the EC2 instance in the correct subnet, register it with the target group, and verify ALB connectivity.
+
+Include all relevant outputs in your response to demonstrate the solution.
+
+***
+
 ## AWS EC2 + ALB Setup with Nginx
 
 This document details the steps to launch an EC2 instance, configure security groups, attach it to an Application Load Balancer (ALB), and verify HTTP access.
