@@ -745,7 +745,7 @@ During `apt install`, Ubuntu displayed a dialog asking which services to restart
 
 _Lab completed on 2026-03-27 | Azure Region: East US | Platform: KodeKloud_
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 

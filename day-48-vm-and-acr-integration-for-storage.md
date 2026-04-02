@@ -719,8 +719,8 @@ The critical mistake to avoid is running `docker run` on the azure-client instea
 
 _Lab completed on 2026-04-01 | Azure Region: East US | Platform: KodeKloud_
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
