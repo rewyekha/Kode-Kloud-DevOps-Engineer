@@ -68,3 +68,4 @@
 * [Day 64: Fix Python App Deployed on Kubernetes Cluster](day-64-fix-python-app-deployed-on-kubernetes-cluster.md)
 * [Day 65: Deploy Redis Deployment on Kubernetes](day-65-deploy-redis-deployment-on-kubernetes.md)
 * [Day 66: Deploy MySQL on Kubernetes](day-66-deploy-mysql-on-kubernetes.md)
+* [Day 67: Deploy Guest Book App on Kubernetes](day-67-deploy-guest-book-app-on-kubernetes.md)
