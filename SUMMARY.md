@@ -37,3 +37,4 @@
 ## Kubernetes Level - 2
 
 * [Kubernetes Shared Volumes](kubernetes-level-2/kubernetes-shared-volumes.md)
+* [Kubernetes Sidecar Containers](kubernetes-level-2/kubernetes-sidecar-containers.md)
