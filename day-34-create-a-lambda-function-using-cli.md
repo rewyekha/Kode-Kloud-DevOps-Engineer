@@ -443,4 +443,4 @@ This allows Lambda to write execution logs to CloudWatch — which is confirmed 
 
 _Lab completed on 2026-03-28 | AWS Region: us-east-1 | Runtime: python3.9 | Platform: KodeKloud_
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
