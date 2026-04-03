@@ -48,3 +48,4 @@
 * [Day 47: SQL Database Migration and Setup](day-47-sql-database-migration-and-setup.md)
 * [Day 48: VM and ACR Integration for Storage](day-48-vm-and-acr-integration-for-storage.md)
 * [Day 49: VM Setup with Web Storage Integration](day-49-vm-setup-with-web-storage-integration.md)
+* [Day 50: VM Setup and Configuration for Azure Application Gateway](day-50-vm-setup-and-configuration-for-azure-application-gateway.md)
