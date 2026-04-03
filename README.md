@@ -1,12 +1,9 @@
 ---
 Description: Created by Reyas Khan
-description: Created by Reyas Khan
 ---
 
 # SUMMARY
-
 {% embed url="https://engineer.kodekloud.com/certificate-verification/15eb626f-6831-405a-867c-6c256ad48229" %}
-
 <figure><img src=".gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 ## Table of contents
