@@ -1,7 +1,15 @@
 ---
 Description: Created by Reyas Khan
+description: Created by Reyas Khan
 ---
-# Table of contents
+
+# SUMMARY
+
+{% embed url="https://engineer.kodekloud.com/certificate-verification/15eb626f-6831-405a-867c-6c256ad48229" %}
+
+<figure><img src=".gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+
+## Table of contents
 
 * [Day 1 - Azure SSH Key Creation](day-1-azure-ssh-key-creation.md)
 * [Day 2 - creating an Azure Virtual Machine (VM)](day-2-creating-an-azure-virtual-machine-vm.md)
