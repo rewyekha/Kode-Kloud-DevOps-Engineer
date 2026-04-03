@@ -1,11 +1,9 @@
 ---
-description: Created by Reyas Khan
+Description: Created by Reyas Khan
 ---
+# Table of contents
 
-# SUMMARY
-## Table of contents
-
-* [Day 1 - Azure SSH Key Creation](Day-1-Azure-SSH-Key-Creation.md)
+* [Day 1 - Azure SSH Key Creation](day-1-azure-ssh-key-creation.md)
 * [Day 2 - creating an Azure Virtual Machine (VM)](day-2-creating-an-azure-virtual-machine-vm.md)
 * [Day 3: Create VM using Azure CLI](day-3-create-vm-using-azure-cli.md)
 * [Day 4: Create a Virtual Network (VNet) in Azure](day-4-create-a-virtual-network-vnet-in-azure.md)
@@ -36,3 +34,20 @@ description: Created by Reyas Khan
 * [Day 31: Deploying and Managing a Web Application](day-31-deploying-and-managing-a-web-application.md)
 * [Day 32: Synchronizing Containers Using the CLI](day-32-synchronizing-containers-using-the-cli.md)
 * [Day 33: Integrating Virtual Machines with Application Load Balancer](day-33-integrating-virtual-machines-with-application-load-balancer.md)
+* [Day 34: Enabling Internet Connectivity for Virtual Machines](day-34-enabling-internet-connectivity-for-virtual-machines.md)
+* [Day 35: Configuring Virtual Network Peering](day-35-configuring-virtual-network-peering.md)
+* [Day 36: Managing Storage Lifecycle in Azure](day-36-managing-storage-lifecycle-in-azure.md)
+* [Day 37: Setting Up MySQL on a Virtual Machine in Azure](day-37-setting-up-mysql-on-a-virtual-machine-in-azure.md)
+* [Day 38: Running Containers on Azure Virtual Machines](day-38-running-containers-on-azure-virtual-machines.md)
+* [Day 39: Deploying a Static Website Using Containers on Azure](day-39-deploying-a-static-website-using-containers-on-azure.md)
+* [Day 40: Managing Secrets with Azure Key Vault](day-40-managing-secrets-with-azure-key-vault.md)
+* [Day 41: Working with Azure Table Storage](day-41-working-with-azure-table-storage.md)
+* [Day 42: Backup and Delete Azure Storage Blob Container](day-42-backup-and-delete-azure-storage-blob-container.md)
+* [Day 43: Configuring Azure VM with Application Gateway](day-43-configuring-azure-vm-with-application-gateway.md)
+* [Day 44: Integrating Azure Event Hub with Virtual Machines](day-44-integrating-azure-event-hub-with-virtual-machines.md)
+* [Day 45: Azure Kubernetes Service (AKS) Setup and Management](day-45-azure-kubernetes-service-aks-setup-and-management.md)
+* [Day 46: EventHub to Blob Storage Integration Setup](day-46-eventhub-to-blob-storage-integration-setup.md)
+* [Day 47: SQL Database Migration and Setup](day-47-sql-database-migration-and-setup.md)
+* [Day 48: VM and ACR Integration for Storage](day-48-vm-and-acr-integration-for-storage.md)
+* [Day 49: VM Setup with Web Storage Integration](day-49-vm-setup-with-web-storage-integration.md)
+* [Day 50: VM Setup and Configuration for Azure Application Gateway](day-50-vm-setup-and-configuration-for-azure-application-gateway.md)
