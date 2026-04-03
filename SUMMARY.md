@@ -38,3 +38,4 @@
 
 * [Kubernetes Shared Volumes](kubernetes-level-2/kubernetes-shared-volumes.md)
 * [Kubernetes Sidecar Containers](kubernetes-level-2/kubernetes-sidecar-containers.md)
+* [Deploy Nginx Web Server on Kubernetes Cluster](kubernetes-level-2/deploy-nginx-web-server-on-kubernetes-cluster.md)
