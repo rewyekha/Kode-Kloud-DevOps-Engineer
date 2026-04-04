@@ -37,3 +37,4 @@
 * [Day 34: Create a Lambda Function Using CLI](day-34-create-a-lambda-function-using-cli.md)
 * [Day 35: Deploying and Managing Applications on AWS](day-35-deploying-and-managing-applications-on-aws-1.md)
 * [Day 36: Load Balancing EC2 Instances with Application Load Balancer](day-36-load-balancing-ec2-instances-with-application-load-balancer.md)
+* [Day 37: Managing EC2 Access with S3 Role-based Permissions](day-37-managing-ec2-access-with-s3-role-based-permissions.md)
