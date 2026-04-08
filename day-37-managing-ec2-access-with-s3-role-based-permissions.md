@@ -433,4 +433,4 @@ aws s3 ls s3://datacenter-s3-254597876252/
 
 All lab objectives have been met. The EC2 instance `datacenter-ec2` is successfully integrated with the private S3 bucket `datacenter-s3-254597876252` via IAM role-based access. No static credentials were used or stored on the instance.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
