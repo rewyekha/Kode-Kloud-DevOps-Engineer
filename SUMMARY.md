@@ -43,3 +43,4 @@
 * [Rolling Updates And Rolling Back Deployments in Kubernetes](kubernetes-level-2/rolling-updates-and-rolling-back-deployments-in-kubernetes.md)
 * [Deploy Jenkins on Kubernetes](kubernetes-level-2/deploy-jenkins-on-kubernetes.md)
 * [Deploy Grafana on Kubernetes Cluster](kubernetes-level-2/deploy-grafana-on-kubernetes-cluster.md)
+* [Deploy Tomcat App on Kubernetes](kubernetes-level-2/deploy-tomcat-app-on-kubernetes.md)
