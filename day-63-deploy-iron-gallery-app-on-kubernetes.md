@@ -444,6 +444,6 @@ Using separate label keys (`run` for the gallery, `db` for the database) is a de
 
 _Lab completed on 2026-03-27 | Cluster: Kubernetes (k3s v1.34.1) | Namespace: iron-namespace-datacenter_
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

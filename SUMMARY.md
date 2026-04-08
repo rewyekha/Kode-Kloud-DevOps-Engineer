@@ -71,3 +71,4 @@
 * [Day 67: Deploy Guest Book App on Kubernetes](day-67-deploy-guest-book-app-on-kubernetes.md)
 * [Day 68: Set Up Jenkins Server](day-68-set-up-jenkins-server.md)
 * [Day 69: Install Jenkins Plugins](day-69-install-jenkins-plugins.md)
+* [Day 70: Configure Jenkins User Access](day-70-configure-jenkins-user-access.md)
