@@ -260,4 +260,4 @@ You should now see Max’s commit in master branch history.
 
 ***
 
-<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
