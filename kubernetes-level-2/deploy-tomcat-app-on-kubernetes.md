@@ -177,6 +177,6 @@ The application is now accessible via NodePort `32227` on any cluster node.
 This document is ready to be copied directly into GitBook or any Markdown-supported documentation platform. It maintains a clean, professional tone with complete terminal outputs for audit and reference purposes.
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
