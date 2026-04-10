@@ -46,3 +46,4 @@
 * [Deploy Tomcat App on Kubernetes](kubernetes-level-2/deploy-tomcat-app-on-kubernetes.md)
 * [Deploy Node App on Kubernetes](kubernetes-level-2/deploy-node-app-on-kubernetes.md)
 * [Troubleshoot Deployment issues in Kubernetes](kubernetes-level-2/troubleshoot-deployment-issues-in-kubernetes.md)
+* [Fix issue with LAMP Environment in Kubernetes](kubernetes-level-2/fix-issue-with-lamp-environment-in-kubernetes.md)
