@@ -39,4 +39,4 @@
 * [Day 36: Load Balancing EC2 Instances with Application Load Balancer](day-36-load-balancing-ec2-instances-with-application-load-balancer.md)
 * [Day 37: Managing EC2 Access with S3 Role-based Permissions](day-37-managing-ec2-access-with-s3-role-based-permissions.md)
 * [Day 38: Deploying Containerized Applications with Amazon ECS](day-38-deploying-containerized-applications-with-amazon-ecs.md)
-* [Day 39: Hosting a Static Website on AWS S3](day-39-hosting-a-static-website-on-aws-s3.md)
+* [Day 39: Hosting a Static Website on AWS S3](page-1-1.md)
