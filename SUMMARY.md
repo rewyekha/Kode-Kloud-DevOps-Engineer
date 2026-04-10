@@ -73,3 +73,4 @@
 * [Day 69: Install Jenkins Plugins](day-69-install-jenkins-plugins.md)
 * [Day 70: Configure Jenkins User Access](day-70-configure-jenkins-user-access.md)
 * [Day 71: Configure Jenkins Job for Package Installation](day-71-configure-jenkins-job-for-package-installation.md)
+* [Day 72:](day-72.md)
