@@ -8,202 +8,211 @@ The deployment name is `redis-deployment`. The pods are not in running state rig
 
 
 
-***
+````markdown
+# Nautilus Kubernetes: Fix Broken Redis Deployment
 
-\# Nautilus Kubernetes: Fix Broken Redis Deployment\
-**Platform:** KodeKloud **Topic:** Kubernetes, Troubleshooting, Deployment, ConfigMap **Difficulty:** Intermediate **Lab Type:** Troubleshooting \
-\---\
-\## Table of Contents\
-1\. #lab-overview2. Lab Objectives3. #prerequisites4. #problem-statement5. Troubleshooting Process6. #root-cause-analysis7. #resolution-steps8. #verification9. #lab-completion-status10. #key-learnings11. #common-mistakes--prevention\
-\---\
-\## Lab Overview\
-The Nautilus DevOps team maintains a Redis application deployed on a Kubernetes cluster. Recent configuration changes introduced errors that caused the Redis deployment to break. As a result, the Redis pod remained stuck in a non‑running state.\
-The goal of this lab was to identify the misconfiguration, correct the deployment, and restore the Redis pod to a healthy **Running** state.\
-\---\
-\## Lab Objectives\
-\- Diagnose why the Redis pod is not starting- Identify configuration errors in the Deployment specification- Fix the Deployment so the pod becomes **Running (1/1 Ready)**- Verify that the Redis application is restored\
-\---\
-\## Prerequisites\
-\- Access to the jump host with `kubectl` configured- A functioning Kubernetes cluster- Basic knowledge of Kubernetes deployments and ConfigMaps\
-\---\
-\## Problem Statement\
-\### Deployment Status\
-\`\`\`bashkubectl get deployment redis-deployment
+**Platform:** KodeKloud | **Topic:** Kubernetes, Troubleshooting, Deployment, ConfigMap  
+**Difficulty:** Intermediate | **Lab Type:** Troubleshooting  
 
-**Output**
+## Table of Contents
+
+1. [Lab Overview](#lab-overview)
+2. [Lab Objectives](#lab-objectives)
+3. [Prerequisites](#prerequisites)
+4. [Initial Issue](#initial-issue)
+5. [Troubleshooting Steps](#troubleshooting-steps)
+6. [Root Cause Analysis](#root-cause-analysis)
+7. [Solution Steps](#solution-steps)
+8. [Verification](#verification)
+9. [Lab Complete](#lab-complete)
+10. [Key Learnings](#key-learnings)
+11. [Common Mistakes & Prevention](#common-mistakes--prevention)
+
+## Lab Overview
+
+The Nautilus DevOps team had a working Redis deployment on the Kubernetes cluster. A team member made changes that broke the application. The `redis-deployment` was stuck with pods in **Pending/ContainerCreating** state. The task was to identify the issue and restore the Redis pod to a healthy **Running** state.
+
+## Lab Objectives
+
+- Diagnose why the Redis pod is not running
+- Identify configuration errors in the Deployment
+- Fix the Deployment so the pod reaches **Running** state (1/1 Ready)
+- Ensure the Redis application is back online
+
+## Prerequisites
+
+- Access to the jump-host with `kubectl` pre-configured
+- Working Kubernetes cluster (default namespace)
+
+## Initial Issue
+
+```bash
+kubectl get deployment redis-deployment
+````
+
+**Output:**
 
 ```
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 redis-deployment   0/1     1            0           3m
 ```
 
-#### Pod Status
-
+```bash
 kubectl get pods
+```
 
-**Output**
+**Output:**
 
 ```
 NAME                                      READY   STATUS             RESTARTS   AGE
 redis-deployment-795ffcb56c-jjsrb         0/1     ContainerCreating   0          3m
 ```
 
-The Redis pod failed to reach a running state and was stuck during container creation.
+### Troubleshooting Steps
 
-***
+#### Step 1: Describe the Pod to see detailed errors
 
-### Troubleshooting Process
+```bash
+kubectl describe pod $(kubectl get pods -l app=redis -o jsonpath="{.items[0].metadata.name}")
+```
 
-#### Step 1: Describe the Pod
-
-To identify the failure reason, the pod was described to inspect events and errors.
-
-kubectl describe pod $(kubectl get pods -l app=redis -o jsonpath="{.items\[0].metadata.name}")
-
-**Relevant Event**
+**Key Error Found in Events:**
 
 ```
-Warning  FailedMount  ...  MountVolume.SetUp failed for volume "config" :
+Warning  FailedMount  ...  MountVolume.SetUp failed for volume "config" : 
 configmap "redis-cofig" not found
 ```
 
-***
+#### Step 2: Check the Deployment YAML
 
-#### Step 2: Inspect the Deployment Configuration
-
+```bash
 kubectl get deployment redis-deployment -o yaml
+```
 
-Two configuration issues were identified in the deployment:
+We observed two critical issues in the spec:
 
-1. Incorrect container image name
-   * `redis:alpin` (invalid)
-2. Incorrect ConfigMap reference
-   * `redis-cofig` (non‑existent resource)
-
-***
+1. Wrong image: `redis:alpin` (should be `redis:alpine`)
+2. Wrong ConfigMap name: `redis-cofig` (should be `redis-config`)
 
 ### Root Cause Analysis
 
-The Redis deployment failed due to configuration typos.
+The deployment had two configuration mistakes:
 
-| Configuration Area | Incorrect Value | Correct Value  | Impact               |
-| ------------------ | --------------- | -------------- | -------------------- |
-| Container Image    | `redis:alpin`   | `redis:alpine` | Image pull error     |
-| ConfigMap Name     | `redis-cofig`   | `redis-config` | Volume mount failure |
+| Issue               | Wrong Value   | Correct Value  | Impact                                               |
+| ------------------- | ------------- | -------------- | ---------------------------------------------------- |
+| Redis Image         | `redis:alpin` | `redis:alpine` | Image pull would eventually fail                     |
+| ConfigMap Reference | `redis-cofig` | `redis-config` | Volume mount failed → Pod stuck in ContainerCreating |
 
-The **primary blocking issue** was the incorrect ConfigMap name, which caused the pod to fail during volume mounting (`FailedMount`).
+The main blocker was the **typo in ConfigMap name**, causing `FailedMount`.
 
-***
-
-### Resolution Steps
+### Solution Steps
 
 #### Step 1: Edit the Deployment
 
+```bash
 kubectl edit deployment redis-deployment
+```
 
-#### Step 2: Apply Configuration Fixes
+**Changes Made Inside the Editor:**
 
-**1. Fix the Redis image**
+1.  **Corrected the image:**
 
-\# Beforeimage: redis:alpin\
-\# Afterimage: redis:alpine
+    ```yaml
+    # From
+    image: redis:alpin
+    # To
+    image: redis:alpine
+    ```
+2.  **Corrected the ConfigMap name:**
 
-**2. Fix the ConfigMap reference**
+    ```yaml
+    # From
+    name: redis-cofig
+    # To
+    name: redis-config
+    ```
 
-\# Beforename: redis-cofig\
-\# Aftername: redis-config
+After editing, saved and exited using `:wq`
 
-The changes were saved and exited using `:wq`.
+#### Step 2: Kubernetes automatically rolled out the changes
 
-Kubernetes automatically triggered a rollout after the deployment specification was updated.
-
-***
+Kubernetes detected the change and created a new ReplicaSet + new Pod.
 
 ### Verification
 
-#### Pod Status Check
+#### Check Pod Status
 
+```bash
 kubectl get pods
+```
 
-**Output**
+**Final Output:**
 
 ```
 NAME                                      READY   STATUS    RESTARTS   AGE
 redis-deployment-5476b4ddd6-45qb6         1/1     Running   0          2m
 ```
 
-***
+#### Detailed Pod Description
 
-#### Pod Description Validation
-
+```bash
 kubectl describe pod redis-deployment-5476b4ddd6-45qb6
+```
 
-**Confirmed Results**
+**Key Confirmations:**
 
-* Pod status: **Running**
-* Container image: `redis:alpine`
-* ConfigMap `redis-config` mounted successfully
-* No `FailedMount` or error events present
-
-***
+* Status: **Running**
+* Ready: **True**
+* Container Image: `redis:alpine`
+* Volume "config" mounted from ConfigMap `redis-config`
+* No FailedMount errors
 
 #### Deployment Status
 
+```bash
 kubectl get deployment redis-deployment
+```
 
-**Output**
+**Output:**
 
 ```
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 redis-deployment   1/1     1            1           10m
 ```
 
-***
+### Lab Complete
 
-### Lab Completion Status
+**Requirement Status**
 
-| Requirement                 | Status |
-| --------------------------- | ------ |
-| Pod running successfully    | ✅      |
-| Deployment ready (1/1)      | ✅      |
-| Correct Redis image         | ✅      |
-| Correct ConfigMap reference | ✅      |
+| Requirement                    | Status |
+| ------------------------------ | ------ |
+| Pod in Running state           | ✅ Done |
+| Deployment ready (1/1)         | ✅ Done |
+| Correct image (`redis:alpine`) | ✅ Done |
+| Correct ConfigMap reference    | ✅ Done |
 
-The Redis application has been fully restored.
-
-***
+The Redis application is now restored and running successfully.
 
 ### Key Learnings
 
-* `kubectl describe pod` is the most effective command for identifying pod startup issues.
-* Typos in ConfigMap, Secret, or volume references commonly result in `FailedMount` errors.
-* `kubectl edit` allows quick fixes for small deployment issues.
-* Any update to a Deployment spec automatically triggers a rollout.
-* Image tag validation is essential to avoid runtime failures.
-
-***
+* Always check `kubectl describe pod` when a pod is not Running — it shows the real root cause.
+* Typo in resource names (ConfigMap, Secret, PVC, etc.) is a very common cause of `FailedMount`.
+* `kubectl edit` is a quick way to fix small configuration issues in Deployments.
+* Kubernetes automatically rolls out changes when the Deployment spec is updated.
+* Image name typos (`alpin` vs `alpine`) can also cause failures later.
 
 ### Common Mistakes & Prevention
 
-* **Incorrect resource names**\
-  Always ensure ConfigMaps, Secrets, and PVC names match exactly.
-* **Invalid image tags**\
-  Verify container images exist in the registry.
-* **Ignoring pod events**\
-  Always inspect events when pods are not running.
-* **Not saving deployment edits**\
-  Confirm changes are saved when exiting `kubectl edit`.
+* **Typo in ConfigMap/Secret name** → Always double-check resource references.
+* Using wrong image tags → Verify image exists on Docker Hub or registry.
+* Not checking Events in `describe pod` → This is the fastest way to troubleshoot.
+* Forgetting to save `:wq` after `kubectl edit`.
 
-**Tip:** Use the following command to monitor deployment progress:
-
-kubectl rollout status deployment/redis-deployment
+**Pro Tip:** After editing a deployment, use `kubectl rollout status deployment/<name>` to monitor the rollout.
 
 ***
 
-**Lab Completed On:** April 10, 2026\
-**Platform:** KodeKloud Kubernetes\
-**Author:** Reyas Khan
-
-
+**Lab Completed on:** April 10, 2026\
+**Platform:** KodeKloud Kubernetes Lab<br>
 
 <figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
