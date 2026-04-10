@@ -45,3 +45,4 @@
 * [Deploy Grafana on Kubernetes Cluster](kubernetes-level-2/deploy-grafana-on-kubernetes-cluster.md)
 * [Deploy Tomcat App on Kubernetes](kubernetes-level-2/deploy-tomcat-app-on-kubernetes.md)
 * [Deploy Node App on Kubernetes](kubernetes-level-2/deploy-node-app-on-kubernetes.md)
+* [Troubleshoot Deployment issues in Kubernetes](kubernetes-level-2/troubleshoot-deployment-issues-in-kubernetes.md)
