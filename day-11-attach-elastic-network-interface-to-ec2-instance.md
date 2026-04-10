@@ -23,7 +23,7 @@ Use below given AWS Credentials. (You can run the `showcreds` command on `aws-cl
 
 * Create the resources only in `us-east-1` region.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Attaching an Existing ENI to an EC2 Instance (GUI & CLI)
 
