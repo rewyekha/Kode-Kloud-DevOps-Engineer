@@ -25,3 +25,9 @@
 * [Weight: 10](ansible-cert/weight-10-5.md)
 * [Weight: 10](ansible-cert/weight-10-6.md)
 * [Weight: 10](ansible-cert/weight-10-7.md)
+
+## ANSIBLE LEVEL 2
+
+***
+
+* [Ansible Ping Module Usage](ansible-ping-module-usage.md)
