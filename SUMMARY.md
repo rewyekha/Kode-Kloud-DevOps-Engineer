@@ -75,3 +75,4 @@
 * [Day 71: Configure Jenkins Job for Package Installation](day-71-configure-jenkins-job-for-package-installation.md)
 * [Day 72:](day-72.md)
 * [Day 40: Troubleshooting Internet Accessibility for an EC2-Hosted Application](day-40-troubleshooting-internet-accessibility-for-an-ec2-hosted-application.md)
+* [Day 73: Jenkins Scheduled Jobs](day-73-jenkins-scheduled-jobs.md)
