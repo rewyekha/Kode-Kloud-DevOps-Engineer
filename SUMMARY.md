@@ -31,3 +31,4 @@
 ***
 
 * [Ansible Ping Module Usage](ansible-ping-module-usage.md)
+* [Ansible Install Package](ansible-install-package.md)
