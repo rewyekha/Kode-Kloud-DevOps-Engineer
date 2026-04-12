@@ -33,3 +33,5 @@
 * [Ansible Ping Module Usage](ansible-ping-module-usage.md)
 * [Ansible Install Package](ansible-install-package.md)
 * [Ansible Archive Module](ansible-archive-module.md)
+* [Ansible Unarchive Module](ansible-unarchive-module.md)
+* [Ansible Blockinfile Module](ansible-blockinfile-module.md)
