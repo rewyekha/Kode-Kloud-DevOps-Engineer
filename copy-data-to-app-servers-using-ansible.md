@@ -157,4 +157,4 @@ ansible-playbook -i inventory playbook.yml
 The Ansible inventory and playbook were successfully created and executed from the jump host.\
 The task meets all validation requirements and is ready for production or CI/CD integration.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

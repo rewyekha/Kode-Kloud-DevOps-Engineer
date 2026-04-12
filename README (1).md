@@ -7,7 +7,7 @@ An Ansible playbook needs completion on the `jump host`, where a team member lef
 
 `Note:` Validation will run the playbook using the command `ansible-playbook -i inventory playbook.yml`. Ensure the playbook works without any additional arguments.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Ansible Playbook Completion – App Server 3
 
