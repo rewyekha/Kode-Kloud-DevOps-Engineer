@@ -40,5 +40,6 @@
 * [Day 37: Managing EC2 Access with S3 Role-based Permissions](day-37-managing-ec2-access-with-s3-role-based-permissions.md)
 * [Day 38: Deploying Containerized Applications with Amazon ECS](day-38-deploying-containerized-applications-with-amazon-ecs.md)
 * [Day 39: Hosting a Static Website on AWS S3](page-1-1.md)
+* [Day 40: Troubleshooting Internet Accessibility for an EC2-Hosted Application](day-40-troubleshooting-internet-accessibility-for-an-ec2-hosted-application.md)
 * [Day 41: Securing Data with AWS KMS](day-41-securing-data-with-aws-kms.md)
 * [Day 42: Building and Managing NoSQL Databases with AWS DynamoDB](day-42-building-and-managing-nosql-databases-with-aws-dynamodb.md)
