@@ -10,3 +10,7 @@
 ## Git Level 2
 
 * [Git Install and Create Repository](git-level-2/git-install-and-create-repository.md)
+* [Create Git Branches](git-level-2/create-git-branches.md)
+* [Git Merge Branches](git-level-2/git-merge-branches.md)
+* [Git Manage Remotes](git-level-2/git-manage-remotes.md)
+* [Git Revert Some Changes](git-level-2/git-revert-some-changes.md)
