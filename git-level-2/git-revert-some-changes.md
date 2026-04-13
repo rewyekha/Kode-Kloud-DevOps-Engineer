@@ -5,7 +5,7 @@ The Nautilus application development team was working on a git repository `/usr/
 1. In `/usr/src/kodekloudrepos/media` git repository, revert the latest commit `( HEAD )` to the previous commit (JFYI the previous commit hash should be with `initial commit` message ).
 2. Use `revert media` message (please use all small letters for commit message) for the new revert commit.
 
-```bash
+```tex
 thor@jumphost ~$ ssh natasha@ststor01
 The authenticity of host 'ststor01 (10.244.195.53)' can't be established.
 ED25519 key fingerprint is SHA256:yEyN8qvzhNxfcKVE+H05zwQPmQMKCXj4JyGWuOP1HIg.
@@ -59,3 +59,5 @@ bef565e add data.txt file
 a683aab initial commit
 [natasha@ststor01 media]$ 
 ```
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
