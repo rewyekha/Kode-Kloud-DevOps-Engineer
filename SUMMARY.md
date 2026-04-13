@@ -41,3 +41,4 @@
 * [Day 38: Deploying Containerized Applications with Amazon ECS](day-38-deploying-containerized-applications-with-amazon-ecs.md)
 * [Day 39: Hosting a Static Website on AWS S3](page-1-1.md)
 * [Day 41: Securing Data with AWS KMS](day-41-securing-data-with-aws-kms.md)
+* [Day 42: Building and Managing NoSQL Databases with AWS DynamoDB](day-42-building-and-managing-nosql-databases-with-aws-dynamodb.md)
