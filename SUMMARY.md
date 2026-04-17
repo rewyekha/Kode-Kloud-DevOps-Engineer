@@ -76,3 +76,4 @@
 * [Day 72:](day-72.md)
 * [Day 40: Troubleshooting Internet Accessibility for an EC2-Hosted Application](day-40-troubleshooting-internet-accessibility-for-an-ec2-hosted-application.md)
 * [Day 73: Jenkins Scheduled Jobs](day-73-jenkins-scheduled-jobs.md)
+* [Day 74: Jenkins Database Backup Job](day-74-jenkins-database-backup-job.md)

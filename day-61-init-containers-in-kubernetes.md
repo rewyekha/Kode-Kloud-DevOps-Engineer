@@ -411,4 +411,4 @@ This returns only pods that have the label `app=ic-devops` — which matches the
 
 _Lab completed on 2026-03-26 | Cluster: Kubernetes | Namespace: default | Pod: ic-deploy-devops-55f857555f-622lh_
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
