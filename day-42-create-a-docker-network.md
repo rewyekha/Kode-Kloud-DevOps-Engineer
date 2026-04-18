@@ -1,5 +1,7 @@
 # Day 42: Create a Docker Network
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team needs to set up several docker environments for different applications. One of the team members has been assigned a ticket where he has been asked to create some docker networks to be used later. Complete the task based on the following ticket description:
 
 a. Create a docker network named as `media` on App Server `1` in `Stratos DC`.
@@ -115,9 +117,7 @@ The Docker network **`media`** was successfully created with:
 This network can now be used by Docker containers for application deployment.
 
 
-
 <figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
-
 
 
 ## **Level 2**
@@ -129,7 +129,6 @@ a. Create a docker network named as `beta` on App Server `3` in `Stratos DC`.
 b. Configure it to use `bridge` drivers.
 
 c. Set it to use subnet `10.10.1.0/24` and iprange `10.10.1.0/24`.
-
 
 
 ```bash
@@ -187,3 +186,7 @@ bcb73a00216c   beta      bridge    local
 ```
 
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

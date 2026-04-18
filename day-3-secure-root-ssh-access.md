@@ -1,5 +1,7 @@
 # Day 3: Secure Root SSH Access
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Following security audits, the `xFusionCorp Industries` security team has rolled out new protocols, including the restriction of direct root SSH login.\
 [Your task is to disable direct SSH root login on all app servers within the `Stratos Datacenter`.](#user-content-fn-1)[^1]
 
@@ -9,23 +11,23 @@ Access these servers via the **jump host** (using user **thor** and password **m
 
 #### Steps to Follow
 
-1.  From your local terminal or the KodeKloud lab terminal, SSH into each app server using the provided credentials:
+1. From your local terminal or the KodeKloud lab terminal, SSH into each app server using the provided credentials:
 
-    *   For **stapp01**:
+    * For **stapp01**:
 
         ```
         ssh tony@172.16.238.10
         ```
 
         (Password: `Ir0nM@n`)
-    *   For **stapp02**:
+    * For **stapp02**:
 
         ```
         ssh steve@172.16.238.11
         ```
 
         (Password: `Am3ric@`)
-    *   For **stapp03**:
+    * For **stapp03**:
 
         ```
         ssh banner@172.16.238.12
@@ -34,14 +36,14 @@ Access these servers via the **jump host** (using user **thor** and password **m
         (Password: `BigGr33n`)
 
     These users (**tony**, **steve**, **banner**) have sudo privileges.
-2.  On **each** app server, gain root access (since editing the SSH config requires elevated privileges):
+2. On **each** app server, gain root access (since editing the SSH config requires elevated privileges):
 
     ```
     sudo su -
     ```
 
     (Or use `sudo` for individual commands.)
-3.  Edit the SSH server configuration file:
+3. Edit the SSH server configuration file:
 
     ```
     vi /etc/ssh/sshd_config
@@ -51,7 +53,7 @@ Access these servers via the **jump host** (using user **thor** and password **m
 
     * Find the line with `PermitRootLogin` (it might be commented with `#` or set to `yes/prohibit-password`).
     * **Uncomment** it if needed (remove the `#`).
-    *   Set it exactly to:
+    * Set it exactly to:
 
         ```
         PermitRootLogin no
@@ -60,7 +62,7 @@ Access these servers via the **jump host** (using user **thor** and password **m
     Save and exit (`:wq` in vi).
 
     **Important**: The file is `/etc/ssh/sshd_config` (server config), **not** `ssh_config` (client config). Many task failures occur due to editing the wrong file.
-4.  Restart the SSH service to apply changes:
+4. Restart the SSH service to apply changes:
 
     ```
     systemctl restart sshd
@@ -75,7 +77,6 @@ Access these servers via the **jump host** (using user **thor** and password **m
 After completing this on all three app servers, submit the task in the KodeKloud interface for validation.
 
 This enhances security by preventing brute-force attacks directly targeting the root account, forcing logins via non-root users with sudo escalation.
-
 
 
 ```
@@ -166,4 +167,8 @@ See system logs and 'systemctl status sshd.service' for details.
 [steve@stapp02 ~]$ 
 ```
 
-[^1]: 
+[^1]:
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

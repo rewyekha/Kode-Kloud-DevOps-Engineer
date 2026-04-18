@@ -1,5 +1,7 @@
 # Day 67: Deploy Guest Book App on Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ### Overview
 
 The Nautilus Application development team has finished development of one of the applications and it is ready for deployment. It is a guestbook application that will be used to manage entries for guests/visitors. As per discussion with the DevOps team, they have finalized the infrastructure that will be deployed on Kubernetes cluster. Below you can find more details about it.
@@ -73,7 +75,6 @@ Create a service named `frontend`.
 
 The **Nautilus Guestbook Application** is designed to manage entries for guests and visitors. The application consists of a **frontend tier** and a **backend Redis tier**, which includes both a **master** and **slave** configuration. The infrastructure is deployed on a Kubernetes cluster.
 
-This documentation provides step-by-step instructions for deploying the application, including all deployments, services, and configuration details.
 
 ***
 
@@ -358,3 +359,6 @@ Replace `<Node-IP>` with the IP of your Kubernetes node where the frontend NodeP
 
 <figure><img src=".gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

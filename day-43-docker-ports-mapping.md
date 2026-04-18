@@ -1,5 +1,7 @@
 # Day 43: Docker Ports Mapping
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team is planning to host an application on a nginx-based container. There are number of tickets already been created for similar tasks. One of the tickets has been assigned to set up a nginx container on `Application Server 3` in `Stratos Datacenter`. Please perform the task as per details mentioned below:
 
 a. Pull `nginx:alpine` docker image on `Application Server 3`.
@@ -23,10 +25,10 @@ The Nautilus DevOps team is planning to host an application on an **nginx-based 
 
 ## Infrastructure Details
 
-| Server Name | Hostname                           | User   | Purpose        |
+| Server Name | Hostname | User | Purpose |
 | ----------- | ---------------------------------- | ------ | -------------- |
-| stapp03     | stapp03.stratos.xfusioncorp.com    | banner | Nautilus App 3 |
-| jump\_host  | jump\_host.stratos.xfusioncorp.com | thor   | Jump Server    |
+| stapp03 | stapp03.stratos.xfusioncorp.com | banner | Nautilus App 3 |
+| jump\_host | jump\_host.stratos.xfusioncorp.com | thor | Jump Server |
 
 ***
 
@@ -153,6 +155,8 @@ Expected output (HTML snippet):
 * nginx service accessible via **host port 6200**.
 
 
-
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

@@ -1,5 +1,7 @@
 # Day 4: Script Execution Permissions
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 In a bid to automate backup processes, the `xFusionCorp Industries` sysadmin team has developed a new bash script named `xfusioncorp.sh`. While the script has been distributed to all necessary servers, it lacks executable permissions on `App Server 3` within the Stratos Datacenter.<br>
 
 **`Your task is to grant executable permissions to the /tmp/xfusioncorp.sh script on App Server 3. Additionally, ensure that all users have the capability to execute it.`**
@@ -8,21 +10,21 @@ To complete this task on **App Server 3** (stapp03), you need to grant executabl
 
 #### Steps to Follow
 
-1.  SSH into **App Server 3**:
+1. SSH into **App Server 3**:
 
     ```bash
     ssh banner@172.16.238.12
     ```
 
     Password: `BigGr33n`
-2.  Once logged in, check the current permissions of the script:
+2. Once logged in, check the current permissions of the script:
 
     ```bash
     ls -l /tmp/xfusioncorp.sh
     ```
 
     (You'll likely see something like `-rw-r--r--` or similar, without the `x`).
-3.  Add **executable permissions for everyone** (owner, group, and others):
+3. Add **executable permissions for everyone** (owner, group, and others):
 
     ```bash
     sudo chmod +x /tmp/xfusioncorp.sh
@@ -38,7 +40,7 @@ To complete this task on **App Server 3** (stapp03), you need to grant executabl
     * `5` = read + execute for group and others
 
     Both commands achieve the same result for this task.
-4.  Verify the permissions have been updated:
+4. Verify the permissions have been updated:
 
     ```bash
     ls -l /tmp/xfusioncorp.sh
@@ -51,7 +53,7 @@ To complete this task on **App Server 3** (stapp03), you need to grant executabl
     ```
 
     The important part is the `x` in owner, group, and others sections (`r-x` for group and others).
-5.  (Optional) Test execution (you don't need to run the script, just confirm permissions are correct):
+5. (Optional) Test execution (you don't need to run the script, just confirm permissions are correct):
 
     ```bash
     /tmp/xfusioncorp.sh
@@ -95,3 +97,7 @@ Administrator. It usually boils down to these three things:
 [banner@stapp03 ~]$ 
 
 ```
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

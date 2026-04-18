@@ -1,5 +1,7 @@
 # Day 46: Deploy an App on Docker Containers
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ## **Lab: Deploy Nautilus App Using Docker Compose**
 
 ### **Lab Objective**
@@ -211,17 +213,17 @@ MariaDB [database_blog]> exit
 
 ***
 
-### **✅ Lab Verification Checklist**
+### ** Lab Verification Checklist**
 
-| Requirement                                         | Status |
+| Requirement | Status |
 | --------------------------------------------------- | ------ |
-| `/opt/itadmin/docker-compose.yml` exists            | ✅      |
-| Two services deployed (`php_blog` and `mysql_blog`) | ✅      |
-| Correct port mapping (3000→80, 3306→3306)           | ✅      |
-| Volume mapping for persistence                      | ✅      |
-| Database `database_blog` created                    | ✅      |
-| Custom user `bloguser` can connect                  | ✅      |
-| Web app accessible via `curl`                       | ✅      |
+| `/opt/itadmin/docker-compose.yml` exists | |
+| Two services deployed (`php_blog` and `mysql_blog`) | |
+| Correct port mapping (3000→80, 3306→3306) | |
+| Volume mapping for persistence | |
+| Database `database_blog` created | |
+| Custom user `bloguser` can connect | |
+| Web app accessible via `curl` | |
 
 ***
 
@@ -236,3 +238,7 @@ docker compose down
 ***
 
 <figure><img src=".gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

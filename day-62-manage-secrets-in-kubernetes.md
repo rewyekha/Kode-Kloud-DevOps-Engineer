@@ -1,5 +1,7 @@
 # Day 62: Manage Secrets in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team is working to deploy some tools in Kubernetes cluster. Some of the tools are licence based so that licence information needs to be stored securely within Kubernetes cluster. Therefore, the team wants to utilize Kubernetes secrets to store those secrets. Below you can find more details about the requirements:
 
 1. We already have a secret key file `blog.txt` under the `/opt/` directory. Create a `generic secret` named `blog`, it should contain the password/license-number present in `blog.txt` file.
@@ -8,7 +10,6 @@ The Nautilus DevOps team is working to deploy some tools in Kubernetes cluster. 
 4. To verify you can exec into the container `secret-container-nautilus`, to check the secret key under the mounted path `/opt/apps`. Before hitting the `Check` button please make sure pod/pods are in running state, also validation can take some time to complete so keep patience.
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
-
 
 
 ***
@@ -70,3 +71,7 @@ thor@jump-host ~$
 ```
 
 <figure><img src=".gitbook/assets/Screenshot 2026-03-27 074745.png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

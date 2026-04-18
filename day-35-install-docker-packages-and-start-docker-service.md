@@ -1,5 +1,7 @@
 # Day 35: Install Docker Packages and Start Docker Service
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team aims to containerize various applications following a recent meeting with the application development team. They intend to conduct testing with the following steps:
 
 1. Install `docker-ce` and `docker compose` packages on `App Server 1`.
@@ -11,7 +13,7 @@ The Nautilus DevOps team aims to containerize various applications following a r
 
 ***
 
-### 📝 Problem Statement
+### Problem Statement
 
 Install the following on **App Server 1 (stapp01)**:
 
@@ -21,7 +23,7 @@ Install the following on **App Server 1 (stapp01)**:
 
 ***
 
-## 🔹 Step 1: Login to App Server
+## Step 1: Login to App Server
 
 ```bash
 thor@jumphost ~$ ssh tony@stapp01
@@ -44,7 +46,7 @@ Ir0nM@n
 
 ***
 
-## 🔹 Step 2: Switch to Root User
+## Step 2: Switch to Root User
 
 ```bash
 [tony@stapp01 ~]$ sudo su -
@@ -59,13 +61,13 @@ We trust you have received the usual lecture from the local System Administrator
 
 ***
 
-## ❌ Step 3: Initial Docker Installation Attempt (Fails)
+## Step 3: Initial Docker Installation Attempt (Fails)
 
 ```bash
 yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
-#### ❌ Error Output
+#### Error Output
 
 ```bash
 No match for argument: docker-ce
@@ -77,7 +79,7 @@ Error: Unable to find a match
 
 ***
 
-### ❓ Why This Error Occurs?
+### Why This Error Occurs?
 
 CentOS Stream 9 **does not include Docker CE in default repositories**.
 
@@ -85,7 +87,7 @@ Docker official repository must be added manually.
 
 ***
 
-## ❌ Step 4: Trying to Start Docker (Fails)
+## Step 4: Trying to Start Docker (Fails)
 
 ```bash
 systemctl enable docker
@@ -107,11 +109,11 @@ Output:
 Failed to start docker.service: Unit docker.service not found.
 ```
 
-✔ Reason: Docker is not installed yet.
+- Reason: Docker is not installed yet.
 
 ***
 
-## ✅ Step 5: Install Required Utility
+## Step 5: Install Required Utility
 
 ```bash
 dnf install -y yum-utils
@@ -127,7 +129,7 @@ Complete!
 
 ***
 
-## ✅ Step 6: Add Docker Official Repository
+## Step 6: Add Docker Official Repository
 
 ```bash
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -153,7 +155,7 @@ docker-ce-stable    Docker CE Stable - x86_64
 
 ***
 
-## ✅ Step 7: Install Docker Packages (Successful)
+## Step 7: Install Docker Packages (Successful)
 
 ```bash
 dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
@@ -172,7 +174,7 @@ Complete!
 
 ***
 
-## 🔐 GPG Key Import (Normal Behavior)
+## GPG Key Import (Normal Behavior)
 
 ```bash
 Importing GPG key 0x621E9F35:
@@ -180,11 +182,11 @@ Userid     : "Docker Release (CE rpm) <docker@docker.com>"
 Key imported successfully
 ```
 
-✔ This is expected during first installation.
+- This is expected during first installation.
 
 ***
 
-## ✅ Step 8: Start and Enable Docker
+## Step 8: Start and Enable Docker
 
 ```bash
 systemctl start docker
@@ -199,7 +201,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /
 
 ***
 
-## ✅ Step 9: Verify Docker Status
+## Step 9: Verify Docker Status
 
 ```bash
 systemctl status docker
@@ -221,7 +223,7 @@ Full Service Info:
 
 ***
 
-## ⚠️ Warning Messages Seen (Non-Critical)
+## Warning Messages Seen (Non-Critical)
 
 ```bash
 Failed to set 'blkio.weight' attribute...
@@ -229,15 +231,15 @@ Failed to reset devices.allow/devices.deny...
 Operation not permitted
 ```
 
-#### ❓ Should You Worry?
+#### Should You Worry?
 
-👉 No.\
+- No.\
 These are **cgroup permission warnings** common in lab/virtualized environments.\
 Docker is running properly.
 
 ***
 
-## ✅ Step 10: Verify Docker & Compose Versions
+## Step 10: Verify Docker & Compose Versions
 
 ```bash
 docker --version
@@ -253,20 +255,20 @@ Docker Compose version v5.1.0
 
 ***
 
-## 🎯 Final Verification Checklist
+## Final Verification Checklist
 
-| Check                  | Status |
+| Check | Status |
 | ---------------------- | ------ |
-| Docker Repo Added      | ✅      |
-| Docker Installed       | ✅      |
-| Docker Service Started | ✅      |
-| Docker Enabled on Boot | ✅      |
-| Docker Running         | ✅      |
-| Docker Compose Working | ✅      |
+| Docker Repo Added | |
+| Docker Installed | |
+| Docker Service Started | |
+| Docker Enabled on Boot | |
+| Docker Running | |
+| Docker Compose Working | |
 
 ***
 
-## 🏁 Final Result
+## Final Result
 
 Docker CE and Docker Compose successfully installed and running on:
 
@@ -275,15 +277,19 @@ Docker CE and Docker Compose successfully installed and running on:
 
 ***
 
-## 📌 Common Errors You May Face
+## Common Errors You May Face
 
-| Error                             | Reason               | Fix               |
+| Error | Reason | Fix |
 | --------------------------------- | -------------------- | ----------------- |
-| `No match for argument docker-ce` | Repo not added       | Add Docker repo   |
-| `Unit docker.service not found`   | Docker not installed | Install docker-ce |
-| `Permission denied`               | Not root             | Use `sudo su -`   |
-| GPG Key prompt                    | First-time install   | Accept import     |
+| `No match for argument docker-ce` | Repo not added | Add Docker repo |
+| `Unit docker.service not found` | Docker not installed | Install docker-ce |
+| `Permission denied` | Not root | Use `sudo su -` |
+| GPG Key prompt | First-time install | Accept import |
 
 ***
 
-✅ **Day 35 Task Completed Successfully**
+- **Day 35 Task Completed Successfully**
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

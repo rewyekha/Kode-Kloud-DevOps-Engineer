@@ -1,11 +1,12 @@
 # Day 59: Troubleshoot Deployment issues in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Last week, the Nautilus DevOps team deployed a redis app on Kubernetes cluster, which was working fine so far. This morning one of the team members was making some changes in this existing setup, but he made some mistakes and the app went down. We need to fix this as soon as possible. Please take a look.
 
 The deployment name is `redis-deployment`. The pods are not in running state right now, so please look into the issue and fix the same.
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
-
 
 
 ## Kubernetes Troubleshooting: Fix Redis Deployment
@@ -46,13 +47,13 @@ Last week, the Nautilus DevOps team deployed a Redis app on a Kubernetes cluster
 
 ### Infrastructure Details
 
-| Component       | Detail                      |
+| Component | Detail |
 | --------------- | --------------------------- |
-| Access Host     | `jump-host`                 |
-| User            | `thor`                      |
-| Deployment Name | `redis-deployment`          |
-| Namespace       | `default`                   |
-| kubectl         | Pre-configured on jump-host |
+| Access Host | `jump-host` |
+| User | `thor` |
+| Deployment Name | `redis-deployment` |
+| Namespace | `default` |
+| kubectl | Pre-configured on jump-host |
 
 ***
 
@@ -74,7 +75,7 @@ NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 redis-deployment   0/1     1            0           2m3s
 ```
 
-> ⚠️ `READY: 0/1` and `AVAILABLE: 0` — the deployment exists but no pods are healthy.
+> `READY: 0/1` and `AVAILABLE: 0` — the deployment exists but no pods are healthy.
 
 ***
 
@@ -92,7 +93,7 @@ NAME                                READY   STATUS              RESTARTS   AGE
 redis-deployment-795ffcb56c-d8b2m   0/1     ContainerCreating   0          3m39s
 ```
 
-> ⚠️ The pod is stuck in `ContainerCreating` — it has been trying to start for over 3 minutes without success. This is abnormal and indicates a configuration problem.
+> The pod is stuck in `ContainerCreating` — it has been trying to start for over 3 minutes without success. This is abnormal and indicates a configuration problem.
 
 ***
 
@@ -155,7 +156,7 @@ Events:
   Normal  ScalingReplicaSet  3m47s  deployment-controller  Scaled up replica set redis-deployment-795ffcb56c from 0 to 1
 ```
 
-> 🔍 **Two issues identified:**
+> **Two issues identified:**
 >
 > 1. `Image: redis:alpin` — typo in the image tag (missing `e`)
 > 2. `Name: redis-cofig` — typo in the ConfigMap name (missing `n`)
@@ -179,7 +180,7 @@ kube-root-ca.crt   1      38m
 redis-config       2      5m4s
 ```
 
-> ✅ The correct ConfigMap name is `redis-config` (with `n`) — confirming the deployment was referencing a non-existent ConfigMap named `redis-cofig`.
+> The correct ConfigMap name is `redis-config` (with `n`) — confirming the deployment was referencing a non-existent ConfigMap named `redis-cofig`.
 
 ***
 
@@ -187,10 +188,10 @@ redis-config       2      5m4s
 
 Two typos were introduced into the deployment configuration by the team member:
 
-| # | Field            | Incorrect Value | Correct Value  | Impact                                                                         |
+| # | Field | Incorrect Value | Correct Value | Impact |
 | - | ---------------- | --------------- | -------------- | ------------------------------------------------------------------------------ |
-| 1 | `image`          | `redis:alpin`   | `redis:alpine` | Pod stuck in `ContainerCreating` — Docker cannot pull a non-existent image tag |
-| 2 | ConfigMap `name` | `redis-cofig`   | `redis-config` | Volume mount fails — Kubernetes cannot find the referenced ConfigMap           |
+| 1 | `image` | `redis:alpin` | `redis:alpine` | Pod stuck in `ContainerCreating` — Docker cannot pull a non-existent image tag |
+| 2 | ConfigMap `name` | `redis-cofig` | `redis-config` | Volume mount fails — Kubernetes cannot find the referenced ConfigMap |
 
 Both errors prevented the pod from ever reaching `Running` state.
 
@@ -296,14 +297,14 @@ Events:
 
 **Confirmation from describe output:**
 
-| Field                  | Before Fix    | After Fix        |
+| Field | Before Fix | After Fix |
 | ---------------------- | ------------- | ---------------- |
-| `revision`             | `1`           | `2` ✅            |
-| `Image`                | `redis:alpin` | `redis:alpine` ✅ |
-| ConfigMap `Name`       | `redis-cofig` | `redis-config` ✅ |
-| `Available` condition  | `False`       | `True` ✅         |
-| `available` replicas   | `0`           | `1` ✅            |
-| `unavailable` replicas | `1`           | `0` ✅            |
+| `revision` | `1` | `2` |
+| `Image` | `redis:alpin` | `redis:alpine` |
+| ConfigMap `Name` | `redis-cofig` | `redis-config` |
+| `Available` condition | `False` | `True` |
+| `available` replicas | `0` | `1` |
+| `unavailable` replicas | `1` | `0` |
 
 The events section also shows a clean rolling update — the old broken ReplicaSet was scaled down and a new healthy one was scaled up.
 
@@ -327,19 +328,19 @@ redis-deployment-5476b4ddd6-wnxlc   1/1     Running   0          27s
 thor@jump-host ~$
 ```
 
-> ✅ `STATUS: Running` and `READY: 1/1` — the Redis pod is fully healthy.
+> `STATUS: Running` and `READY: 1/1` — the Redis pod is fully healthy.
 
 ***
 
-### Lab Complete ✅
+### Lab Complete
 
-| Task                                        | Result |
+| Task | Result |
 | ------------------------------------------- | ------ |
-| Identified pod stuck in `ContainerCreating` | ✅      |
-| Found typo in image tag: `redis:alpin`      | ✅      |
-| Found typo in ConfigMap name: `redis-cofig` | ✅      |
-| Fixed both issues via `kubectl edit`        | ✅      |
-| Pod now in `Running` state `1/1`            | ✅      |
+| Identified pod stuck in `ContainerCreating` | |
+| Found typo in image tag: `redis:alpin` | |
+| Found typo in ConfigMap name: `redis-cofig` | |
+| Fixed both issues via `kubectl edit` | |
+| Pod now in `Running` state `1/1` | |
 
 ***
 
@@ -349,12 +350,12 @@ thor@jump-host ~$
 
 A pod stays in `ContainerCreating` when Kubernetes is unable to fully initialize the container. Common causes include:
 
-| Cause                       | Symptom                         |
+| Cause | Symptom |
 | --------------------------- | ------------------------------- |
-| Invalid image tag           | Cannot pull image from registry |
-| Missing ConfigMap or Secret | Volume mount fails silently     |
-| Missing PersistentVolume    | Storage cannot be attached      |
-| Network plugin issues       | CNI not ready                   |
+| Invalid image tag | Cannot pull image from registry |
+| Missing ConfigMap or Secret | Volume mount fails silently |
+| Missing PersistentVolume | Storage cannot be attached |
+| Network plugin issues | CNI not ready |
 
 In this lab, **both** an invalid image tag and a missing ConfigMap reference caused the pod to hang indefinitely.
 
@@ -403,5 +404,8 @@ volumes:
 ***
 
 
-
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

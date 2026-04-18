@@ -1,5 +1,7 @@
 # Day 40: Docker EXEC Operations
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 One of the Nautilus DevOps team members was working to configure services on a `kkloud` container that is running on `App Server 2` in `Stratos Datacenter`. Due to some personal work he is on PTO for the rest of the week, but we need to finish his pending work ASAP. Please complete the remaining work as per details given below:
 
 a. Install `apache2` in `kkloud` container using `apt` that is running on `App Server 2` in `Stratos Datacenter`.
@@ -7,7 +9,6 @@ a. Install `apache2` in `kkloud` container using `apt` that is running on `App S
 b. Configure Apache to listen on port `6200` instead of default `http` port. Do not bind it to listen on specific IP or hostname only, i.e it should listen on localhost, 127.0.0.1, container ip, etc.
 
 c. Make sure Apache service is up and running inside the container. Keep the container in running state at the end.
-
 
 
 ***
@@ -220,16 +221,16 @@ Output:
 
 ## Tools Used in This Lab
 
-| Tool        | Purpose                                |
+| Tool | Purpose |
 | ----------- | -------------------------------------- |
-| SSH         | Remote login to the application server |
-| Docker      | Manage containers                      |
-| docker exec | Access running container               |
-| apt         | Install packages                       |
-| Apache2     | Web server                             |
-| sed         | Modify configuration files             |
-| curl        | Test HTTP service                      |
-| service     | Manage system services                 |
+| SSH | Remote login to the application server |
+| Docker | Manage containers |
+| docker exec | Access running container |
+| apt | Install packages |
+| Apache2 | Web server |
+| sed | Modify configuration files |
+| curl | Test HTTP service |
+| service | Manage system services |
 
 ***
 
@@ -237,17 +238,17 @@ Output:
 
 These tools are commonly used in troubleshooting and DevOps environments.
 
-| Tool           | Purpose                            |
+| Tool | Purpose |
 | -------------- | ---------------------------------- |
-| netstat        | Display network connections        |
-| ss             | Modern replacement for netstat     |
-| vim / vi       | Edit configuration files           |
-| nano           | Simple text editor                 |
-| systemctl      | Manage services on systemd systems |
-| ps             | View running processes             |
-| grep           | Filter command output              |
-| docker logs    | View container logs                |
-| docker inspect | Inspect container configuration    |
+| netstat | Display network connections |
+| ss | Modern replacement for netstat |
+| vim / vi | Edit configuration files |
+| nano | Simple text editor |
+| systemctl | Manage services on systemd systems |
+| ps | View running processes |
+| grep | Filter command output |
+| docker logs | View container logs |
+| docker inspect | Inspect container configuration |
 
 ***
 
@@ -263,5 +264,8 @@ These tools are commonly used in troubleshooting and DevOps environments.
 * `sed` is very useful for **automating configuration changes**.
 
 
-
 <figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

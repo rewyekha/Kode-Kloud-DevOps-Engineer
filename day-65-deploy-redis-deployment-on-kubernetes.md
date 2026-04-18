@@ -1,5 +1,7 @@
 # Day 65: Deploy Redis Deployment on Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ## Kubernetes: Deploy Redis with ConfigMap for In-Memory Caching
 
 > **Platform:** KodeKloud | **Series:** Nautilus DevOps — Stratos Datacenter **Difficulty:** Intermediate | **Topic:** Kubernetes, Redis, ConfigMap, Deployments, Volumes, emptyDir
@@ -330,20 +332,20 @@ spec:
 
 ### Lab Complete
 
-| Requirement     | Detail                                        | Status    |
+| Requirement | Detail | Status |
 | --------------- | --------------------------------------------- | --------- |
-| ConfigMap name  | `my-redis-config`                             | Confirmed |
-| ConfigMap key   | `redis-config`                                | Confirmed |
-| ConfigMap value | `maxmemory 2mb`                               | Confirmed |
-| Deployment name | `redis-deployment`                            | Confirmed |
-| Image           | `redis:alpine`                                | Confirmed |
-| Container name  | `redis-container`                             | Confirmed |
-| Replicas        | `1`                                           | Confirmed |
-| CPU request     | `1`                                           | Confirmed |
-| Volume 1        | `data` (emptyDir) at `/redis-master-data`     | Confirmed |
-| Volume 2        | `redis-config` (ConfigMap) at `/redis-master` | Confirmed |
-| Container port  | `6379`                                        | Confirmed |
-| Pod status      | `1/1 Running`, `0 restarts`                   | Confirmed |
+| ConfigMap name | `my-redis-config` | Confirmed |
+| ConfigMap key | `redis-config` | Confirmed |
+| ConfigMap value | `maxmemory 2mb` | Confirmed |
+| Deployment name | `redis-deployment` | Confirmed |
+| Image | `redis:alpine` | Confirmed |
+| Container name | `redis-container` | Confirmed |
+| Replicas | `1` | Confirmed |
+| CPU request | `1` | Confirmed |
+| Volume 1 | `data` (emptyDir) at `/redis-master-data` | Confirmed |
+| Volume 2 | `redis-config` (ConfigMap) at `/redis-master` | Confirmed |
+| Container port | `6379` | Confirmed |
+| Pod status | `1/1 Running`, `0 restarts` | Confirmed |
 
 ***
 
@@ -368,10 +370,10 @@ Redis can then be started with `--include /redis-master/redis-config` or the con
 
 #### Two Volume Types Used
 
-| Volume         | Type        | Mount Path           | Purpose                                           |
+| Volume | Type | Mount Path | Purpose |
 | -------------- | ----------- | -------------------- | ------------------------------------------------- |
-| `data`         | `emptyDir`  | `/redis-master-data` | Temporary Redis data storage — lives with the pod |
-| `redis-config` | `configMap` | `/redis-master`      | Injects Redis config file from ConfigMap          |
+| `data` | `emptyDir` | `/redis-master-data` | Temporary Redis data storage — lives with the pod |
+| `redis-config` | `configMap` | `/redis-master` | Injects Redis config file from ConfigMap |
 
 `emptyDir` volumes are created fresh when a pod starts and deleted when the pod is removed. For Redis in a testing scenario this is acceptable — in production, a `PersistentVolumeClaim` would be used to retain data across pod restarts.
 
@@ -385,10 +387,10 @@ resources:
     cpu: "1"
 ```
 
-| Field      | Behaviour                                                                                                          |
+| Field | Behaviour |
 | ---------- | ------------------------------------------------------------------------------------------------------------------ |
-| `requests` | Minimum CPU guaranteed by the scheduler. The pod is only scheduled on a node with at least 1 CPU available.        |
-| `limits`   | Maximum CPU the container can use. Not set here — container can burst beyond 1 CPU if the node has spare capacity. |
+| `requests` | Minimum CPU guaranteed by the scheduler. The pod is only scheduled on a node with at least 1 CPU available. |
+| `limits` | Maximum CPU the container can use. Not set here — container can burst beyond 1 CPU if the node has spare capacity. |
 
 Setting only `requests` without `limits` is common in testing environments to ensure the pod gets scheduled with adequate resources while not artificially capping performance.
 
@@ -396,10 +398,10 @@ Setting only `requests` without `limits` is common in testing environments to en
 
 The `alpine` variant of the Redis image is based on Alpine Linux — a minimal Linux distribution:
 
-| Image          | Approximate Size | Use Case                         |
+| Image | Approximate Size | Use Case |
 | -------------- | ---------------- | -------------------------------- |
-| `redis:latest` | \~130MB          | Full-featured, Debian-based      |
-| `redis:alpine` | \~30MB           | Lightweight, production-friendly |
+| `redis:latest` | \~130MB | Full-featured, Debian-based |
+| `redis:alpine` | \~30MB | Lightweight, production-friendly |
 
 `redis:alpine` is preferred for Kubernetes deployments because smaller images pull faster, consume less storage, and have a smaller attack surface.
 
@@ -412,3 +414,7 @@ Redis always listens on port `6379` by default. The `containerPort: 6379` declar
 _Lab completed on 2026-03-31 | Cluster: Kubernetes | Namespace: default | Pod: redis-deployment-c795495f4-fqjwn_
 
 <figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

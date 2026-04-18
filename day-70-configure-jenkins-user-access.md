@@ -1,5 +1,7 @@
 # Day 70: Configure Jenkins User Access
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus team is integrating Jenkins into their CI/CD pipelines. After setting up a new Jenkins server, they're now configuring user access for the development team, Follow these steps:
 
 1\. Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login with username `admin` and password `Adm!n321`.
@@ -18,9 +20,6 @@ The Nautilus team is integrating Jenkins into their CI/CD pipelines. After setti
 3\. Capture screenshots of your configuration for review purposes. Consider using screen recording software like `loom.com` for documentation and sharing.
 
 
-
-
-
 <figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
@@ -34,3 +33,7 @@ The Nautilus team is integrating Jenkins into their CI/CD pipelines. After setti
 <figure><img src=".gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

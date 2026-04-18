@@ -1,6 +1,11 @@
 # Table of contents
 
-* [SUMMARY](README.md)
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
+* [KodeKloud DevOps Engineer – Lab Solutions](README.md)
+
+## Linux
+
 * [Day 1: Linux User Setup with Non-Interactive Shell](day-1-linux-user-setup-with-non-interactive-shell.md)
 * [Day 2: Temporary User Setup with Expiry](day-2-temporary-user-setup-with-expiry.md)
 * [Day 3: Secure Root SSH Access](day-3-secure-root-ssh-access.md)
@@ -20,35 +25,45 @@
 * [Day 17: Install and Configure PostgreSQL](day-17-install-and-configure-postgresql.md)
 * [Day 19: Install and Configure Web Application](day-19-install-and-configure-web-application.md)
 * [Day 20: Configure Nginx + PHP-FPM Using Unix Sock](day-20-configure-nginx-+-php-fpm-using-unix-sock.md)
+* [Day 40: Troubleshooting Internet Accessibility for an EC2-Hosted Application](day-40-troubleshooting-internet-accessibility-for-an-ec2-hosted-application.md)
+
+## Git
+
 * [Day 21: Set Up Git Repository on Storage Server](day-21-set-up-git-repository-on-storage-server.md)
 * [Day 22: Clone Git Repository on Storage Server](day-22-clone-git-repository-on-storage-server.md)
 * [Day 23: Fork a Git Repository](day-23-fork-a-git-repository.md)
-* [Git task: Update Git Repository with Sample HTML File](git-task-update-git-repository-with-sample-html-file.md)
 * [Day 24: Git Create Branches](day-24-git-create-branches.md)
 * [Day 25: Git Merge Branches](day-25-git-merge-branches.md)
-* [Git task: Delete Git Branch](git-task-delete-git-branch.md)
 * [Day 26: Git Manage Remotes](day-26-git-manage-remotes.md)
 * [Day 27: Git Revert Some Changes](day-27-git-revert-some-changes.md)
 * [Day 28: Git Cherry Pick](day-28-git-cherry-pick.md)
 * [Day 29: Manage Git Pull Requests](day-29-manage-git-pull-requests.md)
-* [Day 30: Git hard reset](day-30-git-hard-reset.md)
+* [Day 30: Git Hard Reset](day-30-git-hard-reset.md)
 * [Day 31: Git Stash](day-31-git-stash.md)
 * [Day 32: Git Rebase](day-32-git-rebase.md)
 * [Day 33: Resolve Git Merge Conflicts](day-33-resolve-git-merge-conflicts.md)
 * [Day 34: Git Hook](day-34-git-hook.md)
+* [Git Task: Update Git Repository with Sample HTML File](git-task-update-git-repository-with-sample-html-file.md)
+* [Git Task: Delete Git Branch](git-task-delete-git-branch.md)
+
+## Docker
+
 * [Day 35: Install Docker Packages and Start Docker Service](day-35-install-docker-packages-and-start-docker-service.md)
 * [Day 36: Deploy Nginx Container on Application Server](day-36-deploy-nginx-container-on-application-server.md)
 * [Day 37: Copy File to Docker Container](day-37-copy-file-to-docker-container.md)
 * [Day 38: Pull Docker Image](day-38-pull-docker-image.md)
 * [Day 39: Create a Docker Image From Container](day-39-create-a-docker-image-from-container.md)
 * [Day 40: Docker EXEC Operations](day-40-docker-exec-operations.md)
-* [Day 41: Write a Docker File](day-41-write-a-docker-file.md)
+* [Day 41: Write a Dockerfile](day-41-write-a-docker-file.md)
 * [Day 42: Create a Docker Network](day-42-create-a-docker-network.md)
 * [Day 43: Docker Ports Mapping](day-43-docker-ports-mapping.md)
 * [Day 44: Write a Docker Compose File](day-44-write-a-docker-compose-file.md)
 * [Day 45: Resolve Dockerfile Issues](day-45-resolve-dockerfile-issues.md)
 * [Day 46: Deploy an App on Docker Containers](day-46-deploy-an-app-on-docker-containers.md)
 * [Day 47: Docker Python App](day-47-docker-python-app.md)
+
+## Kubernetes
+
 * [Day 48: Deploy Pods in Kubernetes Cluster](day-48-deploy-pods-in-kubernetes-cluster.md)
 * [Day 49: Deploy Applications with Kubernetes Deployments](day-49-deploy-applications-with-kubernetes-deployments.md)
 * [Day 50: Set Resource Limits in Kubernetes Pods](day-50-set-resource-limits-in-kubernetes-pods.md)
@@ -60,7 +75,7 @@
 * [Day 56: Deploy Nginx Web Server on Kubernetes Cluster](day-56-deploy-nginx-web-server-on-kubernetes-cluster.md)
 * [Day 57: Print Environment Variables](day-57-print-environment-variables.md)
 * [Day 58: Deploy Grafana on Kubernetes Cluster](day-58-deploy-grafana-on-kubernetes-cluster.md)
-* [Day 59: Troubleshoot Deployment issues in Kubernetes](day-59-troubleshoot-deployment-issues-in-kubernetes.md)
+* [Day 59: Troubleshoot Deployment Issues in Kubernetes](day-59-troubleshoot-deployment-issues-in-kubernetes.md)
 * [Day 60: Persistent Volumes in Kubernetes](day-60-persistent-volumes-in-kubernetes.md)
 * [Day 61: Init Containers in Kubernetes](day-61-init-containers-in-kubernetes.md)
 * [Day 62: Manage Secrets in Kubernetes](day-62-manage-secrets-in-kubernetes.md)
@@ -69,11 +84,17 @@
 * [Day 65: Deploy Redis Deployment on Kubernetes](day-65-deploy-redis-deployment-on-kubernetes.md)
 * [Day 66: Deploy MySQL on Kubernetes](day-66-deploy-mysql-on-kubernetes.md)
 * [Day 67: Deploy Guest Book App on Kubernetes](day-67-deploy-guest-book-app-on-kubernetes.md)
+
+## Jenkins
+
 * [Day 68: Set Up Jenkins Server](day-68-set-up-jenkins-server.md)
 * [Day 69: Install Jenkins Plugins](day-69-install-jenkins-plugins.md)
 * [Day 70: Configure Jenkins User Access](day-70-configure-jenkins-user-access.md)
 * [Day 71: Configure Jenkins Job for Package Installation](day-71-configure-jenkins-job-for-package-installation.md)
-* [Day 72:](day-72.md)
-* [Day 40: Troubleshooting Internet Accessibility for an EC2-Hosted Application](day-40-troubleshooting-internet-accessibility-for-an-ec2-hosted-application.md)
+* [Day 72: Jenkins Freestyle Job](day-72.md)
 * [Day 73: Jenkins Scheduled Jobs](day-73-jenkins-scheduled-jobs.md)
 * [Day 74: Jenkins Database Backup Job](day-74-jenkins-database-backup-job.md)
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

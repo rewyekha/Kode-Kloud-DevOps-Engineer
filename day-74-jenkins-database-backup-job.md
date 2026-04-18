@@ -1,5 +1,7 @@
 # Day 74: Jenkins Database Backup Job
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 There is a requirement to create a Jenkins job to automate the database backup. Below you can find more details to accomplish this task:
 
 Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login using username `admin` and password `Adm!n321`.
@@ -17,14 +19,12 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 3. For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.<br>
 
 
-
 ***
 
 ## Jenkins Automated Database Backup – Implementation Guide
 
 ### Document Purpose
 
-This document describes the end-to-end procedure used to configure a Jenkins job that automates database backups from an application server and securely transfers them to a storage server. It serves as professional documentation for validation, audit, and future reference.
 
 ***
 
@@ -49,12 +49,12 @@ Create a Jenkins job to automate a database backup with the following specificat
 
 ### Infrastructure Details
 
-| Server Role        | Hostname  | User    | Purpose                        |
+| Server Role | Hostname | User | Purpose |
 | ------------------ | --------- | ------- | ------------------------------ |
-| Jump Host          | jump-host | thor    | Secure access                  |
-| Jenkins Server     | jenkins   | jenkins | CI/CD automation               |
-| Application Server | stapp01   | tony    | Hosts application and database |
-| Storage Server     | ststor01  | natasha | Stores backup data             |
+| Jump Host | jump-host | thor | Secure access |
+| Jenkins Server | jenkins | jenkins | CI/CD automation |
+| Application Server | stapp01 | tony | Hosts application and database |
+| Storage Server | ststor01 | natasha | Stores backup data |
 
 ***
 
@@ -204,17 +204,9 @@ This confirms:
 
 ### Conclusion
 
-The Jenkins-based automation for database backup has been implemented and validated successfully. The configuration adheres strictly to the stated requirements and demonstrates a production-ready approach to scheduled backups using Jenkins, SSH, and MySQL utilities.
-
-This document can be used as:
-
-* Operational runbook
-* Audit evidence
-* Training material
-* GitBook knowledge base entry
+The Jenkins-based automation for database backup has been implemented and validated successfully.
 
 ***
-
 
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
@@ -222,3 +214,7 @@ This document can be used as:
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

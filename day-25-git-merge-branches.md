@@ -1,5 +1,6 @@
 # Day 25: Git Merge Branches
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
 
 
 The Nautilus application development team has been working on a project repository `/opt/official.git`. This repo is cloned at `/usr/src/kodekloudrepos` on `storage server` in `Stratos DC`. They recently shared the following requirements with DevOps team:
@@ -10,7 +11,6 @@ Create a new branch `datacenter` in `/usr/src/kodekloudrepos/official` repo from
 
 ### Create `datacenter` Branch and Merge into `master`
 
-This document describes the complete procedure performed on the **Stratos DC** storage server to:
 
 * Create a new branch `datacenter` from `master`
 * Copy `/tmp/index.html` into the repository
@@ -225,13 +225,17 @@ Output:
 
 ## Final Outcome
 
-✔ Created new branch `datacenter`\
-✔ Copied `/tmp/index.html` into repository\
-✔ Committed changes in `datacenter`\
-✔ Merged `datacenter` into `master` (fast-forward merge)\
-✔ Pushed both branches to `/opt/official.git`\
-✔ Verified local and remote branches successfully
+- Created new branch `datacenter`\
+- Copied `/tmp/index.html` into repository\
+- Committed changes in `datacenter`\
+- Merged `datacenter` into `master` (fast-forward merge)\
+- Pushed both branches to `/opt/official.git`\
+- Verified local and remote branches successfully
 
 ***
 
 **Task Completed Successfully.**
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

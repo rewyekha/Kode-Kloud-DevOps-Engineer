@@ -1,5 +1,7 @@
 # Day 50: Set Resource Limits in Kubernetes Pods
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ### Overview
 
 The Nautilus DevOps team has noticed performance issues in some Kubernetes-hosted applications due to resource constraints.
@@ -10,8 +12,8 @@ Set the following resource configurations:
 
 | Resource | Requests | Limits |
 | -------- | -------- | ------ |
-| Memory   | 15Mi     | 20Mi   |
-| CPU      | 100m     | 100m   |
+| Memory | 15Mi | 20Mi |
+| CPU | 100m | 100m |
 
 **Note:** The `kubectl` utility on the **jump-host** is already configured to work with the Kubernetes cluster.
 
@@ -118,25 +120,28 @@ Containers:
 
 ## Pod Details
 
-| Property       | Value           |
+| Property | Value |
 | -------------- | --------------- |
-| Pod Name       | httpd-pod       |
+| Pod Name | httpd-pod |
 | Container Name | httpd-container |
-| Image          | httpd:latest    |
-| CPU Request    | 100m            |
-| CPU Limit      | 100m            |
-| Memory Request | 15Mi            |
-| Memory Limit   | 20Mi            |
-| Status         | Running         |
+| Image | httpd:latest |
+| CPU Request | 100m |
+| CPU Limit | 100m |
+| Memory Request | 15Mi |
+| Memory Limit | 20Mi |
+| Status | Running |
 
 ***
 
 ## Final Result
 
-✅ Pod **httpd-pod** created successfully\
-✅ Container **httpd-container** running\
-✅ Resource **requests and limits configured correctly**
-
+- Pod **httpd-pod** created successfully\
+- Container **httpd-container** running\
+- Resource **requests and limits configured correctly**
 
 
 <figure><img src=".gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

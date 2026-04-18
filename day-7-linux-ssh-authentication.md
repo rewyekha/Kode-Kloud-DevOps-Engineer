@@ -1,10 +1,12 @@
 # Day 7: Linux SSH Authentication
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The system admins team of `xFusionCorp Industries` has set up some scripts on `jump host` that run on regular intervals and perform operations on all app servers in `Stratos Datacenter`. To make these scripts work properly we need to make sure the `thor` user on jump host has password-less SSH access to all app servers through their respective sudo users (i.e `tony` for app server 1). Based on the requirements, perform the following:
 
 Set up a password-less authentication from user `thor` on jump host to all app servers through their respective sudo users.
 
-### 🎯 Objective
+### Objective
 
 Enable **password-less SSH access** from:
 
@@ -13,15 +15,15 @@ Enable **password-less SSH access** from:
 
 to **all app servers**, using their **respective sudo users**:
 
-| App Server | User   |
+| App Server | User |
 | ---------- | ------ |
-| stapp01    | tony   |
-| stapp02    | steve  |
-| stapp03    | banner |
+| stapp01 | tony |
+| stapp02 | steve |
+| stapp03 | banner |
 
 ***
 
-### 🧩 High-Level Flow
+### High-Level Flow
 
 1. Generate SSH key on **jump\_host** as user `thor`
 2. Copy the **public key** to each app server user
@@ -29,11 +31,11 @@ to **all app servers**, using their **respective sudo users**:
 
 ***
 
-### ✅ Step-by-Step Solution
+### Step-by-Step Solution
 
 ***
 
-#### 🔹 Step 1: Login to Jump Host as `thor`
+#### Step 1: Login to Jump Host as `thor`
 
 ```bash
 ssh thor@jump_host.stratos.xfusioncorp.com
@@ -42,7 +44,7 @@ ssh thor@jump_host.stratos.xfusioncorp.com
 
 ***
 
-#### 🔹 Step 2: Generate SSH Key (if not already present)
+#### Step 2: Generate SSH Key (if not already present)
 
 Run **as thor**:
 
@@ -57,30 +59,30 @@ ssh-keygen -t rsa -b 2048
 
 ***
 
-#### 🔹 Step 3: Copy SSH Key to App Servers
+#### Step 3: Copy SSH Key to App Servers
 
-**➤ stapp01 (user: tony)**
+** stapp01 (user: tony)**
 
 ```bash
 ssh-copy-id tony@stapp01.stratos.xfusioncorp.com
 # password: Ir0nM@n
 ```
 
-**➤ stapp02 (user: steve)**
+** stapp02 (user: steve)**
 
 ```bash
 ssh-copy-id steve@stapp02.stratos.xfusioncorp.com
 # password: Am3ric@
 ```
 
-**➤ stapp03 (user: banner)**
+** stapp03 (user: banner)**
 
 ```bash
 ssh-copy-id banner@stapp03.stratos.xfusioncorp.com
 # password: BigGr33n
 ```
 
-📌 This automatically:
+- This automatically:
 
 * Creates `~/.ssh` on target (if missing)
 * Adds public key to `authorized_keys`
@@ -88,7 +90,7 @@ ssh-copy-id banner@stapp03.stratos.xfusioncorp.com
 
 ***
 
-#### 🔹 Step 4: Verify Password-less Access
+#### Step 4: Verify Password-less Access
 
 Run from jump host:
 
@@ -98,11 +100,11 @@ ssh steve@stapp02.stratos.xfusioncorp.com
 ssh banner@stapp03.stratos.xfusioncorp.com
 ```
 
-✅ **You should NOT be prompted for a password**
+- **You should NOT be prompted for a password**
 
 ***
 
-### 🔐 Expected Permissions (Auto-handled but good to know)
+### Expected Permissions (Auto-handled but good to know)
 
 On app servers:
 
@@ -113,7 +115,7 @@ On app servers:
 
 ***
 
-### ✔ Final Validation (Important for Exam/Lab)
+### Final Validation (Important for Exam/Lab)
 
 * SSH works **without password**
 * Access is via **correct sudo users**
@@ -121,7 +123,7 @@ On app servers:
 
 ***
 
-### 🧠 One-Line Summary (For Documentation)
+### One-Line Summary (For Documentation)
 
 > Configured SSH key-based authentication from `thor@jump_host` to all Nautilus app servers using their respective sudo users (`tony`, `steve`, `banner`) to enable password-less automation.
 
@@ -215,3 +217,7 @@ logout
 Connection to stapp03.stratos.xfusioncorp.com closed.
 thor@jumphost ~$ 
 ```
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

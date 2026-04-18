@@ -1,5 +1,7 @@
 # Day 27: Git Revert Some Changes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus application development team was working on a git repository `/usr/src/kodekloudrepos/cluster` present on `Storage server` in `Stratos DC`. However, they reported an issue with the recent commits being pushed to this repo. They have asked the DevOps team to revert repo HEAD to last commit. Below are more details about the task:
 
 1. In `/usr/src/kodekloudrepos/cluster` git repository, revert the latest commit `( HEAD )` to the previous commit (JFYI the previous commit hash should be with `initial commit` message ).
@@ -9,7 +11,7 @@ The Nautilus application development team was working on a git repository `/usr/
 
 ## Day 27: Revert Latest Commit in Git Repository
 
-### 📌 Objective
+### Objective
 
 Revert the latest commit (`HEAD`) in the repository:
 
@@ -25,7 +27,7 @@ revert cluster
 
 ***
 
-### 🖥️ Step 1: Connect to Storage Server
+### Step 1: Connect to Storage Server
 
 Login from the jump host:
 
@@ -57,7 +59,7 @@ Output:
 
 ***
 
-### 📂 Step 2: Navigate to Repository
+### Step 2: Navigate to Repository
 
 ```bash
 cd /usr/src/kodekloudrepos/cluster
@@ -65,7 +67,7 @@ cd /usr/src/kodekloudrepos/cluster
 
 ***
 
-### 🔍 Step 3: Check Git Log
+### Step 3: Check Git Log
 
 ```bash
 git log --oneline
@@ -78,7 +80,7 @@ d1c53d9 (HEAD -> master, origin/master) add data.txt file
 8b03eac initial commit
 ```
 
-#### 🔎 Observation
+#### Observation
 
 * `d1c53d9` → Latest commit (HEAD)
 * `8b03eac` → Initial commit
@@ -87,7 +89,7 @@ We need to revert `d1c53d9`.
 
 ***
 
-### 🔄 Step 4: Revert Latest Commit
+### Step 4: Revert Latest Commit
 
 Run:
 
@@ -111,7 +113,7 @@ After saving and exiting the editor, you will see:
 
 ***
 
-### ✅ Step 5: Verify Changes
+### Step 5: Verify Changes
 
 ```bash
 git log --oneline
@@ -127,23 +129,27 @@ d1c53d9 (origin/master) add data.txt file
 
 ***
 
-## 🎯 Final Result
+## Final Result
 
-✔ Latest commit successfully reverted\
-✔ New commit created with message: `revert cluster`\
-✔ Repository history preserved
+- Latest commit successfully reverted\
+- New commit created with message: `revert cluster`\
+- Repository history preserved
 
 ***
 
-## 📚 Key Concept: `git revert` vs `git reset`
+## Key Concept: `git revert` vs `git reset`
 
-| Command      | Effect                                            |
+| Command | Effect |
 | ------------ | ------------------------------------------------- |
 | `git revert` | Creates a new commit that undoes previous changes |
-| `git reset`  | Moves branch pointer backward (rewrites history)  |
+| `git reset` | Moves branch pointer backward (rewrites history) |
 
 For shared repositories, **`git revert` is the safe option**.
 
 ***
 
-✅ **Task Completed Successfully**
+- **Task Completed Successfully**
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

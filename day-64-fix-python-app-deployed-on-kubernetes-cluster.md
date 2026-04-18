@@ -1,5 +1,7 @@
 # Day 64: Fix Python App Deployed on Kubernetes Cluster
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ## Kubernetes Troubleshooting: Fix Python Flask App Deployment
 
 > **Platform:** KodeKloud | **Series:** Nautilus DevOps — Stratos Datacenter **Difficulty:** Intermediate | **Topic:** Kubernetes, Deployments, Services, NodePort, ImagePullBackOff, Troubleshooting
@@ -44,12 +46,12 @@ One of the DevOps engineers was trying to deploy a Python app on a Kubernetes cl
 
 ### Infrastructure Details
 
-| Server Name          | Hostname    | User     | Password     | Purpose                            |
+| Server Name | Hostname | User | Password | Purpose |
 | -------------------- | ----------- | -------- | ------------ | ---------------------------------- |
-| Application Server 1 | `stapp01`   | `tony`   | `Ir0nM@n`    | Hosts Nautilus Application 1       |
-| Application Server 2 | `stapp02`   | `steve`  | `Am3ric@`    | Hosts Nautilus Application 2       |
-| Application Server 3 | `stapp03`   | `banner` | `BigGr33n`   | Hosts Nautilus Application 3       |
-| Jump Host            | `jump-host` | `thor`   | `mjolnir123` | Provides secure access to Stork DC |
+| Application Server 1 | `stapp01` | `tony` | `Ir0nM@n` | Hosts Nautilus Application 1 |
+| Application Server 2 | `stapp02` | `steve` | `Am3ric@` | Hosts Nautilus Application 2 |
+| Application Server 3 | `stapp03` | `banner` | `BigGr33n` | Hosts Nautilus Application 3 |
+| Jump Host | `jump-host` | `thor` | `mjolnir123` | Provides secure access to Stork DC |
 
 > **Target:** All `kubectl` commands are executed from `jump-host`.
 
@@ -226,10 +228,10 @@ The service `targetPort` is set to `8080`, but the Flask app listens on port `50
 
 Two separate bugs were found:
 
-| # | Resource             | Bug                     | Correct Value           | Impact                                                          |
+| # | Resource | Bug | Correct Value | Impact |
 | - | -------------------- | ----------------------- | ----------------------- | --------------------------------------------------------------- |
-| 1 | Deployment `image`   | `poroko/flask-app-demo` | `poroko/flask-demo-app` | `ImagePullBackOff` — image does not exist on Docker Hub         |
-| 2 | Service `targetPort` | `8080`                  | `5000`                  | Traffic routed to wrong port — Flask would not receive requests |
+| 1 | Deployment `image` | `poroko/flask-app-demo` | `poroko/flask-demo-app` | `ImagePullBackOff` — image does not exist on Docker Hub |
+| 2 | Service `targetPort` | `8080` | `5000` | Traffic routed to wrong port — Flask would not receive requests |
 
 ```bash
 External Traffic → nodePort 32345 → Service port 8080 → targetPort 8080 ← WRONG
@@ -405,13 +407,13 @@ The endpoint `10.22.0.10:5000` confirms:
 
 ### Lab Complete
 
-| Issue                         | Root Cause                                           | Fix Applied                           | Status    |
+| Issue | Root Cause | Fix Applied | Status |
 | ----------------------------- | ---------------------------------------------------- | ------------------------------------- | --------- |
-| `ImagePullBackOff`            | Image name typo `flask-app-demo` vs `flask-demo-app` | `kubectl set image` with correct name | Fixed     |
-| Service `targetPort` mismatch | `targetPort: 8080` instead of `5000`                 | `kubectl edit svc` changed to `5000`  | Fixed     |
-| Pod status                    | `0/1 ImagePullBackOff`                               | `1/1 Running`                         | Confirmed |
-| Endpoint                      | No endpoints                                         | `10.22.0.10:5000`                     | Confirmed |
-| NodePort                      | `32345` accessible                                   | Service routes to Flask on `5000`     | Confirmed |
+| `ImagePullBackOff` | Image name typo `flask-app-demo` vs `flask-demo-app` | `kubectl set image` with correct name | Fixed |
+| Service `targetPort` mismatch | `targetPort: 8080` instead of `5000` | `kubectl edit svc` changed to `5000` | Fixed |
+| Pod status | `0/1 ImagePullBackOff` | `1/1 Running` | Confirmed |
+| Endpoint | No endpoints | `10.22.0.10:5000` | Confirmed |
+| NodePort | `32345` accessible | Service routes to Flask on `5000` | Confirmed |
 
 ***
 
@@ -421,12 +423,12 @@ The endpoint `10.22.0.10:5000` confirms:
 
 `ImagePullBackOff` occurs when Kubernetes cannot pull a container image. Common causes:
 
-| Cause            | Example                                 | Fix                    |
+| Cause | Example | Fix |
 | ---------------- | --------------------------------------- | ---------------------- |
-| Wrong image name | `flask-app-demo` vs `flask-demo-app`    | Correct the image name |
-| Wrong tag        | `nginx:lates` instead of `nginx:latest` | Fix the tag            |
-| Private registry | No pull secret configured               | Add `imagePullSecrets` |
-| Rate limiting    | Too many Docker Hub pulls               | Authenticate or wait   |
+| Wrong image name | `flask-app-demo` vs `flask-demo-app` | Correct the image name |
+| Wrong tag | `nginx:lates` instead of `nginx:latest` | Fix the tag |
+| Private registry | No pull secret configured | Add `imagePullSecrets` |
+| Rate limiting | Too many Docker Hub pulls | Authenticate or wait |
 
 In this lab, the image `poroko/flask-app-demo` does not exist on Docker Hub — the correct image is `poroko/flask-demo-app`. A single character transposition caused the entire deployment to fail.
 
@@ -451,22 +453,22 @@ Pod (python-deployment-datacenter)
 Flask Application (poroko/flask-demo-app)
 ```
 
-| Port Field      | Location        | Must Match                        |
+| Port Field | Location | Must Match |
 | --------------- | --------------- | --------------------------------- |
-| `containerPort` | Deployment spec | What the app actually listens on  |
-| `targetPort`    | Service spec    | Must equal `containerPort`        |
-| `port`          | Service spec    | Cluster-internal access port      |
-| `nodePort`      | Service spec    | External access port on each node |
+| `containerPort` | Deployment spec | What the app actually listens on |
+| `targetPort` | Service spec | Must equal `containerPort` |
+| `port` | Service spec | Cluster-internal access port |
+| `nodePort` | Service spec | External access port on each node |
 
 #### `kubectl set image` vs `kubectl edit`
 
 Both commands update a deployment's image, but they work differently:
 
-| Command             | Method                | Best For                           |
+| Command | Method | Best For |
 | ------------------- | --------------------- | ---------------------------------- |
-| `kubectl set image` | Targeted field update | Changing a single container image  |
-| `kubectl edit`      | Full YAML in editor   | Multiple field changes             |
-| `kubectl patch`     | JSON/YAML patch       | Scripted or specific field updates |
+| `kubectl set image` | Targeted field update | Changing a single container image |
+| `kubectl edit` | Full YAML in editor | Multiple field changes |
+| `kubectl patch` | JSON/YAML patch | Scripted or specific field updates |
 
 `kubectl set image deployment/<name> <container-name>=<new-image>` is the most precise way to update an image without risk of accidentally editing other fields.
 
@@ -504,5 +506,8 @@ After:<br>
 <figure><img src=".gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 
-
 <figure><img src=".gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

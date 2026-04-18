@@ -1,5 +1,7 @@
 # Day 54: Kubernetes Shared Volumes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 We are working on an application that will be deployed on multiple containers within a pod on Kubernetes cluster. There is a requirement to share a volume among the containers to save some temporary data. The Nautilus DevOps team is developing a similar template to replicate the scenario. Below you can find more details about it.
 
 1. Create a pod named `volume-share-devops`.
@@ -12,18 +14,17 @@ We are working on an application that will be deployed on multiple containers wi
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
 
-
 ***
 
-## 📘 Kubernetes Shared Volume Between Containers (emptyDir)
+## Kubernetes Shared Volume Between Containers (emptyDir)
 
-### 📌 Objective
+### Objective
 
 Create a Kubernetes Pod with multiple containers that share a common volume using `emptyDir`. Verify that data written in one container is accessible from another.
 
 ***
 
-### 🏗️ Pod Requirements
+### Pod Requirements
 
 * Pod Name: `volume-share-nautilus`
 * Two containers:
@@ -39,13 +40,13 @@ Create a Kubernetes Pod with multiple containers that share a common volume usin
 
 ***
 
-### 📄 Step 1: Create Pod YAML
+### Step 1: Create Pod YAML
 
 ```bash
 thor@jump-host ~$ vi volume-share-nautilus.yaml
 ```
 
-#### 🔹 YAML Configuration
+#### YAML Configuration
 
 ```yaml
 apiVersion: v1
@@ -73,7 +74,7 @@ spec:
     emptyDir: {}
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * `emptyDir`: Creates a temporary shared directory for all containers in the pod.
 * `volumeMounts`: Mounts the shared volume at different paths inside each container.
@@ -81,71 +82,71 @@ spec:
 
 ***
 
-### 🚀 Step 2: Apply the Configuration
+### Step 2: Apply the Configuration
 
 ```bash
 thor@jump-host ~$ kubectl apply -f volume-share-nautilus.yaml
 ```
 
-#### ✅ Output
+#### Output
 
 ```bash
 pod/volume-share-nautilus created
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * Creates the pod in the Kubernetes cluster using the YAML definition.
 
 ***
 
-### 🔍 Step 3: Verify Pod Status
+### Step 3: Verify Pod Status
 
 ```bash
 thor@jump-host ~$ kubectl get pods
 ```
 
-#### ✅ Output
+#### Output
 
 ```bash
 NAME                    READY   STATUS    RESTARTS   AGE
 volume-share-nautilus   2/2     Running   0          6s
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * `2/2`: Both containers are running.
 * `Running`: Pod is successfully created and active.
 
 ***
 
-### 🔐 Step 4: Access First Container
+### Step 4: Access First Container
 
 ```bash
 thor@jump-host ~$ kubectl exec -it volume-share-nautilus -c volume-container-nautilus-1 -- /bin/bash
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * `kubectl exec`: Executes a command inside a container.
 * `-c`: Specifies the container name.
 
 ***
 
-### ✍️ Step 5: Create File in Shared Volume
+### Step 5: Create File in Shared Volume
 
 ```bash
 root@volume-share-nautilus:/# echo "Welcome to xFusionCorp Industries" > /tmp/beta/beta.txt
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * Creates `beta.txt` inside `/tmp/beta` (shared volume).
 * Data is written to the `emptyDir` volume.
 
 ***
 
-### 🚪 Exit Container
+### Exit Container
 
 ```bash
 root@volume-share-nautilus:/# exit
@@ -154,7 +155,7 @@ exit
 
 ***
 
-### 🔐 Step 6: Access Second Container
+### Step 6: Access Second Container
 
 ```bash
 thor@jump-host ~$ kubectl exec -it volume-share-nautilus -c volume-container-nautilus-2 -- /bin/bash
@@ -162,26 +163,26 @@ thor@jump-host ~$ kubectl exec -it volume-share-nautilus -c volume-container-nau
 
 ***
 
-### 📖 Step 7: Verify Shared File
+### Step 7: Verify Shared File
 
 ```bash
 root@volume-share-nautilus:/# cat /tmp/apps/beta.txt
 ```
 
-#### ✅ Output
+#### Output
 
 ```bash
 Welcome to xFusionCorp Industries
 ```
 
-#### 🧠 Explanation
+#### Explanation
 
 * File created in container 1 is visible in container 2.
 * Confirms volume is shared correctly.
 
 ***
 
-### 🚪 Exit Container
+### Exit Container
 
 ```bash
 root@volume-share-nautilus:/# exit
@@ -190,7 +191,7 @@ exit
 
 ***
 
-### 🎯 Final Verification (Full Terminal Session)
+### Final Verification (Full Terminal Session)
 
 ```bash
 thor@jump-host ~$ vi volume-share-nautilus.yaml
@@ -215,7 +216,7 @@ exit
 
 ***
 
-### 🧠 Key Takeaways
+### Key Takeaways
 
 * `emptyDir` volumes:
   * Exist only for the lifetime of the pod
@@ -226,10 +227,13 @@ exit
 
 ***
 
-### 🏁 Conclusion
+### Conclusion
 
 This setup demonstrates how multiple containers within the same Pod can communicate and share data efficiently using a shared `emptyDir` volume.
 
 
-
 <figure><img src=".gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

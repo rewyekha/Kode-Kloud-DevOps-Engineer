@@ -1,10 +1,11 @@
 # Day 2: Temporary User Setup with Expiry
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 As part of the temporary assignment to the `Nautilus` project, a developer named `kirsty` requires access for a limited duration. To ensure smooth access management, a temporary user account with an expiry date is needed. Here's what you need to do:\
 Create a user named `kirsty` on `App Server 2` in Stratos Datacenter. Set the expiry date to `2024-03-28`, ensuring the user is created in lowercase as per standard protocol.
 
 > Note: You can find the infrastructure details by clicking on the **Details of all Users and Servers** button on the top-right section of the page.
-
 
 
 ***
@@ -53,12 +54,11 @@ Account expires : Mar 28, 2024
 
 ***
 
-### ✅ Task Completed
+### Task Completed
 
 * User **kirsty** created on **App Server 2**
-* Username in lowercase ✔
-* Expiry date set to **2024-03-28** ✔
-
+* Username in lowercase
+* Expiry date set to **2024-03-28**
 
 
 ```
@@ -90,3 +90,6 @@ Number of days of warning before password expires       : 7
 [steve@stapp02 ~]$ 
 ```
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

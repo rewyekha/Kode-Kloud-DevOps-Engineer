@@ -1,5 +1,7 @@
 # Day 71: Configure Jenkins Job for Package Installation
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Some new requirements have come up to install and configure some packages on the Nautilus infrastructure under Stratos Datacenter. The Nautilus DevOps team installed and configured a new Jenkins server so they wanted to create a Jenkins job to automate this task. Find below more details and complete the task accordingly:<br>
 
 1\. Access the Jenkins UI by clicking on the `Jenkins` button in the top bar. Log in using the credentials: username `admin` and password `Adm!n321`.\
@@ -16,7 +18,6 @@ Some new requirements have come up to install and configure some packages on the
 2\. Verify that the Jenkins job runs successfully on repeated executions to ensure reliability.
 
 3\. Capture screenshots of your configuration for documentation and review purposes. Alternatively, use screen recording software like `loom.com` for comprehensive documentation and sharing.
-
 
 
 ***
@@ -64,7 +65,7 @@ The goal of this lab is to create a **parameterized Jenkins Freestyle job** name
 1. Navigate to **Manage Jenkins** → **Manage Plugins**.
 2. Open the **Available** tab and search for **SSH**.
 3. Select **SSH Plugin – Version 158.ve2a\_e90fb\_7319**\
-   &#xNAN;_(Provides the “Execute shell script on remote host using SSH” functionality.)_
+   _(Provides the “Execute shell script on remote host using SSH” functionality.)_
 4. Click **Install without restart** or **Download now and install after restart**.
 5. On the installation page, select **Restart Jenkins when installation is complete and no jobs are running**.
 6. Wait for Jenkins to restart and refresh the browser if required.
@@ -122,7 +123,7 @@ The goal of this lab is to create a **parameterized Jenkins Freestyle job** name
 1. Click **Add build step** → **Execute shell script on remote host using SSH**
 2. Select the **SSH site**:\
    `natasha@ststor01.stratos.xfusioncorp.com:22`
-3.  Enter the following command:
+3. Enter the following command:
 
     echo 'Bl@kW' | sudo -S yum install -y $PACKAGE
 4. Click **Apply**, then **Save**.
@@ -169,7 +170,6 @@ The **`install-packages`** Jenkins job successfully automates RPM package instal
 This implementation leverages the Jenkins SSH plugin to securely execute remote commands and supports repeated executions without manual intervention.
 
 
-
 <figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
@@ -183,7 +183,6 @@ This implementation leverages the Jenkins SSH plugin to securely execute remote 
 <figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
-
 
 
 ```bash
@@ -255,3 +254,7 @@ Finished: SUCCESS
 <figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

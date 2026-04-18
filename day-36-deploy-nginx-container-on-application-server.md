@@ -1,32 +1,33 @@
 # Day 36: Deploy Nginx Container on Application Server
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team is conducting application deployment tests on selected application servers. They require a nginx container deployment on `Application Server 2`. Complete the task with the following instructions:
 
 1. On `Application Server 2` create a container named `nginx_2` using the `nginx` image with the `alpine` tag. Ensure container is in a `running` state.
-
 
 
 ***
 
 ## Day 36: Deploy Nginx Container on Application Server 2
 
-### 📌 Objective
+### Objective
 
 Deploy a container named **`nginx_2`** using the **`nginx:alpine`** image on **Application Server 2 (`stapp02`)** and ensure it is running.
 
-We will use Docker to deploy the **Nginx** container.
+Docker is used to deploy the **Nginx** container.
 
 ***
 
-### 🖥 Infrastructure Details
+### Infrastructure Details
 
-| Server               | Hostname                          | User    |
+| Server | Hostname | User |
 | -------------------- | --------------------------------- | ------- |
 | Application Server 2 | `stapp02.stratos.xfusioncorp.com` | `steve` |
 
 ***
 
-### 🔹 Step 1: Connect to Application Server 2
+### Step 1: Connect to Application Server 2
 
 Login from the jump host:
 
@@ -53,7 +54,7 @@ After successful login:
 
 ***
 
-### 🔹 Step 2: Pull Nginx Alpine Image
+### Step 2: Pull Nginx Alpine Image
 
 ```bash
 docker pull nginx:alpine
@@ -78,7 +79,7 @@ docker.io/library/nginx:alpine
 
 ***
 
-### 🔹 Step 3: Run the Container
+### Step 3: Run the Container
 
 Create and start the container in detached mode:
 
@@ -94,7 +95,7 @@ e25f9b92288a819eb0884a82f0bb495ee1a2e1563f9346b18b920513031591bf
 
 ***
 
-### 🔹 Step 4: Verify Container Status
+### Step 4: Verify Container Status
 
 ```bash
 docker ps
@@ -109,16 +110,16 @@ e25f9b92288a   nginx:alpine   "/docker-entrypoint.…"   8 seconds ago   Up 7 se
 
 ***
 
-### ✅ Verification
+### Verification
 
-✔ Container name: `nginx_2`\
-✔ Image used: `nginx:alpine`\
-✔ Status: `Up` (Running)\
-✔ Port exposed internally: `80/tcp`
+- Container name: `nginx_2`\
+- Image used: `nginx:alpine`\
+- Status: `Up` (Running)\
+- Port exposed internally: `80/tcp`
 
 ***
 
-### 🎯 Conclusion
+### Conclusion
 
 The **nginx\_2** container has been successfully deployed on **Application Server 2 (`stapp02`)** and is running as expected.
 
@@ -126,3 +127,6 @@ The **nginx\_2** container has been successfully deployed on **Application Serve
 
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

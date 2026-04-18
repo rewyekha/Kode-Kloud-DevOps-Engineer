@@ -1,5 +1,7 @@
 # Day 68: Set Up Jenkins Server
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The DevOps team at xFusionCorp Industries is initiating the setup of CI/CD pipelines and has decided to utilize Jenkins as their server. Execute the task according to the provided requirements:
 
 1\. Install `Jenkins` on the jenkins server using the `apt` utility only, and start it using the `service` command.
@@ -16,10 +18,8 @@ The DevOps team at xFusionCorp Industries is initiating the setup of CI/CD pipel
 2\. After Jenkins server installation, click the `Jenkins` button on the top bar to access the Jenkins UI and follow on-screen instructions to create an admin user.
 
 
-
 ### Overview
 
-This document outlines the steps to install and configure Jenkins on the designated server using the `apt` package manager. It also includes the process to create an administrative user through the Jenkins web interface.
 
 ***
 
@@ -194,3 +194,7 @@ Jenkins has been successfully installed using the `apt` package manager, the ser
 <figure><img src=".gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

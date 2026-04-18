@@ -1,12 +1,13 @@
 # Day 57: Print Environment Variables
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ***
 
 ## Kubernetes Pod: Environment Variable Greeting Message
 
 ### Overview
 
-This document explains how to create a Kubernetes Pod that prints a greeting message using environment variables. The pod runs a single shell command and outputs the combined values of predefined environment variables.
 
 The pod is configured to run once and exit successfully, making it suitable for simple execution tasks and testing scenarios.
 
@@ -23,7 +24,7 @@ Create a Kubernetes Pod with the following requirements:
   * `GREETING=Welcome to`
   * `COMPANY=Nautilus`
   * `GROUP=Group`
-*   Command to execute:
+* Command to execute:
 
     ```
     ["/bin/sh", "-c", "echo \"$(GREETING) $(COMPANY) $(GROUP)\""]
@@ -166,3 +167,7 @@ The pod successfully demonstrates how to:
 This pattern is useful for initialization tasks, testing configurations, and simple batch executions inside Kubernetes clusters.
 
 <figure><img src=".gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

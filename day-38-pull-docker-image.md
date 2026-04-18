@@ -1,14 +1,15 @@
 # Day 38: Pull Docker Image
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Nautilus project developers are planning to start testing on a new project. As per their meeting with the DevOps team, they want to test containerized environment application features. As per details shared with DevOps team, we need to accomplish the following task:
 
 a. Pull `busybox:musl` image on `App Server 2` in Stratos DC and re-tag (create new tag) this image as `busybox:blog`.
 
 
-
 ## Pull and Re-Tag Docker Image (busybox:musl → busybox:blog)
 
-### 📌 Objective
+### Objective
 
 Connect to **App Server 2 (stapp02)** via SSH and:
 
@@ -18,16 +19,16 @@ Connect to **App Server 2 (stapp02)** via SSH and:
 
 ***
 
-## 🔐 Step 1: SSH into App Server 2
+## Step 1: SSH into App Server 2
 
-### ❌ Common Mistake (Wrong SSH Syntax)
+### Common Mistake (Wrong SSH Syntax)
 
 ```bash
 thor@jumphost ~$ ssh steve@     172.16.238.11
 ssh: Could not resolve hostname : Name or service not known
 ```
 
-#### 🔎 Why This Happens?
+#### Why This Happens?
 
 There is an unintended space between `steve@` and the IP address.
 
@@ -41,7 +42,7 @@ If a space is added, SSH treats the host as empty → resulting in hostname reso
 
 ***
 
-### ✅ Correct SSH Command
+### Correct SSH Command
 
 ```bash
 thor@jumphost ~$ ssh steve@172.16.238.11
@@ -58,7 +59,7 @@ Warning: Permanently added '172.16.238.11' (ED25519) to the list of known hosts.
 steve@172.16.238.11's password:
 ```
 
-#### 🔎 What This Means
+#### What This Means
 
 * SSH does not recognize the remote server.
 * It asks for confirmation to store the server's public key.
@@ -68,7 +69,7 @@ steve@172.16.238.11's password:
 ~/.ssh/known_hosts
 ```
 
-#### 🟢 Successful Login
+#### Successful Login
 
 ```bash
 [steve@stapp02 ~]$
@@ -78,7 +79,7 @@ You are now logged into **App Server 2**.
 
 ***
 
-## 🐳 Step 2: Pull the Docker Image
+## Step 2: Pull the Docker Image
 
 ### Command
 
@@ -96,18 +97,18 @@ Status: Downloaded newer image for busybox:musl
 docker.io/library/busybox:musl
 ```
 
-### 🔎 Command Explanation
+### Command Explanation
 
-| Part          | Meaning                              |
+| Part | Meaning |
 | ------------- | ------------------------------------ |
 | `docker pull` | Downloads image from Docker registry |
-| `busybox`     | Image name                           |
-| `musl`        | Tag/version of the image             |
-| `library/`    | Official Docker Hub repository       |
+| `busybox` | Image name |
+| `musl` | Tag/version of the image |
+| `library/` | Official Docker Hub repository |
 
 ***
 
-## 🔍 Step 3: Verify the Image
+## Step 3: Verify the Image
 
 ```bash
 docker images | grep busybox
@@ -119,7 +120,7 @@ docker images | grep busybox
 busybox      musl      0188a8de47ca   17 months ago   1.51MB
 ```
 
-### 🔎 Explanation
+### Explanation
 
 * `docker images` → Lists all images
 * `grep busybox` → Filters only busybox images
@@ -128,7 +129,7 @@ busybox      musl      0188a8de47ca   17 months ago   1.51MB
 
 ***
 
-## 🏷️ Step 4: Re-Tag the Image
+## Step 4: Re-Tag the Image
 
 ### Command
 
@@ -136,7 +137,7 @@ busybox      musl      0188a8de47ca   17 months ago   1.51MB
 docker tag busybox:musl busybox:blog
 ```
 
-### 🔎 What This Does
+### What This Does
 
 Creates a **new tag** (`blog`) pointing to the same image ID.
 
@@ -145,7 +146,7 @@ Creates a **new tag** (`blog`) pointing to the same image ID.
 
 ***
 
-## 🔍 Step 5: Verify New Tag
+## Step 5: Verify New Tag
 
 ```bash
 docker images | grep busybox
@@ -158,7 +159,7 @@ busybox      blog      0188a8de47ca   17 months ago   1.51MB
 busybox      musl      0188a8de47ca   17 months ago   1.51MB
 ```
 
-#### ✅ Observation
+#### Observation
 
 Both tags point to:
 
@@ -174,9 +175,9 @@ Meaning:
 
 ***
 
-## 🚨 Common Issues & Troubleshooting
+## Common Issues & Troubleshooting
 
-### 1️⃣ SSH: Permission Denied
+### 1 SSH: Permission Denied
 
 ```bash
 Permission denied (publickey,password).
@@ -190,7 +191,7 @@ Permission denied (publickey,password).
 
 ***
 
-### 2️⃣ Docker Command Not Found
+### 2 Docker Command Not Found
 
 ```bash
 docker: command not found
@@ -209,7 +210,7 @@ sudo usermod -aG docker steve
 
 ***
 
-### 3️⃣ Permission Denied While Running Docker
+### 3 Permission Denied While Running Docker
 
 ```bash
 Got permission denied while trying to connect to the Docker daemon
@@ -225,7 +226,7 @@ Or add user to docker group.
 
 ***
 
-### 4️⃣ Image Not Found Error
+### 4 Image Not Found Error
 
 ```bash
 Error response from daemon: manifest for busybox:musl not found
@@ -239,19 +240,19 @@ Error response from daemon: manifest for busybox:musl not found
 
 ***
 
-## 📚 Summary
+## Summary
 
-| Step         | Command                                |
+| Step | Command |
 | ------------ | -------------------------------------- |
-| SSH Login    | `ssh steve@172.16.238.11`              |
-| Pull Image   | `docker pull busybox:musl`             |
-| Verify Image | \`docker images                        |
+| SSH Login | `ssh steve@172.16.238.11` |
+| Pull Image | `docker pull busybox:musl` |
+| Verify Image | \`docker images |
 | Re-tag Image | `docker tag busybox:musl busybox:blog` |
-| Verify Again | \`docker images                        |
+| Verify Again | \`docker images |
 
 ***
 
-## ✅ Final Result
+## Final Result
 
 You have successfully:
 
@@ -261,5 +262,8 @@ You have successfully:
 * Verified both tags point to the same image
 
 
-
 <figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

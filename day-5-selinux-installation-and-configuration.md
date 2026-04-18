@@ -1,5 +1,7 @@
 # Day 5: SElinux Installation and Configuration
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Following a security audit, the xFusionCorp Industries security team has opted to enhance application and server security with SELinux. To initiate testing, the following requirements have been established for `App server 1` in the `Stratos Datacenter:`<br>
 
 1. Install the required `SELinux` packages.
@@ -89,8 +91,7 @@ thor@jumphost ~$
 ```
 
 
-
-### ✅ Objective Summary
+### Objective Summary
 
 On **App Server 1**:
 
@@ -102,15 +103,15 @@ On **App Server 1**:
 
 ***
 
-### 🧠 Important Concept (Why this works)
+### Important Concept (Why this works)
 
-* `setenforce 0` → **temporary** (lost after reboot) ❌
-* Editing `/etc/selinux/config` → **permanent** ✅
+* `setenforce 0` → **temporary** (lost after reboot)
+* Editing `/etc/selinux/config` → **permanent**
 * Reboot is **not required now**, but config must be ready for next reboot
 
 ***
 
-### 🔹 Step 1: Install SELinux packages
+### Step 1: Install SELinux packages
 
 #### On RHEL / CentOS / Rocky / Alma (Stratos uses these)
 
@@ -122,7 +123,7 @@ sudo yum install -y selinux-policy selinux-policy-targeted
 
 ***
 
-### 🔹 Step 2: Permanently disable SELinux
+### Step 2: Permanently disable SELinux
 
 Edit the SELinux config file:
 
@@ -142,24 +143,24 @@ or
 SELINUX=permissive
 ```
 
-👉 **to**
+- **to**
 
 ```ini
 SELINUX=disabled
 ```
 
-✅ Save and exit.
+- Save and exit.
 
 ***
 
-### 🔹 Step 3: Do NOT reboot (as instructed)
+### Step 3: Do NOT reboot (as instructed)
 
-✔ No reboot required\
-✔ Scheduled maintenance reboot will apply the change
+- No reboot required\
+- Scheduled maintenance reboot will apply the change
 
 ***
 
-### 🔹 Step 4: Ignore current SELinux status
+### Step 4: Ignore current SELinux status
 
 Even if:
 
@@ -179,7 +180,7 @@ or
 Permissive
 ```
 
-👉 **Ignore it** (explicitly stated in the task).
+- **Ignore it** (explicitly stated in the task).
 
 After reboot, SELinux will be:
 
@@ -189,7 +190,7 @@ Disabled
 
 ***
 
-### ✅ Final Verification (Post-Reboot – for your understanding)
+### Final Verification (Post-Reboot – for your understanding)
 
 After reboot (not now):
 
@@ -205,12 +206,15 @@ SELinux status: disabled
 
 ***
 
-### 🏁 Final Answer (What Evaluator Checks)
+### Final Answer (What Evaluator Checks)
 
-✔ SELinux packages installed\
-✔ `/etc/selinux/config` contains `SELINUX=disabled`\
-✔ No reboot performed\
-✔ Permanent disablement configured
+- SELinux packages installed\
+- `/etc/selinux/config` contains `SELINUX=disabled`\
+- No reboot performed\
+- Permanent disablement configured
 
-**Task completed successfully** ✅
+**Task completed successfully**
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

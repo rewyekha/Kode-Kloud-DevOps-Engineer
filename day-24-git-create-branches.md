@@ -1,5 +1,7 @@
 # Day 24: Git Create Branches
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Nautilus developers are actively working on one of the project repositories, `/usr/src/kodekloudrepos/news`. Recently, they decided to implement some new features in the application, and they want to maintain those new changes in a separate branch. Below are the requirements that have been shared with the DevOps team:
 
 1. On `Storage server` in Stratos DC create a new branch `xfusioncorp_news` from `master` branch in `/usr/src/kodekloudrepos/news` git repo.
@@ -7,7 +9,7 @@ Nautilus developers are actively working on one of the project repositories, `/u
 
 ## Create New Branch `xfusioncorp_news` from `master`
 
-### 📌 Task
+### Task
 
 Create a new branch **`xfusioncorp_news`** from the `master` branch in the repository:
 
@@ -15,11 +17,11 @@ Create a new branch **`xfusioncorp_news`** from the `master` branch in the repos
 /usr/src/kodekloudrepos/news
 ```
 
-⚠️ Do **not** make any code changes.
+- Do **not** make any code changes.
 
 ***
 
-### 🖥 Server Details
+### Server Details
 
 * **Server:** `ststor01`
 * **User:** `natasha`
@@ -27,9 +29,9 @@ Create a new branch **`xfusioncorp_news`** from the `master` branch in the repos
 
 ***
 
-### 🚀 Step-by-Step Solution
+### Step-by-Step Solution
 
-#### 1️⃣ SSH into Storage Server
+#### 1 SSH into Storage Server
 
 From jump host:
 
@@ -41,7 +43,7 @@ Enter password when prompted.
 
 ***
 
-#### 2️⃣ Navigate to Repository
+#### 2 Navigate to Repository
 
 ```bash
 cd /usr/src/kodekloudrepos/news
@@ -49,7 +51,7 @@ cd /usr/src/kodekloudrepos/news
 
 ***
 
-#### 3️⃣ Resolve Dubious Ownership Issue
+#### 3 Resolve Dubious Ownership Issue
 
 When running `git status`, you may see:
 
@@ -67,7 +69,7 @@ Enter password for `natasha`.
 
 ***
 
-#### 4️⃣ Navigate to Repository as Root
+#### 4 Navigate to Repository as Root
 
 ```bash
 cd /usr/src/kodekloudrepos/news
@@ -82,7 +84,7 @@ git branch
 
 ***
 
-#### 5️⃣ Switch to master Branch
+#### 5 Switch to master Branch
 
 ```bash
 git checkout master
@@ -102,7 +104,7 @@ Output should show:
 
 ***
 
-#### 6️⃣ Create New Branch
+#### 6 Create New Branch
 
 ```bash
 git checkout -b xfusioncorp_news
@@ -110,7 +112,7 @@ git checkout -b xfusioncorp_news
 
 ***
 
-#### 7️⃣ Verify Branch Creation
+#### 7 Verify Branch Creation
 
 ```bash
 git branch
@@ -126,7 +128,7 @@ Expected Output:
 
 ***
 
-### ✅ Final Verification
+### Final Verification
 
 ```bash
 git status
@@ -139,13 +141,13 @@ On branch xfusioncorp_news
 nothing to commit, working tree clean
 ```
 
-✔ Branch successfully created\
-✔ No code changes made\
-✔ Working tree clean
+- Branch successfully created\
+- No code changes made\
+- Working tree clean
 
 ***
 
-### 📚 Key Notes
+### Key Notes
 
 * If repository ownership issues appear, switching to root resolves it.
 * Always ensure you're on `master` before creating a new branch.
@@ -154,5 +156,8 @@ nothing to commit, working tree clean
 
 ***
 
-**Task Status: Completed Successfully** ✅
+**Task Status: Completed Successfully**
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

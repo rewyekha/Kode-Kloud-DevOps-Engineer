@@ -1,5 +1,7 @@
 # Day 53: Resolve VolumeMounts Issue in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 We encountered an issue with our Nginx and PHP-FPM setup on the Kubernetes cluster this morning, which halted its functionality. Investigate and rectify the issue:
 
 The pod name is `nginx-phpfpm` and configmap name is `nginx-config`. Identify and fix the problem.
@@ -7,7 +9,6 @@ The pod name is `nginx-phpfpm` and configmap name is `nginx-config`. Identify an
 Once resolved, copy `/home/thor/index.php` file from the `jump host` to the `nginx-container` within the nginx document root. After this, you should be able to access the website using `Website` button on the top bar.
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
-
 
 
 ***
@@ -187,7 +188,7 @@ Click the **Website button** on the top bar — the page should now load success
 
 ***
 
-### ✅ Key Notes
+### Key Notes
 
 1. Both nginx and php-fpm containers **must share the same volume path** `/var/www/html`.
 2. ConfigMap must point to **the same document root** as the volume.
@@ -222,8 +223,10 @@ thor@jump-host ~$ kubectl exec -it nginx-phpfpm -c nginx-container -- curl http:
 ***
 
 
-
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

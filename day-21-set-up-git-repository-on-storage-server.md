@@ -1,5 +1,7 @@
 # Day 21: Set Up Git Repository on Storage Server
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus development team has provided requirements to the DevOps team for a new application development project, specifically requesting the establishment of a Git repository. Follow the instructions below to create the Git repository on the Storage server in the Stratos DC:
 
 ```
@@ -9,12 +11,10 @@ Create a bare repository named /opt/games.git (ensure exact name usage).
 ```
 
 
-
 ## Git Repository Setup on Nautilus Storage Server
 
 ### Overview
 
-This document describes the steps followed to install Git and create a bare Git repository on the Nautilus **Storage Server (`ststor01`)** as requested by the development team.
 
 ***
 
@@ -153,6 +153,10 @@ drwxr-xr-x 6 root root 4096 Feb 10 04:37 /opt/games.git
 
 ### Final Status
 
-✅ Git installed successfully on the Storage Server\
-✅ Bare Git repository created at `/opt/games.git`\
-✅ Repository name and path match the project requirements
+- Git installed successfully on the Storage Server\
+- Bare Git repository created at `/opt/games.git`\
+- Repository name and path match the project requirements
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

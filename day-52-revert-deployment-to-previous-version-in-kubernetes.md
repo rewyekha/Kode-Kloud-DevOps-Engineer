@@ -1,11 +1,12 @@
 # Day 52: Revert Deployment to Previous Version in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Earlier today, the Nautilus DevOps team deployed a new release for an application. However, a customer has reported a bug related to this recent release. Consequently, the team aims to revert to the previous version.
 
 There exists a deployment named `nginx-deployment`; initiate a rollback to the previous revision.
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
-
 
 
 ## Kubernetes Deployment Rollback – `nginx-deployment`
@@ -137,10 +138,10 @@ REVISION  CHANGE-CAUSE
 
 Two revisions exist:
 
-| Revision | Description                          |
+| Revision | Description |
 | -------- | ------------------------------------ |
-| 1        | Original stable version              |
-| 2        | Updated version using `nginx:alpine` |
+| 1 | Original stable version |
+| 2 | Updated version using `nginx:alpine` |
 
 Since **Revision 2 contains the bug**, we rollback to the **previous revision**.
 
@@ -272,13 +273,13 @@ When a rollback occurs, Kubernetes performs the following steps:
 
 ## Final Result
 
-| Component   | Status                   |
+| Component | Status |
 | ----------- | ------------------------ |
-| Deployment  | Rolled back successfully |
-| Pods        | Running                  |
-| Image       | nginx:1.16               |
-| Revision    | 3                        |
-| Application | Stable version restored  |
+| Deployment | Rolled back successfully |
+| Pods | Running |
+| Image | nginx:1.16 |
+| Revision | 3 |
+| Application | Stable version restored |
 
 ***
 
@@ -292,13 +293,13 @@ kubectl rollout undo deployment nginx-deployment
 
 ## Key Kubernetes Commands
 
-| Command                       | Purpose                    |
+| Command | Purpose |
 | ----------------------------- | -------------------------- |
-| `kubectl get all`             | View all resources         |
+| `kubectl get all` | View all resources |
 | `kubectl describe deployment` | Inspect deployment details |
-| `kubectl rollout history`     | View deployment revisions  |
-| `kubectl rollout undo`        | Rollback deployment        |
-| `kubectl rollout status`      | Check rollout progress     |
+| `kubectl rollout history` | View deployment revisions |
+| `kubectl rollout undo` | Rollback deployment |
+| `kubectl rollout status` | Check rollout progress |
 
 ***
 
@@ -311,7 +312,10 @@ kubectl rollout undo deployment nginx-deployment
 
 ***
 
-✔ Deployment successfully rolled back to the **previous stable version**.
+- Deployment successfully rolled back to the **previous stable version**.
 
 <figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

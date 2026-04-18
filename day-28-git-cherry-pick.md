@@ -1,12 +1,14 @@
 # Day 28: Git Cherry Pick
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus application development team has been working on a project repository /opt/ecommerce.git. This repo is cloned at /usr/src/kodekloudrepos on storage server in Stratos DC. They recently shared the following requirements with the DevOps team:&#x20;
 
 There are two branches in this repository, master and feature. One of the developers is working on the feature branch and their work is still in progress, however they want to merge one of the commits from the feature branch to the master branch, the message for the commit that needs to be merged into master is Update info.txt. Accomplish this task for them, also remember to push your changes eventually.
 
 ## Cherry-Pick a Specific Commit from Feature to Master
 
-### 📌 Scenario
+### Scenario
 
 The Nautilus development team maintains a Git repository:
 
@@ -27,7 +29,7 @@ There are two branches:
 
 A developer requested to merge **only one specific commit** from `feature` into `master`.
 
-#### 🎯 Required Commit
+#### Required Commit
 
 ```
 Update info.txt
@@ -35,7 +37,7 @@ Update info.txt
 
 ***
 
-## 🖥 Step 1: Login to Storage Server
+## Step 1: Login to Storage Server
 
 From jump host:
 
@@ -54,7 +56,7 @@ natasha@ststor01's password:
 
 ***
 
-## 📁 Step 2: Navigate to Repository
+## Step 2: Navigate to Repository
 
 ```bash
 cd /usr/src/kodekloudrepos/ecommerce
@@ -75,7 +77,7 @@ cd /usr/src/kodekloudrepos/ecommerce
 
 ***
 
-## 🌿 Step 3: Verify Available Branches
+## Step 3: Verify Available Branches
 
 ```bash
 git branch
@@ -90,7 +92,7 @@ Output:
 
 ***
 
-## 🔍 Step 4: Identify the Required Commit
+## Step 4: Identify the Required Commit
 
 Switch to `feature` branch:
 
@@ -113,7 +115,7 @@ beb11d8 Update welcome.txt
 b43cc6a initial commit
 ```
 
-✅ Required commit hash:
+- Required commit hash:
 
 ```
 2bb682f
@@ -121,7 +123,7 @@ b43cc6a initial commit
 
 ***
 
-## 🔄 Step 5: Switch to Master Branch
+## Step 5: Switch to Master Branch
 
 ```bash
 git checkout master
@@ -148,7 +150,7 @@ Already up to date.
 
 ***
 
-## 🍒 Step 6: Cherry-Pick Required Commit
+## Step 6: Cherry-Pick Required Commit
 
 ```bash
 git cherry-pick 2bb682f
@@ -164,7 +166,7 @@ Output:
 
 ***
 
-## 🚀 Step 7: Push Changes to Remote Repository
+## Step 7: Push Changes to Remote Repository
 
 ```bash
 git push origin master
@@ -180,7 +182,7 @@ To /opt/ecommerce.git
 
 ***
 
-## ✅ Step 8: Verify Final Commit History
+## Step 8: Verify Final Commit History
 
 ```bash
 git log --oneline
@@ -196,15 +198,15 @@ b43cc6a initial commit
 
 ***
 
-## 📊 Final Repository State
+## Final Repository State
 
-#### ✔ master branch contains:
+#### master branch contains:
 
 * `initial commit`
 * `Add welcome.txt`
 * `Update info.txt`
 
-#### ✔ feature branch contains:
+#### feature branch contains:
 
 * `Update welcome.txt`
 * `Update info.txt`
@@ -212,9 +214,9 @@ b43cc6a initial commit
 
 ***
 
-## 📚 Key Concept Used
+## Key Concept Used
 
-#### 🔹 `git cherry-pick`
+#### `git cherry-pick`
 
 Cherry-pick allows you to apply a specific commit from one branch into another without merging the entire branch.
 
@@ -226,7 +228,7 @@ git cherry-pick <commit-hash>
 
 ***
 
-## 🏁 Conclusion
+## Conclusion
 
 The requested commit `Update info.txt` was successfully:
 
@@ -235,15 +237,14 @@ The requested commit `Update info.txt` was successfully:
 * Pushed to remote repository
 * Verified in commit history
 
-Task completed successfully. 🚀
+Task completed successfully.
 
 
-
-## ⚠️ Common Mistake: Cherry-Picking the Wrong Commit (Educational Section)
+## Common Mistake: Cherry-Picking the Wrong Commit (Educational Section)
 
 During the process, it is possible to accidentally cherry-pick the wrong commit.
 
-### ❌ What Went Wrong?
+### What Went Wrong?
 
 The required commit message was:
 
@@ -265,7 +266,7 @@ The correct commit should have been:
 
 ***
 
-## 🔎 How to Identify the Mistake
+## How to Identify the Mistake
 
 After cherry-picking and pushing, checking the log revealed:
 
@@ -285,7 +286,7 @@ This confirmed that the wrong commit had been merged into `master`.
 
 ***
 
-## ✅ Fix It Properly
+## Fix It Properly
 
 Since the incorrect commit was already pushed to the remote repository, we must:
 
@@ -295,7 +296,7 @@ Since the incorrect commit was already pushed to the remote repository, we must:
 
 ***
 
-### 🔹 Step 1: Reset Master Back
+### Step 1: Reset Master Back
 
 Reset to the commit before the wrong cherry-pick:
 
@@ -311,7 +312,7 @@ HEAD is now at 418e307 Add welcome.txt
 
 ***
 
-### 🔹 Step 2: Cherry-Pick the Correct Commit
+### Step 2: Cherry-Pick the Correct Commit
 
 ```bash
 git cherry-pick 2bb682f
@@ -326,7 +327,7 @@ Output:
 
 ***
 
-### 🔹 Step 3: Force Push the Correct History
+### Step 3: Force Push the Correct History
 
 Because the commit history changed, use force push:
 
@@ -342,7 +343,7 @@ Output:
 
 ***
 
-### 🔹 Step 4: Verify Final State
+### Step 4: Verify Final State
 
 ```bash
 git log --oneline
@@ -358,7 +359,7 @@ b43cc6a initial commit
 
 ***
 
-## 🎯 Final State Required
+## Final State Required
 
 The `master` branch must contain:
 
@@ -368,11 +369,11 @@ The `master` branch must contain:
 
 And must NOT contain:
 
-* ❌ `Update welcome.txt`
+* `Update welcome.txt`
 
 ***
 
-## 📘 Learning Outcome
+## Learning Outcome
 
 This scenario demonstrates:
 
@@ -380,3 +381,7 @@ This scenario demonstrates:
 * How to safely recover from pushing an incorrect commit
 * Proper usage of `git reset --hard`
 * When and why `git push --force` is required
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

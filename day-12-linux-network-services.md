@@ -1,5 +1,7 @@
 # Day 12: Linux Network Services
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Our monitoring tool has reported an issue in `Stratos Datacenter`. One of our app servers has an issue, as its Apache service is not reachable on port `3002` (which is the Apache port). The service itself could be down, the firewall could be at fault, or something else could be causing the issue.
 
 Use tools like `telnet`, `netstat`, etc. to find and fix the issue. Also make sure Apache is reachable from the jump host without compromising any security settings.\
@@ -42,11 +44,11 @@ Once fixed, you can test the same using command `curl http://stapp01:3002` comma
 
 ***
 
-### ✅ STEP-BY-STEP (YouTube-style)
+### STEP-BY-STEP (YouTube-style)
 
 ***
 
-### 1️⃣ From jump host – check connectivity
+### 1 From jump host – check connectivity
 
 ```bash
 ssh thor@jump_host
@@ -58,11 +60,11 @@ Test port:
 telnet stapp01 3002
 ```
 
-❌ If it fails → problem confirmed
+- If it fails → problem confirmed
 
 ***
 
-### 2️⃣ SSH into App Server 1
+### 2 SSH into App Server 1
 
 ```bash
 ssh tony@stapp01
@@ -71,7 +73,7 @@ sudo su
 
 ***
 
-### 3️⃣ Check Apache service
+### 3 Check Apache service
 
 ```bash
 systemctl status httpd
@@ -87,7 +89,7 @@ If it **fails**, continue below.
 
 ***
 
-### 4️⃣ Check what is using port 3002
+### 4 Check what is using port 3002
 
 ```bash
 netstat -lntp | grep 3002
@@ -103,7 +105,7 @@ Example:
 tcp  0  0 127.0.0.1:3002  LISTEN  456/someprocess
 ```
 
-👉 Kill that PID (ONLY the one using 3002):
+- Kill that PID (ONLY the one using 3002):
 
 ```bash
 kill 456
@@ -117,7 +119,7 @@ netstat -lntp | grep 3002
 
 ***
 
-### 5️⃣ Restart Apache
+### 5 Restart Apache
 
 ```bash
 systemctl restart httpd
@@ -138,7 +140,7 @@ You should see:
 
 ***
 
-### 6️⃣ Test locally on stapp01
+### 6 Test locally on stapp01
 
 ```bash
 curl http://localhost:3002
@@ -148,7 +150,7 @@ If this works → Apache is fine.
 
 ***
 
-### 7️⃣ Check firewall (VERY IMPORTANT)
+### 7 Check firewall (VERY IMPORTANT)
 
 ```bash
 iptables -L -n
@@ -166,11 +168,11 @@ Verify:
 iptables -L -n
 ```
 
-✔ Only port 3002 opened → **no security compromise**
+- Only port 3002 opened → **no security compromise**
 
 ***
 
-### 8️⃣ Final test from jump host (THIS IS WHAT GRADER CHECKS)
+### 8 Final test from jump host (THIS IS WHAT GRADER CHECKS)
 
 Exit back:
 
@@ -184,28 +186,28 @@ Test:
 curl http://stapp01:3002
 ```
 
-🎉 If this works → **TASK PASSES**
+- If this works → **TASK PASSES**
 
 ***
 
-### ✅ Summary (YouTube Logic Applied Correctly)
+### Summary (YouTube Logic Applied Correctly)
 
-| Step          | What you did            |
+| Step | What you did |
 | ------------- | ----------------------- |
-| telnet        | Verified issue          |
-| netstat       | Found port usage        |
-| kill PID      | Freed port              |
-| restart httpd | Fixed Apache            |
-| iptables      | Allowed port            |
-| curl          | Verified from jump host |
+| telnet | Verified issue |
+| netstat | Found port usage |
+| kill PID | Freed port |
+| restart httpd | Fixed Apache |
+| iptables | Allowed port |
+| curl | Verified from jump host |
 
 ***
 
-### ⚠️ Very Important Notes
+### Very Important Notes
 
-* ❌ Do **NOT** edit `index.html`
-* ❌ Do **NOT** change Apache config unless required
-* ✅ Only fix **service + port + firewall**
+* Do **NOT** edit `index.html`
+* Do **NOT** change Apache config unless required
+* Only fix **service + port + firewall**
 
 ***
 
@@ -217,44 +219,48 @@ systemctl status httpd
 ```
 
 <pre><code><strong>[root@stapp01 tony]# history
-</strong>    1  systemctl status httpd
-    2  systemctl start httpd
-    3  netstat -lntp | grep 8087
-    4  systemctl stop sendmail
-    5  systemctl disable sendmail
-    6  netstat -lntp | grep 8087
-    7  systemctl start httpd
-    8  systemctl enable httpd
-    9  systemctl status httpd
-   10  netstat -lntp | grep 8087
-   11  iptables -L -n
-   12  curl http://localhost:8087
-   13  sudo history
-   14  history
-   15  history
-[root@stapp01 tony]# 
+</strong> 1 systemctl status httpd
+    2 systemctl start httpd
+    3 netstat -lntp | grep 8087
+    4 systemctl stop sendmail
+    5 systemctl disable sendmail
+    6 netstat -lntp | grep 8087
+    7 systemctl start httpd
+    8 systemctl enable httpd
+    9 systemctl status httpd
+   10 netstat -lntp | grep 8087
+   11 iptables -L -n
+   12 curl http://localhost:8087
+   13 sudo history
+   14 history
+   15 history
+[root@stapp01 tony]#
 </code></pre>
 
 <pre><code><strong>[tony@stapp01 ~]$ iptables -L -n
 </strong>iptables v1.8.4 (nf_tables): Could not fetch rule set generation id: Permission denied (you must be root)
 
 <strong>[tony@stapp01 ~]$ sudo iptables -L -n
-</strong>[sudo] password for tony: 
+</strong>[sudo] password for tony:
 Chain INPUT (policy ACCEPT)
-target     prot opt source               destination         
-ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3002
-ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
-ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           
-ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           
-ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
-REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+target prot opt source destination
+ACCEPT tcp -- 0.0.0.0/0 0.0.0.0/0 tcp dpt:3002
+ACCEPT all -- 0.0.0.0/0 0.0.0.0/0 state RELATED,ESTABLISHED
+ACCEPT icmp -- 0.0.0.0/0 0.0.0.0/0
+ACCEPT all -- 0.0.0.0/0 0.0.0.0/0
+ACCEPT tcp -- 0.0.0.0/0 0.0.0.0/0 state NEW tcp dpt:22
+REJECT all -- 0.0.0.0/0 0.0.0.0/0 reject-with icmp-host-prohibited
 
 Chain FORWARD (policy ACCEPT)
-target     prot opt source               destination         
-REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited
+target prot opt source destination
+REJECT all -- 0.0.0.0/0 0.0.0.0/0 reject-with icmp-host-prohibited
 
 Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination         
+target prot opt source destination
 # Warning: iptables-legacy tables present, use iptables-legacy to see them
-[tony@stapp01 ~]$ 
+[tony@stapp01 ~]$
 </code></pre>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

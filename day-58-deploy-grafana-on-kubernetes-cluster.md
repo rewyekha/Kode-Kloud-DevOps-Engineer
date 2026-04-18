@@ -1,5 +1,7 @@
 # Day 58: Deploy Grafana on Kubernetes Cluster
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps teams is planning to set up a Grafana tool to collect and analyze analytics from some applications. They are planning to deploy it on Kubernetes cluster. Below you can find more details.
 
 1.) Create a deployment named `grafana-deployment-xfusion` using any grafana image for Grafana app. Set other parameters as per your choice.
@@ -11,12 +13,10 @@ The Nautilus DevOps teams is planning to set up a Grafana tool to collect and an
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
 
-
 ## Grafana Deployment on Kubernetes
 
 ### Overview
 
-This document describes the steps to deploy Grafana on a Kubernetes cluster and expose it using a NodePort service. The objective is to make the Grafana web interface accessible externally without modifying application-level configurations.
 
 ***
 
@@ -131,9 +131,12 @@ http://10.244.195.199:32000
 Grafana has been successfully deployed on the Kubernetes cluster and exposed via a NodePort service. The application is accessible externally using the node IP and the configured port.
 
 
-
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

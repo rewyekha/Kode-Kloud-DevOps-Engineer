@@ -1,5 +1,7 @@
 # Day 17: Install and Configure PostgreSQL
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The `Nautilus` application development team has shared that they are planning to deploy one newly developed application on `Nautilus` infra in `Stratos DC`. The application uses PostgreSQL database, so as a pre-requisite we need to set up PostgreSQL database server as per requirements shared below:
 
 PostgreSQL database server is already installed on the `Nautilus` database server.
@@ -52,3 +54,7 @@ kodekloud_db7-> exit
 Use \q to quit.
 kodekloud_db7-> 
 ```
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
