@@ -1,6 +1,7 @@
 # Day 26: Git Manage Remotes
 
-This document outlines the complete terminal execution performed on the **Stratos DC** Storage Server to:
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 
 * Add a new Git remote `dev_ecommerce`
 * Commit a new file to the `master` branch
@@ -202,12 +203,16 @@ Output:
 
 ## Final Outcome
 
-✔ Added new remote `dev_ecommerce`\
-✔ Copied `/tmp/index.html` into repository\
-✔ Committed changes to `master`\
-✔ Successfully pushed `master` branch to `/opt/xfusioncorp_ecommerce.git`\
-✔ Verified remote branch exists
+- Added new remote `dev_ecommerce`\
+- Copied `/tmp/index.html` into repository\
+- Committed changes to `master`\
+- Successfully pushed `master` branch to `/opt/xfusioncorp_ecommerce.git`\
+- Verified remote branch exists
 
 ***
 
-✅ **Task Completed Successfully**
+- **Task Completed Successfully**
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

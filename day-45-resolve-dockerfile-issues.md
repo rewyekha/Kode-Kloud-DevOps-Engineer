@@ -1,5 +1,7 @@
 # Day 45: Resolve Dockerfile Issues
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ### Problem Statement
 
 The Nautilus DevOps team needs to create a Docker image based on requirements provided by the development team. A team member attempted to build the image using a Dockerfile located on **App Server 1** but encountered errors during the build process.
@@ -23,7 +25,7 @@ The Nautilus DevOps team needs to create a Docker image based on requirements pr
 
 ## Infrastructure Details
 
-| Server  | Hostname                        | User | Purpose               |
+| Server | Hostname | User | Purpose |
 | ------- | ------------------------------- | ---- | --------------------- |
 | stapp01 | stapp01.stratos.xfusioncorp.com | tony | Nautilus App Server 1 |
 
@@ -243,5 +245,6 @@ Docker image **`nautilus:latest`** is now available.
 
 <figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
+---
 
-
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

@@ -1,5 +1,7 @@
 # Day 73: Jenkins Scheduled Jobs
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The devops team of xFusionCorp Industries is working on to setup centralised logging management system to maintain and analyse server logs easily. Since it will take some time to implement, they wanted to gather some server logs on a regular basis. At least one of the app servers is having issues with the Apache server. The team needs Apache logs so that they can identify and troubleshoot the issues easily if they arise. So they decided to create a Jenkins job to collect logs from the server. Please create/configure a Jenkins job as per details mentioned below:
 
 Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login using username `admin` and password `Adm!n321`\
@@ -14,14 +16,10 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 **3.** For scenarios that require web UI changes, take screenshots or record your work (e.g. using loom.com) so you can share it for review if the task is marked incomplete.
 
 
-
-
-
 ## Jenkins Job: Centralized Apache Log Collection (copy-logs)
 
 ### Overview
 
-This document describes the setup and configuration of a Jenkins job to periodically collect Apache server logs from Application Server 1 (`stapp01`) and store them on the Storage Server (`ststor01`). The job is scheduled to run every 3 minutes and ensures centralized log availability for troubleshooting and analysis.
 
 ***
 
@@ -40,12 +38,12 @@ This document describes the setup and configuration of a Jenkins job to periodic
 
 ### Infrastructure Details
 
-| Server Role        | Hostname  | User    | Password   |
+| Server Role | Hostname | User | Password |
 | ------------------ | --------- | ------- | ---------- |
-| Jenkins Server     | jenkins   | jenkins | j@rv!s     |
-| Application Server | stapp01   | tony    | Ir0nM@n    |
-| Storage Server     | ststor01  | natasha | Bl@kW      |
-| Jumphost           | jump-host | thor    | mjolnir123 |
+| Jenkins Server | jenkins | jenkins | j@rv!s |
+| Application Server | stapp01 | tony | Ir0nM@n |
+| Storage Server | ststor01 | natasha | Bl@kW |
+| Jumphost | jump-host | thor | mjolnir123 |
 
 ***
 
@@ -291,3 +289,7 @@ The Jenkins job `copy-logs` is successfully configured to collect Apache logs fr
 <figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

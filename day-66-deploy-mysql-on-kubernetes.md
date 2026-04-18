@@ -1,5 +1,7 @@
 # Day 66: Deploy MySQL on Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 A new MySQL server needs to be deployed on Kubernetes cluster. The Nautilus DevOps team was working on to gather the requirements. Recently they were able to finalize the requirements and shared them with the team members to start working on it. Below you can find the details:
 
 1.) Create a PersistentVolume `mysql-pv`, its capacity should be `250Mi`, set other parameters as per your preference.
@@ -25,7 +27,6 @@ d.) `name: MYSQL_PASSWORD`, should pick value from secretKeyRef `name: mysql-use
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
 
-
 ## Deploying MySQL on Kubernetes with Persistent Storage and Secrets
 
 **Category:** Kubernetes / Storage / Secrets Management **Difficulty:** Intermediate **Platform:** KodeKloud / Nautilus DevOps Lab
@@ -48,15 +49,15 @@ By the end of this lab, the following Kubernetes resources will be configured an
 
 ### Requirements
 
-| Resource              | Name               | Details                                       |
+| Resource | Name | Details |
 | --------------------- | ------------------ | --------------------------------------------- |
-| PersistentVolume      | `mysql-pv`         | 250Mi, ReadWriteOnce, Retain policy, hostPath |
-| PersistentVolumeClaim | `mysql-pv-claim`   | 250Mi, ReadWriteOnce                          |
-| Deployment            | `mysql-deployment` | mysql:5.7, mounted at `/var/lib/mysql`        |
-| Service               | `mysql`            | NodePort, port 3306, nodePort 30007           |
-| Secret                | `mysql-root-pass`  | key: `password`                               |
-| Secret                | `mysql-user-pass`  | keys: `username`, `password`                  |
-| Secret                | `mysql-db-url`     | key: `database`                               |
+| PersistentVolume | `mysql-pv` | 250Mi, ReadWriteOnce, Retain policy, hostPath |
+| PersistentVolumeClaim | `mysql-pv-claim` | 250Mi, ReadWriteOnce |
+| Deployment | `mysql-deployment` | mysql:5.7, mounted at `/var/lib/mysql` |
+| Service | `mysql` | NodePort, port 3306, nodePort 30007 |
+| Secret | `mysql-root-pass` | key: `password` |
+| Secret | `mysql-user-pass` | keys: `username`, `password` |
+| Secret | `mysql-db-url` | key: `database` |
 
 ***
 
@@ -432,19 +433,19 @@ EOF       claimName: mysql-pv-claim
    +---------------------+      +---------------------+
 ```
 
-| Check         | Expected Result                        |
+| Check | Expected Result |
 | ------------- | -------------------------------------- |
-| Pod status    | Running, Ready 1/1, Restart Count 0    |
-| PV status     | Bound to `default/mysql-pv-claim`      |
-| PVC status    | Bound to `mysql-pv`                    |
-| Service type  | NodePort, 3306:30007/TCP               |
-| Secrets count | 3 Opaque secrets present               |
-| Volume mount  | `/var/lib/mysql` from `mysql-pv-claim` |
-| Env vars      | All 4 sourced from secretKeyRef        |
-
+| Pod status | Running, Ready 1/1, Restart Count 0 |
+| PV status | Bound to `default/mysql-pv-claim` |
+| PVC status | Bound to `mysql-pv` |
+| Service type | NodePort, 3306:30007/TCP |
+| Secrets count | 3 Opaque secrets present |
+| Volume mount | `/var/lib/mysql` from `mysql-pv-claim` |
+| Env vars | All 4 sourced from secretKeyRef |
 
 
 <figure><img src=".gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
+---
 
-
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

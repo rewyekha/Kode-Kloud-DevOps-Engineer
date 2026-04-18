@@ -1,5 +1,7 @@
 # Day 51: Execute Rolling Updates in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 An application currently running on the Kubernetes cluster employs the nginx web server. The Nautilus application development team has introduced some recent changes that need deployment. They've crafted an image `nginx:1.19` with the latest updates.
 
 Execute a rolling update for this application, integrating the `nginx:1.19` image. The deployment is named `nginx-deployment`.
@@ -176,7 +178,7 @@ nginx-deployment-6655dc8cfb-hsnrn   1/1     Running   0          55s
 
 ***
 
-### ✅ Result
+### Result
 
 * The **nginx-deployment** was successfully updated to **nginx:1.19**.
 * All pods were **recreated gradually** via **rolling update**.
@@ -184,3 +186,6 @@ nginx-deployment-6655dc8cfb-hsnrn   1/1     Running   0          55s
 
 <figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

@@ -1,9 +1,10 @@
 # Git task: Delete Git Branch
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus developers are engaged in active development on one of the project repositories located at `/usr/src/kodekloudrepos/ecommerce`. During testing, several test branches were created, and now they require cleanup. Here are the requirements provided to the DevOps team:
 
 On the `Storage server` in Stratos DC, delete a branch named `xfusioncorp_ecommerce` from the `/usr/src/kodekloudrepos/ecommerce` Git repository.
-
 
 
 ***
@@ -147,3 +148,7 @@ The branch **`xfusioncorp_ecommerce`** has been successfully removed from the re
 ```
 
 <figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

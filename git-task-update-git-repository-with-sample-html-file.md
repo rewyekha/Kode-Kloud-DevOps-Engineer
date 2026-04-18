@@ -1,5 +1,7 @@
 # Git task: Update Git Repository with Sample HTML File
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ## Copying `index.html` to Git Repository and Pushing to Master
 
 ### Question
@@ -144,5 +146,8 @@ Your branch is up to date with 'origin/master'.
 nothing to commit, working tree clean
 ```
 
-✅ The `index.html` file is successfully added, committed, and pushed to the master branch
+- The `index.html` file is successfully added, committed, and pushed to the master branch
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

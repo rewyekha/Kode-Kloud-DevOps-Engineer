@@ -1,5 +1,7 @@
 # Day 20: Configure Nginx + PHP-FPM Using Unix Sock
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The `Nautilus` application development team is planning to launch a new PHP-based application, which they want to deploy on `Nautilus` infra in `Stratos DC`. The development team had a meeting with the production support team and they have shared some requirements regarding the infrastructure. Below are the requirements they shared:
 
 a. Install `nginx` on `app server 3` , configure it to use port `8099` and its document root should be `/var/www/html`.
@@ -11,7 +13,6 @@ c. Configure php-fpm and nginx to work together.
 d. Once configured correctly, you can test the website using `curl http://stapp03:8099/index.php` command from jump host.
 
 NOTE: We have copied two files, `index.php` and `info.php`, under `/var/www/html` as part of the `PHP-based application` setup. Please do not modify these files.
-
 
 
 ## Configure Nginx & PHP-FPM 8.3 Using Unix Socket on App Server 3
@@ -29,7 +30,7 @@ Deploy a PHP-based application on **stapp03** using **nginx** and **PHP-FPM 8.3*
 * PHP-FPM version: **8.3**
 * PHP-FPM socket: `/var/run/php-fpm/default.sock`
 * Do **not** modify `index.php` or `info.php`
-*   Validate using:
+* Validate using:
 
     ```bash
     curl http://stapp03:8099/index.php
@@ -189,3 +190,6 @@ Welcome to xFusionCorp Industries!
 * Application accessible via curl
 * All requirements satisfied without modifying application files
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

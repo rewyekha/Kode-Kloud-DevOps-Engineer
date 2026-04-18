@@ -1,5 +1,7 @@
 # Day 47: Docker Python App
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 A python app needed to be Dockerized, and then it needs to be deployed on `App Server 2`. We have already copied a `requirements.txt` file (having the app dependencies) under `/python_app/src/` directory on `App Server 2`. Further complete this task as per details mentioned below:
 
 1. Create a `Dockerfile` under `/python_app` directory:
@@ -311,17 +313,21 @@ Application is working successfully.
 
 ## Final Verification Checklist
 
-✔ Dockerfile created in `/python_app`\
-✔ Base image: `python:3.9`\
-✔ Dependencies installed via `requirements.txt`\
-✔ Port **8087 exposed**\
-✔ Image built: `nautilus/python-app`\
-✔ Container created: `pythonapp_nautilus`\
-✔ Port mapped **8095 → 8087**\
-✔ Application accessible via curl
+- Dockerfile created in `/python_app`\
+- Base image: `python:3.9`\
+- Dependencies installed via `requirements.txt`\
+- Port **8087 exposed**\
+- Image built: `nautilus/python-app`\
+- Container created: `pythonapp_nautilus`\
+- Port mapped **8095 → 8087**\
+- Application accessible via curl
 
 ***
 
-✅ **Task Completed Successfully**
+- **Task Completed Successfully**
 
 <figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

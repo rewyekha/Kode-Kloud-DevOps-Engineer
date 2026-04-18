@@ -1,5 +1,7 @@
 # Day 49: Deploy Applications with Kubernetes Deployments
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team is delving into Kubernetes for app management. One team member needs to create a deployment following these details:
 
 Create a deployment named `nginx` to deploy the application `nginx` using the image `nginx:latest` (ensure to specify the tag)
@@ -102,5 +104,8 @@ Scaled up replica set nginx-7c5d8bf9f7 from 0 to 1
 * Kubernetes ensures **desired replicas are running** and handles updates via rolling strategy.
 
 
-
 <figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

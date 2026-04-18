@@ -1,12 +1,14 @@
 # Day 30: Git hard reset
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ***
 
 ## Day 30: Git Hard Reset
 
 ***
 
-### 📌 Question
+### Question
 
 The Nautilus application development team was working on a git repository:
 
@@ -32,7 +34,7 @@ add data.txt file
 
 ***
 
-## 🖥 Server Details
+## Server Details
 
 * Server: `ststor01`
 * User: `natasha`
@@ -40,7 +42,7 @@ add data.txt file
 
 ***
 
-## ✅ Solution
+## Solution
 
 ***
 
@@ -184,17 +186,17 @@ a2b2d0c (HEAD -> master, origin/master) add data.txt file
 
 ***
 
-## 🎯 Final Result
+## Final Result
 
-✔ Only two commits remain\
-✔ `HEAD` points to `add data.txt file`\
-✔ All test commits removed\
-✔ Remote repository updated\
-✔ Working tree clean
+- Only two commits remain\
+- `HEAD` points to `add data.txt file`\
+- All test commits removed\
+- Remote repository updated\
+- Working tree clean
 
 ***
 
-## 🏁 Final Command Summary
+## Final Command Summary
 
 ```bash
 ssh natasha@ststor01
@@ -209,4 +211,8 @@ git log --oneline
 
 ***
 
-✅ **Task Completed Successfully**
+- **Task Completed Successfully**
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

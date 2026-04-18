@@ -1,16 +1,17 @@
 # Day 31: Git Stash
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus application development team was working on a git repository `/usr/src/kodekloudrepos/ecommerce` present on `Storage server` in `Stratos DC`. One of the developers stashed some in-progress changes in this repository, but now they want to restore some of the stashed changes. Find below more details to accomplish this task:
 
 Look for the stashed changes under `/usr/src/kodekloudrepos/ecommerce` git repository, and restore the stash with `stash@{1}` identifier. Further, commit and push your changes to the origin.
-
 
 
 ***
 
 ## Restore Git Stash and Push Changes
 
-### 📌 Task Objective
+### Task Objective
 
 Restore the stashed changes with identifier:
 
@@ -28,7 +29,7 @@ Then commit and push the changes to the remote origin.
 
 ***
 
-## 🖥 Infrastructure Details
+## Infrastructure Details
 
 * **Server:** ststor01 (Storage Server)
 * **User:** natasha
@@ -37,7 +38,7 @@ Then commit and push the changes to the remote origin.
 
 ***
 
-## 🚀 Terminal Solution
+## Terminal Solution
 
 ### Step 1: SSH into Storage Server
 
@@ -154,7 +155,7 @@ master -> master
 
 ***
 
-## ✅ Final Command Summary
+## Final Command Summary
 
 ```bash
 ssh natasha@ststor01.stratos.xfusioncorp.com
@@ -169,13 +170,16 @@ git push origin master
 
 ***
 
-## 🎯 Result
+## Result
 
 * Stash `stash@{1}` successfully restored
 * Changes committed to `master`
 * Updates pushed to remote origin
 
-✔ Task Completed Successfully
+- Task Completed Successfully
 
 ***
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

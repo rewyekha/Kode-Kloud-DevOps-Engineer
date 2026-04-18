@@ -1,5 +1,7 @@
 # Day 60: Persistent Volumes in Kubernetes
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The Nautilus DevOps team is working on a Kubernetes template to deploy a web application on the cluster. There are some requirements to create/use persistent volumes to store the application code, and the template needs to be designed accordingly. Please find more details below:
 
 1. Create a `PersistentVolume` named as `pv-nautilus`. Configure the `spec` as storage class should be `manual`, set capacity to `4Gi`, set access mode to `ReadWriteOnce`, volume type should be `hostPath` and set path to `/mnt/finance` (this directory is already created, you might not be able to access it directly, so you need not to worry about it).
@@ -8,9 +10,6 @@ The Nautilus DevOps team is working on a Kubernetes template to deploy a web app
 4. Create a node port type service named `web-nautilus` using node port `30008` to expose the web server running within the pod.
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
-
-
-
 
 
 ## Kubernetes: Deploy Web Application with Persistent Volumes and NodePort Service
@@ -53,18 +52,18 @@ The Nautilus DevOps team is working on a Kubernetes template to deploy a web app
 
 ### Infrastructure Details
 
-| Server Name          | Hostname    | User      | Password     | Purpose                               |
+| Server Name | Hostname | User | Password | Purpose |
 | -------------------- | ----------- | --------- | ------------ | ------------------------------------- |
-| Application Server 1 | `stapp01`   | `tony`    | `Ir0nM@n`    | Hosts Nautilus Application 1          |
-| Application Server 2 | `stapp02`   | `steve`   | `Am3ric@`    | Hosts Nautilus Application 2          |
-| Application Server 3 | `stapp03`   | `banner`  | `BigGr33n`   | Hosts Nautilus Application 3          |
-| LoadBalancer Server  | `stlb01`    | `loki`    | `Mischi3f`   | Distributes traffic for Nautilus HTTP |
-| Database Server      | `stdb01`    | `peter`   | `Sp!dy`      | Hosts Nautilus Database               |
-| Storage Server       | `ststor01`  | `natasha` | `Bl@kW`      | Stores data for Nautilus Servers      |
-| Backup Server        | `stbkp01`   | `clint`   | `H@wk3y3`    | Manages backups for Nautilus Servers  |
-| Mail Server          | `stmail01`  | `groot`   | `Gr00T123`   | Manages email services                |
-| Jump Host            | `jump-host` | `thor`    | `mjolnir123` | Provides secure access to Stork DC    |
-| Jenkins Server       | `jenkins`   | `jenkins` | `j@rv!s`     | Runs Jenkins for CI/CD pipeline       |
+| Application Server 1 | `stapp01` | `tony` | `Ir0nM@n` | Hosts Nautilus Application 1 |
+| Application Server 2 | `stapp02` | `steve` | `Am3ric@` | Hosts Nautilus Application 2 |
+| Application Server 3 | `stapp03` | `banner` | `BigGr33n` | Hosts Nautilus Application 3 |
+| LoadBalancer Server | `stlb01` | `loki` | `Mischi3f` | Distributes traffic for Nautilus HTTP |
+| Database Server | `stdb01` | `peter` | `Sp!dy` | Hosts Nautilus Database |
+| Storage Server | `ststor01` | `natasha` | `Bl@kW` | Stores data for Nautilus Servers |
+| Backup Server | `stbkp01` | `clint` | `H@wk3y3` | Manages backups for Nautilus Servers |
+| Mail Server | `stmail01` | `groot` | `Gr00T123` | Manages email services |
+| Jump Host | `jump-host` | `thor` | `mjolnir123` | Provides secure access to Stork DC |
+| Jenkins Server | `jenkins` | `jenkins` | `j@rv!s` | Runs Jenkins for CI/CD pipeline |
 
 > **Target:** All `kubectl` commands are executed from `jump-host`, which is pre-configured to communicate with the Kubernetes cluster.
 
@@ -421,15 +420,15 @@ This confirms the Apache `httpd` server is running and serving content from the 
 
 ### Lab Complete
 
-| Requirement           | Resource       | Configuration                                                                      | Status     |
+| Requirement | Resource | Configuration | Status |
 | --------------------- | -------------- | ---------------------------------------------------------------------------------- | ---------- |
-| PersistentVolume      | `pv-nautilus`  | `manual` / `4Gi` / `ReadWriteOnce` / `hostPath: /mnt/finance`                      | Confirmed  |
-| PersistentVolumeClaim | `pvc-nautilus` | `manual` / `2Gi` / `ReadWriteOnce` / `Bound`                                       | Confirmed  |
-| Pod                   | `pod-nautilus` | `container-nautilus` / `httpd:latest` / PVC mounted at `/usr/local/apache2/htdocs` | Running    |
-| Label                 | `pod-nautilus` | `app=web-nautilus`                                                                 | Applied    |
-| NodePort Service      | `web-nautilus` | `NodePort` / port `30008` / selector `app: web-nautilus`                           | Confirmed  |
-| Endpoint              | `web-nautilus` | `10.22.0.9:80`                                                                     | Registered |
-| Web server response   | Port `30008`   | `Index of /` returned                                                              | Verified   |
+| PersistentVolume | `pv-nautilus` | `manual` / `4Gi` / `ReadWriteOnce` / `hostPath: /mnt/finance` | Confirmed |
+| PersistentVolumeClaim | `pvc-nautilus` | `manual` / `2Gi` / `ReadWriteOnce` / `Bound` | Confirmed |
+| Pod | `pod-nautilus` | `container-nautilus` / `httpd:latest` / PVC mounted at `/usr/local/apache2/htdocs` | Running |
+| Label | `pod-nautilus` | `app=web-nautilus` | Applied |
+| NodePort Service | `web-nautilus` | `NodePort` / port `30008` / selector `app: web-nautilus` | Confirmed |
+| Endpoint | `web-nautilus` | `10.22.0.9:80` | Registered |
+| Web server response | Port `30008` | `Index of /` returned | Verified |
 
 ***
 
@@ -464,12 +463,12 @@ A claim is bound to a PV when all three criteria match: storage class name, acce
 
 `hostPath` mounts a file or directory from the host node's filesystem into the pod. It is useful for single-node development clusters and labs, but is not recommended for production multi-node clusters because the data is tied to a specific node — if the pod is rescheduled to a different node, it will not find the same data.
 
-| Volume Type             | Scope          | Use Case                     |
+| Volume Type | Scope | Use Case |
 | ----------------------- | -------------- | ---------------------------- |
-| `hostPath`              | Single node    | Development, labs            |
-| `nfs`                   | Network-wide   | Shared storage across nodes  |
-| `awsElasticBlockStore`  | Cloud provider | AWS production workloads     |
-| `persistentVolumeClaim` | Cluster-wide   | Abstracted, portable storage |
+| `hostPath` | Single node | Development, labs |
+| `nfs` | Network-wide | Shared storage across nodes |
+| `awsElasticBlockStore` | Cloud provider | AWS production workloads |
+| `persistentVolumeClaim` | Cluster-wide | Abstracted, portable storage |
 
 #### NodePort Service Port Mapping
 
@@ -491,11 +490,11 @@ container-nautilus (httpd:latest)
 
 The three port fields in a NodePort service serve distinct roles:
 
-| Field        | Value   | Description                                    |
+| Field | Value | Description |
 | ------------ | ------- | ---------------------------------------------- |
-| `nodePort`   | `30008` | External port exposed on every cluster node    |
-| `port`       | `80`    | Port the service listens on inside the cluster |
-| `targetPort` | `80`    | Port the container listens on inside the pod   |
+| `nodePort` | `30008` | External port exposed on every cluster node |
+| `port` | `80` | Port the service listens on inside the cluster |
+| `targetPort` | `80` | Port the container listens on inside the pod |
 
 #### Why the Pod Needed a Label
 
@@ -512,3 +511,7 @@ _Lab completed on 2026-03-25 | Cluster: Kubernetes | Namespace: default | Verifi
 <figure><img src=".gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

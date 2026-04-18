@@ -1,21 +1,22 @@
 # Day 34: Git Hook
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 Day 34: Git Hook
 
 The Nautilus application development team was working on a git repository /opt/news.git which is cloned under /usr/src/kodekloudrepos directory present on Storage server in Stratos DC. The team want to setup a hook on this repository, please find below more details:
 
-&#x20;   Merge the feature branch into the master branch, but before pushing your changes complete below point.
+&#x20; Merge the feature branch into the master branch, but before pushing your changes complete below point.
 
-&#x20;   Create a post-update hook in this git repository so that whenever any changes are pushed to the master branch, it creates a release tag with name release-2023-06-15, where 2023-06-15 is supposed to be the current date. For example if today is 20th June, 2023 then the release tag must be release-2023-06-20. Make sure you test the hook at least once and create a release tag for today's release.
+&#x20; Create a post-update hook in this git repository so that whenever any changes are pushed to the master branch, it creates a release tag with name release-2023-06-15, where 2023-06-15 is supposed to be the current date. For example if today is 20th June, 2023 then the release tag must be release-2023-06-20. Make sure you test the hook at least once and create a release tag for today's release.
 
-&#x20;   Finally remember to push your changes.\
-&#x20;   Note: Perform this task using the natasha user, and ensure the repository or existing directory permissions are not altered.
+&#x20; Finally remember to push your changes.\
+&#x20; Note: Perform this task using the natasha user, and ensure the repository or existing directory permissions are not altered.
 
 
+## Day 34: Git Hook – Auto Release Tag on Push
 
-## 📘 Day 34: Git Hook – Auto Release Tag on Push
-
-### 🧾 Task Overview
+### Task Overview
 
 The Nautilus development team is working on a Git repository:
 
@@ -24,11 +25,11 @@ The Nautilus development team is working on a Git repository:
 * **Server:** `ststor01`
 * **User:** `natasha`
 
-#### 🎯 Objectives
+#### Objectives
 
 1. Merge the `feature` branch into `master`
 2. Create a **post-update hook** in `/opt/news.git`
-3.  When changes are pushed to `master`, automatically create a release tag:
+3. When changes are pushed to `master`, automatically create a release tag:
 
     ```
     release-YYYY-MM-DD
@@ -40,7 +41,7 @@ The Nautilus development team is working on a Git repository:
 
 ***
 
-## 🖥 Step 1: Connect to Storage Server
+## Step 1: Connect to Storage Server
 
 From jump host:
 
@@ -50,7 +51,7 @@ ssh natasha@172.16.238.15
 
 ***
 
-## 📂 Step 2: Navigate to Cloned Repository
+## Step 2: Navigate to Cloned Repository
 
 ```bash
 cd /usr/src/kodekloudrepos
@@ -63,7 +64,7 @@ Ensure working branch is `feature`.
 
 ***
 
-## 🔀 Step 3: Merge Feature into Master
+## Step 3: Merge Feature into Master
 
 #### Switch to master
 
@@ -93,11 +94,11 @@ Fast-forward
  create mode 100644 feature.txt
 ```
 
-✅ Feature successfully merged into master.
+- Feature successfully merged into master.
 
 ***
 
-## 🪝 Step 4: Create Post-Update Hook
+## Step 4: Create Post-Update Hook
 
 Move to bare repository hooks directory:
 
@@ -113,7 +114,7 @@ vi post-update
 
 ***
 
-### 📝 Add Following Script
+### Add Following Script
 
 ```bash
 #!/bin/bash
@@ -133,7 +134,7 @@ done
 
 * `"$@"` → receives updated refs from post-update hook
 * Checks if push was made to `master`
-*   Creates tag in format:
+* Creates tag in format:
 
     ```
     release-YYYY-MM-DD
@@ -141,17 +142,17 @@ done
 
 ***
 
-### 🔐 Make Hook Executable
+### Make Hook Executable
 
 ```bash
 chmod +x post-update
 ```
 
-⚠ Do NOT change ownership or permissions of repository.
+- Do NOT change ownership or permissions of repository.
 
 ***
 
-## 🚀 Step 5: Push Changes to Trigger Hook
+## Step 5: Push Changes to Trigger Hook
 
 Return to working repository:
 
@@ -176,7 +177,7 @@ git push origin master
 
 ***
 
-## 🧪 Step 6: Verify Tag Creation
+## Step 6: Verify Tag Creation
 
 Check in bare repository:
 
@@ -191,23 +192,23 @@ Example output:
 release-2026-02-27
 ```
 
-✔ Tag matches current date\
-✔ Hook successfully triggered
+- Tag matches current date\
+- Hook successfully triggered
 
 ***
 
-## ⚠ Common Errors & Solutions
+## Common Errors & Solutions
 
-| Issue               | Cause                     | Solution                        |
+| Issue | Cause | Solution |
 | ------------------- | ------------------------- | ------------------------------- |
-| Tag not created     | Hook not executable       | `chmod +x post-update`          |
-| Wrong hook logic    | Used post-receive syntax  | Use `"$@"` loop for post-update |
-| No tag after push   | No new commit pushed      | Create test commit and push     |
-| Tag pushed manually | Not required in bare repo | Only `git tag` is needed        |
+| Tag not created | Hook not executable | `chmod +x post-update` |
+| Wrong hook logic | Used post-receive syntax | Use `"$@"` loop for post-update |
+| No tag after push | No new commit pushed | Create test commit and push |
+| Tag pushed manually | Not required in bare repo | Only `git tag` is needed |
 
 ***
 
-## ✅ Final Verification Checklist
+## Final Verification Checklist
 
 * [x] Merged `feature` into `master`
 * [x] Created `post-update` hook in `/opt/news.git/hooks`
@@ -220,7 +221,7 @@ release-2026-02-27
 
 ***
 
-## 🏁 Final Result
+## Final Result
 
 Whenever changes are pushed to the `master` branch, a release tag is automatically created in this format:
 
@@ -230,3 +231,6 @@ release-YYYY-MM-DD
 
 The hook is fully functional and meets all task requirements.
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

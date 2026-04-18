@@ -1,10 +1,6 @@
 # Day 16: Install and Configure Nginx as an LBR
 
-Absolutely! Here's a clean **GitBook-style documentation** for your Nginx LBR lab, including the problem statement and step-by-step solution:
-
-***
-
-## Day 16: Install and Configure Nginx as a Load Balancer (LBR)
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
 
 ### Objective
 
@@ -22,12 +18,12 @@ You are required to:
 
 ### Infrastructure Details
 
-| Server Name | IP            | Hostname                        | User   | Password | Purpose           |
+| Server Name | IP | Hostname | User | Password | Purpose |
 | ----------- | ------------- | ------------------------------- | ------ | -------- | ----------------- |
-| stapp01     | 172.16.238.10 | stapp01.stratos.xfusioncorp.com | tony   | Ir0nM@n  | Nautilus App 1    |
-| stapp02     | 172.16.238.11 | stapp02.stratos.xfusioncorp.com | steve  | Am3ric@  | Nautilus App 2    |
-| stapp03     | 172.16.238.12 | stapp03.stratos.xfusioncorp.com | banner | BigGr33n | Nautilus App 3    |
-| stlb01      | 172.16.238.14 | stlb01.stratos.xfusioncorp.com  | loki   | Mischi3f | Nautilus HTTP LBR |
+| stapp01 | 172.16.238.10 | stapp01.stratos.xfusioncorp.com | tony | Ir0nM@n | Nautilus App 1 |
+| stapp02 | 172.16.238.11 | stapp02.stratos.xfusioncorp.com | steve | Am3ric@ | Nautilus App 2 |
+| stapp03 | 172.16.238.12 | stapp03.stratos.xfusioncorp.com | banner | BigGr33n | Nautilus App 3 |
+| stlb01 | 172.16.238.14 | stlb01.stratos.xfusioncorp.com | loki | Mischi3f | Nautilus HTTP LBR |
 
 > Note: Apache service on app servers may run on a non-standard port (in this lab, it is **5001**).
 
@@ -205,7 +201,7 @@ sudo systemctl reload nginx
 
 ***
 
-### ✅ Result
+### Result
 
 * Nginx installed on LBR.
 * Load balancing configured correctly.
@@ -224,3 +220,7 @@ labs/16-nginx-lbr/README.md
 If you want, I can also write a **ready-to-use full `/etc/nginx/nginx.conf` file** for this lab that you can directly copy-paste. It will include all default configs plus the upstream block.
 
 Do you want me to do that?
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

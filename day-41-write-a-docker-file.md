@@ -1,5 +1,7 @@
 # Day 41: Write a Docker File
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 As per recent requirements shared by the Nautilus application development team, they need custom images created for one of their projects. Several of the initial testing requirements have already been shared with the DevOps team.
 
 Create a **Dockerfile** at:
@@ -19,10 +21,10 @@ on **App Server 1 in Stratos DC** with the following requirements:
 
 ## Infrastructure Details
 
-| Server     | Hostname                           | User | Purpose               |
+| Server | Hostname | User | Purpose |
 | ---------- | ---------------------------------- | ---- | --------------------- |
-| stapp01    | stapp01.stratos.xfusioncorp.com    | tony | Nautilus App Server 1 |
-| jump\_host | jump\_host.stratos.xfusioncorp.com | thor | Jump Server           |
+| stapp01 | stapp01.stratos.xfusioncorp.com | tony | Nautilus App Server 1 |
+| jump\_host | jump\_host.stratos.xfusioncorp.com | thor | Jump Server |
 
 ***
 
@@ -159,3 +161,7 @@ It satisfies all requirements:
 * No other Apache configuration changes made.
 
 <figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

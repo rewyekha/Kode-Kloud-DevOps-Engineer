@@ -1,10 +1,12 @@
 # Day 29: Manage Git Pull Requests
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 `Max` want to push some new changes to one of the repositories but we don't want people to push directly to `master` branch, since that would be the final version of the code. It should always only have content that has been reviewed and approved. We cannot just allow everyone to directly push to the master branch. So, let's do it the right way as discussed below:
 
 SSH into `storage server` using user `max`, password `Max_pass123` . There you can find an already cloned repo under `Max` user's home.
 
-Max has written his story about The 🦊 Fox and Grapes 🍇
+Max has written his story about The Fox and Grapes
 
 Max has already pushed his story to remote git repository hosted on `Gitea` branch `story/fox-and-grapes`
 
@@ -48,13 +50,12 @@ PR title : `Added fox-and-grapes story`
 
 Review and merge it.
 
-Great stuff!! The story has been merged! 👏
+Great stuff!! The story has been merged!
 
 `Note:` For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.
 
 
-
-## ✅ Step 1: SSH into Storage Server as Max
+## Step 1: SSH into Storage Server as Max
 
 From the jump host (if required), SSH into the storage server:
 
@@ -70,7 +71,7 @@ Max_pass123
 
 ***
 
-## ✅ Step 2: Verify the Cloned Repository
+## Step 2: Verify the Cloned Repository
 
 Navigate to Max’s home directory and locate the cloned repository:
 
@@ -95,7 +96,7 @@ You should see Sarah’s story files.
 
 ***
 
-## ✅ Step 3: Validate Commit History
+## Step 3: Validate Commit History
 
 Run:
 
@@ -129,7 +130,7 @@ git branch
 
 ***
 
-## ✅ Step 4: Confirm Max’s Story Branch Exists Remotely
+## Step 4: Confirm Max’s Story Branch Exists Remotely
 
 ```bash
 git branch -r
@@ -146,7 +147,7 @@ This confirms Max already pushed his branch.
 
 ***
 
-## ✅ Step 5: Create Pull Request in Gitea UI
+## Step 5: Create Pull Request in Gitea UI
 
 #### Open Gitea Web UI
 
@@ -175,7 +176,7 @@ Click **Create Pull Request**
 
 ***
 
-## ✅ Step 6: Assign Reviewer (Tom)
+## Step 6: Assign Reviewer (Tom)
 
 Inside the newly created PR:
 
@@ -185,7 +186,7 @@ Inside the newly created PR:
 
 ***
 
-## ✅ Step 7: Review and Merge as Tom
+## Step 7: Review and Merge as Tom
 
 #### Logout Max
 
@@ -209,7 +210,7 @@ Click profile → Logout.
 
 ***
 
-## ✅ Step 8: Merge the Pull Request
+## Step 8: Merge the Pull Request
 
 After approval:
 
@@ -224,7 +225,7 @@ Merged
 
 ***
 
-## ✅ Step 9: Verify Merge (Optional CLI Validation)
+## Step 9: Verify Merge (Optional CLI Validation)
 
 SSH back into storage server and pull latest changes:
 
@@ -249,7 +250,7 @@ You should now see Max’s commit in master branch history.
 
 ***
 
-## 🎉 Expected Final Result
+## Expected Final Result
 
 * Direct push to master prevented
 * PR created properly
@@ -261,3 +262,7 @@ You should now see Max’s commit in master branch history.
 ***
 
 <figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

@@ -1,5 +1,7 @@
 # Day 22: Clone Git Repository on Storage Server
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 The DevOps team established a new Git repository last week, which remains unused at present. However, the Nautilus application development team now requires a copy of this repository on the `Storage Server` in the Stratos DC. Follow the provided details to clone the repository:
 
 1. The repository to be cloned is located at `/opt/news.git`
@@ -7,7 +9,7 @@ The DevOps team established a new Git repository last week, which remains unused
 
 ## Clone Git Repository on Storage Server
 
-### 📌 Task Description
+### Task Description
 
 The DevOps team created a new Git repository that needs to be cloned on the **Storage Server** in the Stratos DC.
 
@@ -26,15 +28,15 @@ The DevOps team created a new Git repository that needs to be cloned on the **St
 
 ***
 
-### 🖥️ Infrastructure Details
+### Infrastructure Details
 
-| Server   | Hostname                         | User    | Purpose        |
+| Server | Hostname | User | Purpose |
 | -------- | -------------------------------- | ------- | -------------- |
 | ststor01 | ststor01.stratos.xfusioncorp.com | natasha | Storage Server |
 
 ***
 
-## ✅ Solution Steps
+## Solution Steps
 
 ***
 
@@ -78,7 +80,7 @@ warning: You appear to have cloned an empty repository.
 done.
 ```
 
-> ⚠️ The warning is normal because the repository is empty.
+> The warning is normal because the repository is empty.
 
 ***
 
@@ -110,7 +112,7 @@ Expected:
 
 ***
 
-## 📂 Final Directory Structure
+## Final Directory Structure
 
 ```
 /usr/src/kodekloudrepos/
@@ -120,10 +122,14 @@ Expected:
 
 ***
 
-## 🎯 Validation Checklist
+## Validation Checklist
 
-* ✅ Logged in as `natasha`
-* ✅ Repository `/opt/games.git` exists
-* ✅ Cloned under `/usr/src/kodekloudrepos/games`
-* ✅ No permission changes made
-* ✅ No existing directories modified
+* Logged in as `natasha`
+* Repository `/opt/games.git` exists
+* Cloned under `/usr/src/kodekloudrepos/games`
+* No permission changes made
+* No existing directories modified
+
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*

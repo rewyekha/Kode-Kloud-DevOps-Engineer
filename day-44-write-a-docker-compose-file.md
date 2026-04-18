@@ -1,5 +1,7 @@
 # Day 44: Write a Docker Compose File
 
+> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
+
 ## Hosting Static Website on Dockerized Apache HTTP Server
 
 ### Objective
@@ -10,9 +12,9 @@ Deploy a **static website** provided by the Nautilus application team using the 
 
 ### Environment Details
 
-| Server Name | IP      | Hostname                        | User  | Purpose        |
+| Server Name | IP | Hostname | User | Purpose |
 | ----------- | ------- | ------------------------------- | ----- | -------------- |
-| stapp02     | Dynamic | stapp02.stratos.xfusioncorp.com | steve | Nautilus App 2 |
+| stapp02 | Dynamic | stapp02.stratos.xfusioncorp.com | steve | Nautilus App 2 |
 
 **Docker host directory**: `/opt/docker`\
 **Website content directory**: `/opt/dba`
@@ -132,7 +134,7 @@ d57d1897f9ec   httpd:latest   "httpd-foreground"   15 seconds ago   Up 14 second
 
 ***
 
-### ✅ Summary
+### Summary
 
 * Docker container `httpd` created with `httpd:latest`.
 * Container port `80` mapped to host port `3000`.
@@ -143,3 +145,6 @@ d57d1897f9ec   httpd:latest   "httpd-foreground"   15 seconds ago   Up 14 second
 
 <figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
+---
+
+*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
