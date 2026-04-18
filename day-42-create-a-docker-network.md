@@ -104,3 +104,69 @@ The Docker network **`media`** was successfully created with:
 * **Server:** stapp01
 
 This network can now be used by Docker containers for application deployment.
+
+
+## **Level 2**
+
+The Nautilus DevOps team needs to set up several docker environments for different applications. One of the team members has been assigned a ticket where he has been asked to create some docker networks to be used later. Complete the task based on the following ticket description:
+
+a. Create a docker network named as `beta` on App Server `3` in `Stratos DC`.
+
+b. Configure it to use `bridge` drivers.
+
+c. Set it to use subnet `10.10.1.0/24` and iprange `10.10.1.0/24`.
+
+```bash
+thor@jump-host ~$ ssh banner@stapp03
+The authenticity of host 'stapp03 (10.244.81.19)' can't be established.
+ED25519 key fingerprint is SHA256:LaLUbprcvX2bAGEEV24wAUUd9onp9twCQNBCKJLNdL0.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'stapp03' (ED25519) to the list of known hosts.
+banner@stapp03's password: 
+[banner@stapp03 ~]$ docker network create \
+> --driver bridge \
+> --subnet 10.10.1.0/24 \
+> --ip-range 10.10.1.0/24 \
+> beta
+bcb73a00216c07c4eb5fc181f392e857f1e07f083c3ecff32e2686e37cd38fba
+[banner@stapp03 ~]$ docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+bcb73a00216c   beta      bridge    local
+46ead9a11dd0   bridge    bridge    local
+7c8b613b88d2   host      host      local
+048894f0ce01   none      null      local
+[banner@stapp03 ~]$ docker network inspect beta
+[
+    {
+        "Name": "beta",
+        "Id": "bcb73a00216c07c4eb5fc181f392e857f1e07f083c3ecff32e2686e37cd38fba",
+        "Created": "2026-03-25T02:11:45.838215938Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "10.10.1.0/24",
+                    "IPRange": "10.10.1.0/24"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+[banner@stapp03 ~]$ 
+```
+
