@@ -1,4 +1,4 @@
-# Day 72:
+# Day 72: Jenkins Freestyle Job
 
 > **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
 
@@ -21,7 +21,6 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 1\. You might need to install some plugins and restart Jenkins service. So, we recommend clicking on `Restart Jenkins when installation is complete and no jobs are running` on plugin installation/update page i.e `update centre`. Also, Jenkins UI sometimes gets stuck when Jenkins service restarts in the back end. In this case, please make sure to refresh the UI page.\
 \
 2\. For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.
-
 
 ````markdown
 # Jenkins: Create a Parameterized Job
@@ -164,15 +163,14 @@ The build completed successfully and correctly displayed both parameter values.
 **Platform:** KodeKloud Jenkins Lab\
 **Status:** Completed Successfully
 
-
 <figure><img src=".gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

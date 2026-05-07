@@ -17,12 +17,11 @@ e. Do not use sudo inside the script.
 Note:\
 The zip package must be installed on given App Server before executing the script. This package is essential for creating the zip archive of the website files. Install it manually outside the script.
 
-
 ### What you need to do (summary)
 
 * Work **on App Server 3** → `stapp03` (user: `banner`)
 * Create a script:\
-  **`/scripts/official_backup.sh`**
+  &#xNAN;**`/scripts/official_backup.sh`**
 * Script must:
   1. Zip `/var/www/html/official`
   2. Save zip as `xfusioncorp_official.zip` in `/backup`
@@ -139,9 +138,9 @@ chmod +x /scripts/official_backup.sh
 /scripts/official_backup.sh
 ```
 
-- No password prompt\
-- Zip created in `/backup`\
-- Zip copied to `stbkp01:/backup`
+* No password prompt\\
+* Zip created in `/backup`\\
+* Zip copied to `stbkp01:/backup`
 
 ***
 
@@ -297,6 +296,6 @@ Last login: Thu Dec 25 04:33:24 2025 from 172.16.238.12
 [clint@stbkp01 ~]$
 </code></pre>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

@@ -1,7 +1,5 @@
 # Table of contents
 
-> **Reyas Khan** | [reyaskhan.me](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)
-
 * [KodeKloud DevOps Engineer – Lab Solutions](README.md)
 
 ## Linux
@@ -94,7 +92,4 @@
 * [Day 72: Jenkins Freestyle Job](day-72.md)
 * [Day 73: Jenkins Scheduled Jobs](day-73-jenkins-scheduled-jobs.md)
 * [Day 74: Jenkins Database Backup Job](day-74-jenkins-database-backup-job.md)
-
----
-
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+* [Day 75: Jenkins Slave Nodes](jenkins/day-75-jenkins-slave-nodes.md)
