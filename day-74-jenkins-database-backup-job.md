@@ -18,13 +18,11 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 2. Please make sure to define you cron expression like this `*/10 * * * *` (this is just an example to run job every 10 minutes).
 3. For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.<br>
 
-
 ***
 
 ## Jenkins Automated Database Backup – Implementation Guide
 
 ### Document Purpose
-
 
 ***
 
@@ -49,12 +47,12 @@ Create a Jenkins job to automate a database backup with the following specificat
 
 ### Infrastructure Details
 
-| Server Role | Hostname | User | Purpose |
+| Server Role        | Hostname  | User    | Purpose                        |
 | ------------------ | --------- | ------- | ------------------------------ |
-| Jump Host | jump-host | thor | Secure access |
-| Jenkins Server | jenkins | jenkins | CI/CD automation |
-| Application Server | stapp01 | tony | Hosts application and database |
-| Storage Server | ststor01 | natasha | Stores backup data |
+| Jump Host          | jump-host | thor    | Secure access                  |
+| Jenkins Server     | jenkins   | jenkins | CI/CD automation               |
+| Application Server | stapp01   | tony    | Hosts application and database |
+| Storage Server     | ststor01  | natasha | Stores backup data             |
 
 ***
 
@@ -208,13 +206,12 @@ The Jenkins-based automation for database backup has been implemented and valida
 
 ***
 
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+***
 
----
-
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

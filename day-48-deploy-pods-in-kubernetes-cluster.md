@@ -9,7 +9,6 @@ The Nautilus DevOps team is diving into Kubernetes for application management. O
 
 `Note`: The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
-
 ## Kubernetes Pod Creation – nginx
 
 ### Overview
@@ -64,15 +63,15 @@ pod/pod-nginx created
 
 ### Command Explanation
 
-| Parameter | Meaning |
+| Parameter                   | Meaning                                                 |
 | --------------------------- | ------------------------------------------------------- |
-| `kubectl run` | Creates a new pod or deployment in Kubernetes |
-| `pod-nginx` | Name of the pod |
-| `--image=nginx:latest` | Specifies the container image and tag |
-| `--labels=app=nginx_app` | Adds a label to the pod for identification and grouping |
-| `--restart=Never` | Ensures a Pod is created instead of a Deployment |
-| `--overrides` | Allows manual customization of the pod specification |
-| `"name": "nginx-container"` | Sets the container name inside the pod |
+| `kubectl run`               | Creates a new pod or deployment in Kubernetes           |
+| `pod-nginx`                 | Name of the pod                                         |
+| `--image=nginx:latest`      | Specifies the container image and tag                   |
+| `--labels=app=nginx_app`    | Adds a label to the pod for identification and grouping |
+| `--restart=Never`           | Ensures a Pod is created instead of a Deployment        |
+| `--overrides`               | Allows manual customization of the pod specification    |
+| `"name": "nginx-container"` | Sets the container name inside the pod                  |
 
 ***
 
@@ -94,13 +93,13 @@ pod-nginx   1/1     Running   0          7s
 
 ### Command Explanation
 
-| Column | Meaning |
+| Column     | Meaning                                       |
 | ---------- | --------------------------------------------- |
-| `NAME` | Name of the pod |
-| `READY` | Number of ready containers / total containers |
-| `STATUS` | Current state of the pod |
-| `RESTARTS` | Number of container restarts |
-| `AGE` | Time since pod creation |
+| `NAME`     | Name of the pod                               |
+| `READY`    | Number of ready containers / total containers |
+| `STATUS`   | Current state of the pod                      |
+| `RESTARTS` | Number of container restarts                  |
+| `AGE`      | Time since pod creation                       |
 
 ***
 
@@ -150,14 +149,14 @@ Events:
 
 ### Command Explanation
 
-| Field | Meaning |
+| Field        | Meaning                                        |
 | ------------ | ---------------------------------------------- |
-| `Namespace` | Kubernetes namespace where the pod runs |
-| `Node` | Worker node where the pod is scheduled |
-| `Labels` | Key-value metadata used for grouping resources |
-| `Status` | Current state of the pod |
-| `Containers` | List of containers inside the pod |
-| `Events` | Timeline of actions performed by Kubernetes |
+| `Namespace`  | Kubernetes namespace where the pod runs        |
+| `Node`       | Worker node where the pod is scheduled         |
+| `Labels`     | Key-value metadata used for grouping resources |
+| `Status`     | Current state of the pod                       |
+| `Containers` | List of containers inside the pod              |
+| `Events`     | Timeline of actions performed by Kubernetes    |
 
 ***
 
@@ -198,11 +197,11 @@ Where:
 
 ## Quick Validation Checklist
 
-| Check | Command |
+| Check                | Command                                   |
 | -------------------- | ----------------------------------------- |
-| Verify pod exists | `kubectl get pods` |
-| Check labels | `kubectl get pod pod-nginx --show-labels` |
-| Inspect full details | `kubectl describe pod pod-nginx` |
+| Verify pod exists    | `kubectl get pods`                        |
+| Check labels         | `kubectl get pod pod-nginx --show-labels` |
+| Inspect full details | `kubectl describe pod pod-nginx`          |
 
 ***
 
@@ -301,8 +300,8 @@ Events:
 thor@jump-host ~$ 
 ```
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

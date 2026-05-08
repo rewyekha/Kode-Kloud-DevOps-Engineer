@@ -359,19 +359,19 @@ spec:
 
 ### Lab Complete
 
-| Requirement | Resource | Configuration | Status |
+| Requirement        | Resource                             | Configuration                          | Status    |
 | ------------------ | ------------------------------------ | -------------------------------------- | --------- |
-| Namespace | `iron-namespace-datacenter` | Created | Confirmed |
-| Gallery Deployment | `iron-gallery-deployment-datacenter` | 1 replica, `kodekloud/irongallery:2.0` | Running |
-| Gallery Container | `iron-gallery-container-datacenter` | Memory 100Mi, CPU 50m | Confirmed |
-| Gallery Volumes | `config` + `images` | emptyDir at correct mount paths | Confirmed |
-| DB Deployment | `iron-db-deployment-datacenter` | 1 replica, `kodekloud/irondb:2.0` | Running |
-| DB Container | `iron-db-container-datacenter` | All 4 env vars set | Confirmed |
-| DB Volume | `db` | emptyDir at `/var/lib/mysql` | Confirmed |
-| DB Service | `iron-db-service-datacenter` | ClusterIP, port 3306 | Confirmed |
-| Gallery Service | `iron-gallery-service-datacenter` | NodePort 32678 → 80 | Confirmed |
-| All pods | Both pods | `1/1 Running`, `0 restarts` | Confirmed |
-| App accessible | Port 32678 | Installation page displayed | Confirmed |
+| Namespace          | `iron-namespace-datacenter`          | Created                                | Confirmed |
+| Gallery Deployment | `iron-gallery-deployment-datacenter` | 1 replica, `kodekloud/irongallery:2.0` | Running   |
+| Gallery Container  | `iron-gallery-container-datacenter`  | Memory 100Mi, CPU 50m                  | Confirmed |
+| Gallery Volumes    | `config` + `images`                  | emptyDir at correct mount paths        | Confirmed |
+| DB Deployment      | `iron-db-deployment-datacenter`      | 1 replica, `kodekloud/irondb:2.0`      | Running   |
+| DB Container       | `iron-db-container-datacenter`       | All 4 env vars set                     | Confirmed |
+| DB Volume          | `db`                                 | emptyDir at `/var/lib/mysql`           | Confirmed |
+| DB Service         | `iron-db-service-datacenter`         | ClusterIP, port 3306                   | Confirmed |
+| Gallery Service    | `iron-gallery-service-datacenter`    | NodePort 32678 → 80                    | Confirmed |
+| All pods           | Both pods                            | `1/1 Running`, `0 restarts`            | Confirmed |
+| App accessible     | Port 32678                           | Installation page displayed            | Confirmed |
 
 ***
 
@@ -395,10 +395,10 @@ Every `kubectl` command targeting these resources must include `-n iron-namespac
 
 #### ClusterIP vs NodePort Services
 
-| Service Type | Accessible From | Use Case |
+| Service Type | Accessible From                        | Use Case                                  |
 | ------------ | -------------------------------------- | ----------------------------------------- |
-| `ClusterIP` | Inside the cluster only | Internal service-to-service communication |
-| `NodePort` | Outside the cluster via node IP + port | External access to web applications |
+| `ClusterIP`  | Inside the cluster only                | Internal service-to-service communication |
+| `NodePort`   | Outside the cluster via node IP + port | External access to web applications       |
 
 `iron-db-service-datacenter` uses `ClusterIP` because the database should only be reachable by the gallery application inside the cluster — not from the internet. `iron-gallery-service-datacenter` uses `NodePort 32678` to expose the web interface externally.
 
@@ -420,11 +420,11 @@ The page asks for database connection details because the application has not ye
 
 Both deployments use `emptyDir` volumes. An `emptyDir` volume is created when a pod is assigned to a node and exists only for the lifetime of that pod:
 
-| Volume | Mount Path | Purpose |
+| Volume   | Mount Path                      | Purpose                         |
 | -------- | ------------------------------- | ------------------------------- |
-| `config` | `/usr/share/nginx/html/data` | Iron Gallery configuration data |
-| `images` | `/usr/share/nginx/html/uploads` | Uploaded image files |
-| `db` | `/var/lib/mysql` | MariaDB data files |
+| `config` | `/usr/share/nginx/html/data`    | Iron Gallery configuration data |
+| `images` | `/usr/share/nginx/html/uploads` | Uploaded image files            |
+| `db`     | `/var/lib/mysql`                | MariaDB data files              |
 
 For the Iron DB deployment, the `emptyDir` at `/var/lib/mysql` means the database data does not persist across pod restarts — suitable for this initial deployment and testing phase.
 
@@ -446,10 +446,10 @@ Using separate label keys (`run` for the gallery, `db` for the database) is a de
 
 _Lab completed on 2026-03-27 | Cluster: Kubernetes (k3s v1.34.1) | Namespace: iron-namespace-datacenter_
 
-<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

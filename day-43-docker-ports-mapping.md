@@ -25,10 +25,10 @@ The Nautilus DevOps team is planning to host an application on an **nginx-based 
 
 ## Infrastructure Details
 
-| Server Name | Hostname | User | Purpose |
+| Server Name | Hostname                           | User   | Purpose        |
 | ----------- | ---------------------------------- | ------ | -------------- |
-| stapp03 | stapp03.stratos.xfusioncorp.com | banner | Nautilus App 3 |
-| jump\_host | jump\_host.stratos.xfusioncorp.com | thor | Jump Server |
+| stapp03     | stapp03.stratos.xfusioncorp.com    | banner | Nautilus App 3 |
+| jump\_host  | jump\_host.stratos.xfusioncorp.com | thor   | Jump Server    |
 
 ***
 
@@ -154,9 +154,8 @@ Expected output (HTML snippet):
 * Port mapping configured **6200 → 80**.
 * nginx service accessible via **host port 6200**.
 
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+***
 
----
-
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

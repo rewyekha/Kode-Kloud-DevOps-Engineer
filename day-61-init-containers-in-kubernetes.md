@@ -12,7 +12,6 @@ There are some applications that need to be deployed on Kubernetes cluster and t
 
 `Note:` The `kubectl` utility on the `jump-host` has been configured to work with the Kubernetes cluster.
 
-
 ## Kubernetes: Deploy Application with Init Containers
 
 > **Platform:** KodeKloud | **Series:** Nautilus DevOps — Stratos Datacenter **Difficulty:** Intermediate | **Topic:** Kubernetes, Deployments, Init Containers, emptyDir Volumes
@@ -54,18 +53,18 @@ There are some applications that need to be deployed on a Kubernetes cluster. Th
 
 ### Infrastructure Details
 
-| Server Name | Hostname | User | Password | Purpose |
+| Server Name          | Hostname    | User      | Password     | Purpose                               |
 | -------------------- | ----------- | --------- | ------------ | ------------------------------------- |
-| Application Server 1 | `stapp01` | `tony` | `Ir0nM@n` | Hosts Nautilus Application 1 |
-| Application Server 2 | `stapp02` | `steve` | `Am3ric@` | Hosts Nautilus Application 2 |
-| Application Server 3 | `stapp03` | `banner` | `BigGr33n` | Hosts Nautilus Application 3 |
-| LoadBalancer Server | `stlb01` | `loki` | `Mischi3f` | Distributes traffic for Nautilus HTTP |
-| Database Server | `stdb01` | `peter` | `Sp!dy` | Hosts Nautilus Database |
-| Storage Server | `ststor01` | `natasha` | `Bl@kW` | Stores data for Nautilus Servers |
-| Backup Server | `stbkp01` | `clint` | `H@wk3y3` | Manages backups for Nautilus Servers |
-| Mail Server | `stmail01` | `groot` | `Gr00T123` | Manages email services |
-| Jump Host | `jump-host` | `thor` | `mjolnir123` | Provides secure access to Stork DC |
-| Jenkins Server | `jenkins` | `jenkins` | `j@rv!s` | Runs Jenkins for CI/CD pipeline |
+| Application Server 1 | `stapp01`   | `tony`    | `Ir0nM@n`    | Hosts Nautilus Application 1          |
+| Application Server 2 | `stapp02`   | `steve`   | `Am3ric@`    | Hosts Nautilus Application 2          |
+| Application Server 3 | `stapp03`   | `banner`  | `BigGr33n`   | Hosts Nautilus Application 3          |
+| LoadBalancer Server  | `stlb01`    | `loki`    | `Mischi3f`   | Distributes traffic for Nautilus HTTP |
+| Database Server      | `stdb01`    | `peter`   | `Sp!dy`      | Hosts Nautilus Database               |
+| Storage Server       | `ststor01`  | `natasha` | `Bl@kW`      | Stores data for Nautilus Servers      |
+| Backup Server        | `stbkp01`   | `clint`   | `H@wk3y3`    | Manages backups for Nautilus Servers  |
+| Mail Server          | `stmail01`  | `groot`   | `Gr00T123`   | Manages email services                |
+| Jump Host            | `jump-host` | `thor`    | `mjolnir123` | Provides secure access to Stork DC    |
+| Jenkins Server       | `jenkins`   | `jenkins` | `j@rv!s`     | Runs Jenkins for CI/CD pipeline       |
 
 > **Target:** All `kubectl` commands are executed from `jump-host`, which is pre-configured to communicate with the Kubernetes cluster.
 
@@ -306,24 +305,24 @@ At 106 seconds, the deployment remains `1/1 Ready` with `0` restarts — confirm
 
 ### Lab Complete
 
-| Requirement | Detail | Status |
+| Requirement            | Detail                                                    | Status    |
 | ---------------------- | --------------------------------------------------------- | --------- |
-| Deployment name | `ic-deploy-devops` | Confirmed |
-| Replicas | `1` | Confirmed |
-| Selector label | `app: ic-devops` | Confirmed |
-| Template label | `app: ic-devops` | Confirmed |
-| Init container name | `ic-msg-devops` | Confirmed |
-| Init container image | `ubuntu:latest` | Confirmed |
-| Init container command | `echo Init Done... > /ic/media` | Confirmed |
-| Init volume mount name | `ic-volume-devops` at `/ic` | Confirmed |
-| Main container name | `ic-main-devops` | Confirmed |
-| Main container image | `ubuntu:latest` | Confirmed |
-| Main container command | `while true; do cat /ic/media; sleep 5; done` | Confirmed |
-| Main volume mount name | `ic-volume-devops` at `/ic` | Confirmed |
-| Volume name | `ic-volume-devops` | Confirmed |
-| Volume type | `emptyDir: {}` | Confirmed |
-| Pod status | `1/1 Running`, `0 restarts` | Confirmed |
-| Log output | `Init Done - Welcome to xFusionCorp Industries` repeating | Confirmed |
+| Deployment name        | `ic-deploy-devops`                                        | Confirmed |
+| Replicas               | `1`                                                       | Confirmed |
+| Selector label         | `app: ic-devops`                                          | Confirmed |
+| Template label         | `app: ic-devops`                                          | Confirmed |
+| Init container name    | `ic-msg-devops`                                           | Confirmed |
+| Init container image   | `ubuntu:latest`                                           | Confirmed |
+| Init container command | `echo Init Done... > /ic/media`                           | Confirmed |
+| Init volume mount name | `ic-volume-devops` at `/ic`                               | Confirmed |
+| Main container name    | `ic-main-devops`                                          | Confirmed |
+| Main container image   | `ubuntu:latest`                                           | Confirmed |
+| Main container command | `while true; do cat /ic/media; sleep 5; done`             | Confirmed |
+| Main volume mount name | `ic-volume-devops` at `/ic`                               | Confirmed |
+| Volume name            | `ic-volume-devops`                                        | Confirmed |
+| Volume type            | `emptyDir: {}`                                            | Confirmed |
+| Pod status             | `1/1 Running`, `0 restarts`                               | Confirmed |
+| Log output             | `Init Done - Welcome to xFusionCorp Industries` repeating | Confirmed |
 
 ***
 
@@ -364,21 +363,21 @@ ic-msg-devops                 ic-volume-devops             ic-main-devops
                                         every 5 seconds
 ```
 
-| Volume Type | Lifetime | Shared Across | Use Case |
+| Volume Type             | Lifetime      | Shared Across          | Use Case                               |
 | ----------------------- | ------------- | ---------------------- | -------------------------------------- |
-| `emptyDir` | Pod lifetime | Containers in same pod | Temporary inter-container data sharing |
-| `hostPath` | Node lifetime | Pods on same node | Access node filesystem |
-| `persistentVolumeClaim` | Independent | Pods across nodes | Persistent application data |
+| `emptyDir`              | Pod lifetime  | Containers in same pod | Temporary inter-container data sharing |
+| `hostPath`              | Node lifetime | Pods on same node      | Access node filesystem                 |
+| `persistentVolumeClaim` | Independent   | Pods across nodes      | Persistent application data            |
 
 #### Init Container vs Sidecar Container
 
-| Feature | Init Container | Sidecar Container |
+| Feature       | Init Container                 | Sidecar Container             |
 | ------------- | ------------------------------ | ----------------------------- |
-| Defined under | `initContainers` | `containers` |
-| Runs | Before main containers | Alongside main containers |
-| Lifecycle | Runs once then exits | Runs for pod lifetime |
-| Purpose | Setup, pre-configuration | Logging, proxying, monitoring |
-| Must succeed | Yes — pod fails if it does not | No — independent lifecycle |
+| Defined under | `initContainers`               | `containers`                  |
+| Runs          | Before main containers         | Alongside main containers     |
+| Lifecycle     | Runs once then exits           | Runs for pod lifetime         |
+| Purpose       | Setup, pre-configuration       | Logging, proxying, monitoring |
+| Must succeed  | Yes — pod fails if it does not | No — independent lifecycle    |
 
 #### The `-c` Flag in `kubectl logs`
 
@@ -412,8 +411,8 @@ This returns only pods that have the label `app=ic-devops` — which matches the
 
 _Lab completed on 2026-03-26 | Cluster: Kubernetes | Namespace: default | Pod: ic-deploy-devops-55f857555f-622lh_
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

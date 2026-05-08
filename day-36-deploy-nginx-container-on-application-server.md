@@ -6,7 +6,6 @@ The Nautilus DevOps team is conducting application deployment tests on selected 
 
 1. On `Application Server 2` create a container named `nginx_2` using the `nginx` image with the `alpine` tag. Ensure container is in a `running` state.
 
-
 ***
 
 ## Day 36: Deploy Nginx Container on Application Server 2
@@ -21,7 +20,7 @@ Docker is used to deploy the **Nginx** container.
 
 ### Infrastructure Details
 
-| Server | Hostname | User |
+| Server               | Hostname                          | User    |
 | -------------------- | --------------------------------- | ------- |
 | Application Server 2 | `stapp02.stratos.xfusioncorp.com` | `steve` |
 
@@ -112,10 +111,10 @@ e25f9b92288a   nginx:alpine   "/docker-entrypoint.…"   8 seconds ago   Up 7 se
 
 ### Verification
 
-- Container name: `nginx_2`\
-- Image used: `nginx:alpine`\
-- Status: `Up` (Running)\
-- Port exposed internally: `80/tcp`
+* Container name: `nginx_2`\\
+* Image used: `nginx:alpine`\\
+* Status: `Up` (Running)\\
+* Port exposed internally: `80/tcp`
 
 ***
 
@@ -125,8 +124,8 @@ The **nginx\_2** container has been successfully deployed on **Application Serve
 
 ***
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

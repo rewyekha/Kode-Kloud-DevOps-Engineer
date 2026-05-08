@@ -15,11 +15,9 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 **2.** Define the cron expression as required (e.g. `*/10 * * * *` to run every 10 minutes).\
 **3.** For scenarios that require web UI changes, take screenshots or record your work (e.g. using loom.com) so you can share it for review if the task is marked incomplete.
 
-
 ## Jenkins Job: Centralized Apache Log Collection (copy-logs)
 
 ### Overview
-
 
 ***
 
@@ -38,12 +36,12 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 
 ### Infrastructure Details
 
-| Server Role | Hostname | User | Password |
+| Server Role        | Hostname  | User    | Password   |
 | ------------------ | --------- | ------- | ---------- |
-| Jenkins Server | jenkins | jenkins | j@rv!s |
-| Application Server | stapp01 | tony | Ir0nM@n |
-| Storage Server | ststor01 | natasha | Bl@kW |
-| Jumphost | jump-host | thor | mjolnir123 |
+| Jenkins Server     | jenkins   | jenkins | j@rv!s     |
+| Application Server | stapp01   | tony    | Ir0nM@n    |
+| Storage Server     | ststor01  | natasha | Bl@kW      |
+| Jumphost           | jump-host | thor    | mjolnir123 |
 
 ***
 
@@ -284,12 +282,12 @@ The Jenkins job `copy-logs` is successfully configured to collect Apache logs fr
 * Centralized storage verified
 * Scheduled execution working as expected
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

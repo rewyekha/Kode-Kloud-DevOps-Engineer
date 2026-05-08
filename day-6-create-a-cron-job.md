@@ -7,13 +7,13 @@ The `Nautilus` system admins team has prepared scripts to automate several day-t
 a. Install `cronie` package on all `Nautilus` app servers and start `crond` service.\
 b. Add a cron `*/5 * * * * echo hello > /tmp/cron_text` for `root` user.
 
-<figure><img src=".gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 add `*/5 * * * * echo hello > /tmp/cron_text`
 
-![](<.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png>) &#x20;
+![](<.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 You’re starting from the **jumphost**, and this task must be done on **ALL Nautilus App Servers**:
 
@@ -196,9 +196,9 @@ Save and exit.
 
 On **stapp01, stapp02, stapp03**:
 
-- `cronie` package installed\
-- `crond` service running\
-- Root cron exists with correct schedule and command
+* `cronie` package installed\\
+* `crond` service running\\
+* Root cron exists with correct schedule and command
 
 ***
 
@@ -211,6 +211,6 @@ On **stapp01, stapp02, stapp03**:
 
 ###
 
----
+***
 
-*[Reyas Khan](https://reyaskhan.me) | [GitHub](https://github.com/rewyekha)*
+[_Reyas Khan_](https://reyaskhan.me) _|_ [_GitHub_](https://github.com/rewyekha)

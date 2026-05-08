@@ -23,8 +23,195 @@ Click on the `Jenkins` button on the top bar to access the Jenkins UI. Login usi
 \
 2\. For these kind of scenarios requiring changes to be done in a web UI, please take screenshots so that you can share it with us for review in case your task is marked incomplete. You may also consider using a screen recording software such as loom.com to record and share your work.
 
+## Jenkins: Adding Application Servers as SSH Agent Nodes
+
+> This document covers the complete procedure for adding all Nautilus application servers as SSH-based Jenkins agent nodes on the newly installed Jenkins server in Stratos DC.
+
+***
+
+### Overview
+
+This runbook documents the procedure followed to successfully add all Nautilus application servers as **SSH-based Jenkins agent (slave) nodes**. These agents execute CI/CD jobs and automation tasks directly on the application servers.
+
+The setup covers credential management, node configuration, Java compatibility resolution, and final verification.
+
+***
+
+### Scope
+
+The following application servers are configured as Jenkins agents:
+
+| Node Name      | Hostname | Label   | Remote User |
+| -------------- | -------- | ------- | ----------- |
+| App\_server\_1 | stapp01  | stapp01 | tony        |
+| App\_server\_2 | stapp02  | stapp02 | steve       |
+| App\_server\_3 | stapp03  | stapp03 | banner      |
+
+***
+
+### Infrastructure Reference
+
+| Server               | Hostname | User   | Purpose        |
+| -------------------- | -------- | ------ | -------------- |
+| Application Server 1 | stapp01  | tony   | Nautilus App 1 |
+| Application Server 2 | stapp02  | steve  | Nautilus App 2 |
+| Application Server 3 | stapp03  | banner | Nautilus App 3 |
+| Jenkins Server       | jenkins  | admin  | CI/CD          |
+
+***
+
+### Step 1 — Verify Java on Application Servers
+
+Each agent requires Java installed to run `remoting.jar`. The Java version on agents must match the Jenkins controller.
+
+Jenkins controller runs Java 17. Agents with Java 11 will throw `UnsupportedClassVersionError` (class version 61 vs 55). &#x20;
+
+#### Resolution
+
+Install Java 17 on all application servers and set it as the default runtime.
+
+**Verify the Java version:**
+
+```bash
+java -version
+```
+
+**Expected output:**
+
+```
+openjdk version "17"
+```
+
+***
+
+### Step 2 — Configure Jenkins Credentials
+
+Create separate SSH credentials for each application server.
+
+**Jenkins path:**
+
+```
+Manage Jenkins → Credentials → System → Global
+```
+
+**Credential type:** Username with password
+
+| Credential ID   | User   | Server  |
+| --------------- | ------ | ------- |
+| `ssh-tony-id`   | tony   | stapp01 |
+| `ssh-steve-id`  | steve  | stapp02 |
+| `ssh-banner-id` | banner | stapp03 |
+
+***
+
+### Step 3 — Install Required Jenkins Plugin
+
+The **SSH Build Agents Plugin** is required to enable SSH-based agent connections.
+
+**Installation path:**
+
+```
+Manage Jenkins → Plugins → Available / Installed
+```
+
+***
+
+### Step 4 — Add Jenkins Nodes (Agents)
+
+Nodes are added as **Permanent Agents** using SSH.
+
+#### Common Settings
+
+| Field                 | Value                               |
+| --------------------- | ----------------------------------- |
+| Launch method         | Launch agents via SSH               |
+| Host key verification | Non-verifying Verification Strategy |
+| Executors             | 1                                   |
+| Usage                 | Use this node as much as possible   |
+
+***
+
+#### App\_server\_1
+
+| Field                 | Value                |
+| --------------------- | -------------------- |
+| Node Name             | App\_server\_1       |
+| Hostname              | stapp01              |
+| Credentials           | `ssh-tony-id`        |
+| Label                 | stapp01              |
+| Remote Root Directory | `/home/tony/jenkins` |
+
+***
+
+#### App\_server\_2
+
+| Field                 | Value                 |
+| --------------------- | --------------------- |
+| Node Name             | App\_server\_2        |
+| Hostname              | stapp02               |
+| Credentials           | `ssh-steve-id`        |
+| Label                 | stapp02               |
+| Remote Root Directory | `/home/steve/jenkins` |
+
+***
+
+#### App\_server\_3
+
+| Field                 | Value                  |
+| --------------------- | ---------------------- |
+| Node Name             | App\_server\_3         |
+| Hostname              | stapp03                |
+| Credentials           | `ssh-banner-id`        |
+| Label                 | stapp03                |
+| Remote Root Directory | `/home/banner/jenkins` |
+
+***
+
+### Troubleshooting
+
+#### Issue 1 — Java version mismatch
+
+**Error:**
+
+```
+UnsupportedClassVersionError (class version 61 vs 55)
+```
+
+**Cause:** Jenkins controller compiled with Java 17 while the agent was running Java 11.
+
+**Resolution:**
+
+1. Install Java 17 on all agent servers.
+2. Set Java 17 as the default runtime on each agent.
+3. Verify with `java -version`.
+
+***
+
+### Notes
+
+* Screenshots of credentials, node configuration, and agent online status should be captured for audit and review.
+* This setup supports scalable, label-based CI/CD job execution across application servers.
+
+***
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
+Install Java on all three machines
 
-<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+```bash
+sudo yum install -y java-17-openjdk java-17-openjdk-devel
+```
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+Relaunch the Nodes
+
+
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
