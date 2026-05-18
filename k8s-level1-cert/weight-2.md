@@ -161,5 +161,5 @@ thor@jumphost ~$ kubectl logs webserver-t4q1 -c sidecar-container
 thor@jumphost ~$ 
 ```
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
