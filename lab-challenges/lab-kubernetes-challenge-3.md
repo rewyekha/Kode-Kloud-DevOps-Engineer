@@ -1,6 +1,6 @@
 # Lab- Kubernetes Challenge 3
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -374,4 +374,4 @@ All five pods must be in `Running` state and all five deployments must show `1/1
 | Service    | redis  | vote      | ClusterIP 6379  |
 | Service    | db     | vote      | ClusterIP 5432  |
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>

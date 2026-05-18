@@ -1,6 +1,6 @@
 # Lab- Kubernetes Challenge 1
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -299,4 +299,4 @@ kubectl get pv
 | Kubeconfig User       | martin                | default kubeconfig |
 | Kubeconfig Context    | developer             | default kubeconfig |
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

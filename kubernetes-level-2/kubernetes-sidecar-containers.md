@@ -193,5 +193,5 @@ This implementation demonstrates a clean and modular approach to log handling in
 
 This pattern can be extended in production environments by integrating log shipping tools such as Fluentd, Logstash, or other observability platforms.
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
