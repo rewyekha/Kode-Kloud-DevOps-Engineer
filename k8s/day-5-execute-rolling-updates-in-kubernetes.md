@@ -38,7 +38,7 @@ nginx-deployment-5dd558cf95-sdzsw   1/1     Running   0          39s
 </strong>
 </code></pre>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 1: Update the Image (Correct Container Name)
 
