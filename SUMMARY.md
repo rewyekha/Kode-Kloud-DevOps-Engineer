@@ -1,8 +1,12 @@
 # Table of contents
 
+## Group 1
+
+* [Lab- Kubernetes Challenge 1](README.md)
+
 ## K8s
 
-* [Kode Kloud - k8s](README.md)
+* [Kode Kloud - k8s](<README (1).md>)
 * [Day 1: Deploy Pods in Kubernetes Cluster](k8s/day-1-deploy-pods-in-kubernetes-cluster.md)
 * [Day 2: Deploy Applications with Kubernetes Deployments](k8s/day-2-deploy-applications-with-kubernetes-deployments.md)
 * [Day 4: Script Execution Permissions](k8s/day-4-script-execution-permissions.md)
