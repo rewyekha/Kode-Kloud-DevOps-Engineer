@@ -3,6 +3,7 @@
 ## Lab Challenges
 
 * [Lab- Kubernetes Challenge 1](README.md)
+* [Lab- Kubernetes Challenge 2](lab-challenges/lab-kubernetes-challenge-2.md)
 
 ## K8s
 
