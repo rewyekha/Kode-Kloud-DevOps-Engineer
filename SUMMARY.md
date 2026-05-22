@@ -94,3 +94,4 @@
 * [Day 74: Jenkins Database Backup Job](day-74-jenkins-database-backup-job.md)
 * [Day 75: Jenkins Slave Nodes](jenkins/day-75-jenkins-slave-nodes.md)
 * [Day 76: Jenkins Project Security](jenkins/day-76-jenkins-project-security.md)
+* [Day 77: Jenkins Deploy Pipeline](jenkins/day-77-jenkins-deploy-pipeline.md)
