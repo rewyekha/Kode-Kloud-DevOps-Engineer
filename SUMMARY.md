@@ -96,3 +96,4 @@
 * [Day 76: Jenkins Project Security](jenkins/day-76-jenkins-project-security.md)
 * [Day 77: Jenkins Deploy Pipeline](jenkins/day-77-jenkins-deploy-pipeline.md)
 * [Day 78: Jenkins Conditional Pipeline](jenkins/day-78-jenkins-conditional-pipeline.md)
+* [Day 79: Jenkins Deployment Job](jenkins/day-79-jenkins-deployment-job.md)
