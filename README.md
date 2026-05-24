@@ -39,10 +39,11 @@ The deployment consists of the following components within the `development` nam
 Create a private key and a certificate signing request (CSR) for the user `martin`, then sign the certificate using the cluster CA.
 
 ```bash
+# Generate a private key and CSR
 openssl genrsa -out martin.key 2048
-
 openssl req -new -key martin.key -subj "/CN=martin" -out martin.csr
 
+# Sign the CSR with the cluster CA
 openssl x509 -req \
   -in martin.csr \
   -CA /etc/kubernetes/pki/ca.crt \
@@ -60,6 +61,7 @@ The resulting files `martin.key` and `martin.crt` are used in subsequent kubecon
 Add the user credentials and create a new context called `developer` in the default kubeconfig file.
 
 ```bash
+# Configure kubeconfig for Martin
 kubectl config set-credentials martin \
   --client-certificate=martin.crt \
   --client-key=martin.key
