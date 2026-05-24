@@ -10,9 +10,6 @@
 ## CKS Lab Challenges
 
 * [Lab- CKS Challenge 1](cks-lab-challenges/lab-cks-challenge-1.md)
-* [Lab- Kubernetes Challenge 2](cks-lab-challenges/lab-kubernetes-challenge-2.md)
-* [Lab- Kubernetes Challenge 3](cks-lab-challenges/lab-kubernetes-challenge-3.md)
-* [Lab- Kubernetes Challenge 4](cks-lab-challenges/lab-kubernetes-challenge-4.md)
 
 ## K8s
 
